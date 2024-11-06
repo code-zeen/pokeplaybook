@@ -108,6 +108,21 @@
           "option": "도롱뇽"
         }
       ]
+    },
+    {
+      "id": 4,
+      "title": "태양계 중 가장 큰 행성의 이름은 무엇인가요?",
+      "content": "",
+      "answer_config": {
+        "type": 3,
+        "shouldBeOrdered": false,
+        "canBeDuplicate": false,
+        "correct_answer_ids": [],
+        "correct_answer_values": [
+          "목성"
+        ]
+      },
+      "options": []
     }
   ]
 }
