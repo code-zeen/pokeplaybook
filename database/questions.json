@@ -1,7 +1,7 @@
 {
   "questions": [{
     "id": 1,
-    "question": "일반적인 구름의 무게는 몇 kg 인가요?",
+    "title": "일반적인 구름의 무게는 몇 kg 인가요?",
     "content": "",
     "answer_type": 1,
     "correct_answer_id": 5,
@@ -23,7 +23,7 @@
     }]
   }, {
     "id": 2,
-    "question": "사람의 몸에 있는 모든 세포들 중 세균이 몇퍼센트를 차지할까요?",
+    "title": "사람의 몸에 있는 모든 세포들 중 세균이 몇퍼센트를 차지할까요?",
     "content": "",
     "answer_type": 1,
     "correct_answer_id": 3,
