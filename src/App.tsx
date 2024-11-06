@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Question } from './types/question.ts'
+import { Question } from './components/question/question.ts'
+import QuestionTitle from './components/question/QuestionTitle.tsx'
 
 function App() {
   const [questions, setQuestions] = useState<Question[]>([])
@@ -18,10 +19,7 @@ function App() {
     <div>
       {questions.map(q => (
         <div className="flex flex-col gap-1 p-4">
-          <div className="flex items-center gap-4">
-            <b className="px-3.5 py-2 bg-slate-500 text-white rounded-lg">{q.id}번</b>
-            <h5>{q.question}</h5>
-          </div>
+          <QuestionTitle id={q.id} title={q.title} />
           <div className="flex gap-8 flex-wrap">
             {q.options.map(o => (
               <div className="flex gap-1">
