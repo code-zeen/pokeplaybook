@@ -13,6 +13,7 @@ export interface AnswerConfigType {
   shouldBeOrdered: boolean
   canBeDuplicate: boolean
   correct_answer_ids: number[]
+  correct_answer_values: string[]
 }
 
 export interface OptionType {
