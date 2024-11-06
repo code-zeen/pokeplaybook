@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Question } from './components/question/question.ts'
 import QuestionTitle from './components/question/QuestionTitle.tsx'
+import Answers from './components/question/Answers.tsx'
 
 function App() {
   const [questions, setQuestions] = useState<Question[]>([])
@@ -22,10 +23,7 @@ function App() {
           <QuestionTitle id={q.id} title={q.title} />
           <div className="flex gap-8 flex-wrap">
             {q.options.map(o => (
-              <div className="flex gap-1">
-                <input key={o.id} type="radio" name={String(q.id)} id={`${q.id}-${o.id}`} value={o.option} />
-                <label htmlFor={`${q.id}-${o.id}`}>{o.option}</label>
-              </div>
+              <Answers qId={q.id} oId={o.id} option={o.option} />
             ))}
           </div>
         </div>
