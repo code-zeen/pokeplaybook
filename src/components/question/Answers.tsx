@@ -1,5 +1,6 @@
 import type { OptionType, QuestionType } from './questionType.ts'
 import AnswerMultipleChoice from './AnswerMultipleChoice.tsx'
+import { AnswerTypeEnum } from '../../types/enum.ts'
 
 interface AnswerProps {
   qId: QuestionType['id']
@@ -9,13 +10,15 @@ interface AnswerProps {
 
 function Answers({ qId, answerConfig, options }: AnswerProps) {
   const { type } = answerConfig
-  const isMultipleChoice = type === 1 || type === 2
+  const isMultipleChoice = type === AnswerTypeEnum.RADIO || type === AnswerTypeEnum.CHECKBOX
+  const isText = type === AnswerTypeEnum.TEXT
 
   return (
     <div className="flex flex-col p-4 gap-4 md:flex-row md:gap-8">
       {isMultipleChoice && options.map(o => (
         <AnswerMultipleChoice key={o.id} qId={qId} oId={o.id} type={answerConfig.type} option={o} />
       ))}
+      {isText && <input type="text" className="border-2" />}
     </div>
   )
 }

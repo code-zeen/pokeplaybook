@@ -1,8 +1,8 @@
 export enum AnswerTypeEnum {
   RADIO = 1,
   CHECKBOX,
-  SELECT,
   TEXT,
+  SELECT,
   HOTSPOT,
   DRAGNDROP,
   CONNECT,
