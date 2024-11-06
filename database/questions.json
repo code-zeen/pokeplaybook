@@ -1,0 +1,25 @@
+{
+  "questions": [{
+    "id": 1,
+    "question": "일반적인 구름의 무게는 몇 kg 인가요?",
+    "content": "",
+    "answer_type": 1,
+    "correct_answer_id": 5,
+    "options": [{
+      "id": 1,
+      "option": "1 kg"
+    }, {
+      "id": 2,
+      "option": "100 kg"
+    }, {
+      "id": 3,
+      "option": "100,000 kg"
+    }, {
+      "id": 4,
+      "option": "100,000,000 kg"
+    }, {
+      "id": 5,
+      "option": "100,000,000,000 kg"
+    }]
+  }]
+}
