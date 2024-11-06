@@ -1,20 +1,21 @@
 import type { OptionType, QuestionType } from './questionType.ts'
+import AnswerMultipleChoice from './AnswerMultipleChoice.tsx'
 
 interface AnswerProps {
   qId: QuestionType['id']
-  oId: OptionType['id']
   answerConfig: QuestionType['answer_config']
-  option: OptionType['option']
+  options: OptionType[]
 }
 
-function Answers({ qId, oId, answerConfig, option }: AnswerProps) {
+function Answers({ qId, answerConfig, options }: AnswerProps) {
   const { type } = answerConfig
-  const inputType = type === 1 ? 'radio' : type === 2 ? 'checkbox' : 'text'
+  const isMultipleChoice = type === 1 || type === 2
 
   return (
-    <div className="flex items-center gap-1 min-w-max">
-      <input key={oId} type={inputType} name={String(qId)} id={`${qId}-${oId}`} value={oId} />
-      <label htmlFor={`${qId}-${oId}`}>{option}</label>
+    <div className="flex flex-col p-4 gap-4 md:flex-row md:gap-8">
+      {isMultipleChoice && options.map(o => (
+        <AnswerMultipleChoice qId={qId} oId={o.id} type={answerConfig.type} option={o} />
+      ))}
     </div>
   )
 }
