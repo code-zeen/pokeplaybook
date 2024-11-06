@@ -9,7 +9,6 @@ interface AnswerMultipleChoiceProps {
 }
 
 function AnswerMultipleChoice({ qId, oId, type, option }: AnswerMultipleChoiceProps) {
-  console.log(AnswerTypeEnum[type])
   return (
     <div className="flex items-center gap-1 min-w-max">
       <input key={oId} type={AnswerTypeEnum[type].toLowerCase()} name={String(qId)} id={`${qId}-${oId}`} value={oId} />
