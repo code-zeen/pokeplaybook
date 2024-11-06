@@ -1,7 +1,7 @@
-import type { OptionType, QuestionTitleType } from './questionType.ts'
+import type { OptionType, QuestionType } from './questionType.ts'
 
 interface AnswerProps {
-  qId: QuestionTitleType['id']
+  qId: QuestionType['id']
   oId: OptionType['id']
   option: OptionType['option']
 }

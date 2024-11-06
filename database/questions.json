@@ -1,47 +1,113 @@
 {
-  "questions": [{
-    "id": 1,
-    "title": "일반적인 구름의 무게는 몇 kg 인가요?",
-    "content": "",
-    "answer_type": 1,
-    "correct_answer_id": 5,
-    "options": [{
+  "questions": [
+    {
       "id": 1,
-      "option": "1 kg"
-    }, {
+      "title": "일반적인 구름의 무게는 몇 kg 인가요?",
+      "content": "",
+      "answer_config": {
+        "type": 1,
+        "shouldBeOrdered": false,
+        "canBeDuplicate": false,
+        "correct_answer_ids": [
+          5
+        ]
+      },
+      "options": [
+        {
+          "id": 1,
+          "option": "1 kg"
+        },
+        {
+          "id": 2,
+          "option": "100 kg"
+        },
+        {
+          "id": 3,
+          "option": "100,000 kg"
+        },
+        {
+          "id": 4,
+          "option": "100,000,000 kg"
+        },
+        {
+          "id": 5,
+          "option": "100,000,000,000 kg"
+        }
+      ]
+    },
+    {
       "id": 2,
-      "option": "100 kg"
-    }, {
+      "title": "사람의 몸에 있는 모든 세포들 중 세균이 몇퍼센트를 차지할까요?",
+      "content": "",
+      "answer_config": {
+        "type": 1,
+        "shouldBeOrdered": false,
+        "canBeDuplicate": false,
+        "correct_answer_ids": [
+          3
+        ]
+      },
+      "options": [
+        {
+          "id": 1,
+          "option": "15%"
+        },
+        {
+          "id": 2,
+          "option": "35%"
+        },
+        {
+          "id": 3,
+          "option": "55%"
+        },
+        {
+          "id": 4,
+          "option": "75%"
+        },
+        {
+          "id": 5,
+          "option": "95%"
+        }
+      ]
+    },
+    {
       "id": 3,
-      "option": "100,000 kg"
-    }, {
-      "id": 4,
-      "option": "100,000,000 kg"
-    }, {
-      "id": 5,
-      "option": "100,000,000,000 kg"
-    }]
-  }, {
-    "id": 2,
-    "title": "사람의 몸에 있는 모든 세포들 중 세균이 몇퍼센트를 차지할까요?",
-    "content": "",
-    "answer_type": 1,
-    "correct_answer_id": 3,
-    "options": [{
-      "id": 1,
-      "option": "15%"
-    }, {
-      "id": 2,
-      "option": "35%"
-    }, {
-      "id": 3,
-      "option": "55%"
-    }, {
-      "id": 4,
-      "option": "75%"
-    }, {
-      "id": 5,
-      "option": "95%"
-    }]
-  }]
+      "title": "다음 중 신체 부위를 재생할 수 있는 동물들은?",
+      "content": "",
+      "answer_config": {
+        "type": 2,
+        "shouldBeOrdered": false,
+        "canBeDuplicate": false,
+        "correct_answer_ids": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "options": [
+        {
+          "id": 1,
+          "option": "불가사리"
+        },
+        {
+          "id": 2,
+          "option": "우파루파"
+        },
+        {
+          "id": 3,
+          "option": "플라나리아"
+        },
+        {
+          "id": 4,
+          "option": "제브라피시"
+        },
+        {
+          "id": 5,
+          "option": "도롱뇽"
+        }
+      ]
+    }
+  ]
 }
