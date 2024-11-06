@@ -14,7 +14,7 @@ function Answers({ qId, answerConfig, options }: AnswerProps) {
   return (
     <div className="flex flex-col p-4 gap-4 md:flex-row md:gap-8">
       {isMultipleChoice && options.map(o => (
-        <AnswerMultipleChoice qId={qId} oId={o.id} type={answerConfig.type} option={o} />
+        <AnswerMultipleChoice key={o.id} qId={qId} oId={o.id} type={answerConfig.type} option={o} />
       ))}
     </div>
   )

@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="p-1">
       {questions.map(q => (
-        <Question question={q} />
+        <Question key={q.id} question={q} />
       ))}
     </div>
   )
