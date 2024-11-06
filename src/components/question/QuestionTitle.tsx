@@ -1,4 +1,4 @@
-import type { QuestionTitleType } from './question.ts'
+import type { QuestionTitleType } from './questionType.ts'
 
 function QuestionTitle({ id, title }: QuestionTitleType) {
   return (

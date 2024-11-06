@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Question } from './components/question/question.ts'
 import QuestionTitle from './components/question/QuestionTitle.tsx'
 import Answers from './components/question/Answers.tsx'
+import { QuestionType } from './components/question/questionType.ts'
 
 function App() {
-  const [questions, setQuestions] = useState<Question[]>([])
+  const [questions, setQuestions] = useState<QuestionType[]>([])
   useEffect(() => {
     fetchQuestions()
   }, [])

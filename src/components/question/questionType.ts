@@ -1,6 +1,6 @@
 import { AnswerTypeEnum } from '../../types/enum.ts'
 
-export interface Question extends QuestionTitleType {
+export interface QuestionType extends QuestionTitleType {
   content: string
   answer_type: AnswerTypeEnum
   options: OptionType[]
