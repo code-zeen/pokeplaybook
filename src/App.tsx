@@ -17,11 +17,11 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="p-1">
       {questions.map(q => (
-        <div className="flex flex-col gap-1 p-4">
+        <div className="flex flex-col gap-1">
           <QuestionTitle id={q.id} title={q.title} />
-          <div className="flex gap-8 flex-wrap">
+          <div className="flex flex-col p-4 gap-4 md:flex-row md:gap-8">
             {q.options.map(o => (
               <Answers qId={q.id} oId={o.id} option={o.option} />
             ))}
