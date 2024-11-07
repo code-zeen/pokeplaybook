@@ -1,10 +1,11 @@
 import Draggable from './Draggable.tsx'
 import DropArea from './DropArea.tsx'
+import { OptionType } from '../questionType.ts'
 
-function DragAndDrop() {
+function DragAndDrop({ options }: { options: OptionType[] }) {
   return (
     <div className="flex flex-col">
-      <Draggable />
+      <Draggable options={options} />
       <DropArea />
     </div>
   )

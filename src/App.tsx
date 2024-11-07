@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { QuestionType } from './components/question/questionType.ts'
 import Question from './components/question/Question.tsx'
-import DragAndDrop from './components/question/answer/DragAndDrop.tsx'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
@@ -20,11 +19,12 @@ function App() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="p-1">
-        {/*{questions.map(q => (*/}
-        {/*  <Question key={q.id} question={q} />*/}
-        {/*))}*/}
-        <DragAndDrop />
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col p-1 border gap-2">
+          {questions.map(q => (
+            <Question key={q.id} question={q} />
+          ))}
+        </div>
       </div>
     </DndProvider>
   )
