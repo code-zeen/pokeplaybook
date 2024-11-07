@@ -1,7 +1,7 @@
 import DraggableItem from './DraggableItem.tsx'
 
 function Draggable() {
-  const draggableItems = [ 'test', 'hello', 'world' ]
+  const draggableItems = [ { id: 1, value: 'test', }, { id: 2, value: 'hello', }, { id: 3, value: 'world', },]
   return (
     <div className="flex relative border-2 border-dashed border-gray-300 rounded-xl gap-2 p-8 pt-8 mt-4">
       <div
@@ -9,7 +9,7 @@ function Draggable() {
         <b>끌어놓으세요</b>
       </div>
       {draggableItems.map((item, i) => (
-        <DraggableItem key={i}>{item}</DraggableItem>
+        <DraggableItem key={i} item={item} />
       ))}
     </div>
   )
