@@ -1,12 +1,13 @@
 import { useDrop } from 'react-dnd'
 import useDragAndDrop from './useDragAndDrop.ts'
-import { ReactElement } from 'react'
+import { OptionType } from '../questionType.ts'
+import TextBox from './TextBox.tsx'
 
 
 function DropArea() {
   const [{ isOver }, drop] = useDrop(() => ({
-    accept: 'any',
-    drop: (item: ReactElement) => {
+    accept: ['text'],
+    drop: (item: OptionType) => {
       addDroppedItem(item)
     },
     collect: monitor => ({
@@ -15,12 +16,12 @@ function DropArea() {
   }))
   const { droppedItems, addDroppedItem } = useDragAndDrop()
 
-  console.log(droppedItems)
-
   return (
     <div ref={drop}
          className={`flex gap-2 border border-gray-300 min-h-12 rounded p-4 hover:border-sky-600 ${isOver && 'border-sky-600'}`}>
-      {droppedItems.map(item => item)}
+      {droppedItems.map(item => (
+        <TextBox key={item.id} text={item.option} />
+      ))}
     </div>
   )
 }

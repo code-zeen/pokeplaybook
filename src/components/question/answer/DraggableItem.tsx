@@ -1,15 +1,17 @@
 import { useDrag } from 'react-dnd'
 import { cloneElement, isValidElement, ReactElement } from 'react'
 import { TextBoxProps } from './TextBox.tsx'
+import { OptionType } from '../questionType.ts'
 
 interface DraggableItemProps {
   children: ReactElement<TextBoxProps>
+  item: OptionType
 }
 
-function DraggableItem({ children }: DraggableItemProps) {
+function DraggableItem({ children, item }: DraggableItemProps) {
   const [{ isDragging }, drag] = useDrag(() => ({
-    type: 'any',
-    item: children,
+    type: 'text',
+    item: item,
     collect: monitor => ({
       isDragging: monitor.isDragging(),
     }),

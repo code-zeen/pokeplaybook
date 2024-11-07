@@ -10,7 +10,7 @@ function Draggable({ options }: { options: OptionType[] }) {
         <b>끌어놓으세요</b>
       </div>
       {options.map(o => (
-        <DraggableItem key={o.id}>
+        <DraggableItem key={o.id} item={o}>
           <TextBox text={o.option} />
         </DraggableItem>
       ))}

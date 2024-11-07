@@ -1,12 +1,13 @@
-import { ReactElement, useState } from 'react'
+import { useState } from 'react'
+import { OptionType } from '../questionType.ts'
 
 const useDragAndDrop = () => {
-  const [droppedItems, setDroppedItems] = useState<ReactElement[]>([])
+  const [droppedItems, setDroppedItems] = useState<OptionType[]>([])
 
-  const addDroppedItem = (node: ReactElement) => {
+  const addDroppedItem = (item: OptionType) => {
     setDroppedItems(prev => {
-      if (!prev.includes(node)) {
-        return [...prev, node]
+      if (!prev.includes(item)) {
+        return [...prev, item]
       }
       return prev
     })
