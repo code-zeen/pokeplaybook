@@ -587,12 +587,8 @@ video {
   display: inline-flex;
 }
 
-.min-h-8 {
-  min-height: 2rem;
-}
-
-.min-h-6 {
-  min-height: 1.5rem;
+.h-10 {
+  height: 2.5rem;
 }
 
 .min-h-16 {
@@ -698,11 +694,6 @@ video {
 
 .border-dashed {
   border-style: dashed;
-}
-
-.border-blue-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(191 219 254 / var(--tw-border-opacity));
 }
 
 .border-gray-300 {
