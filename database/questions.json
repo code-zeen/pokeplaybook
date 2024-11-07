@@ -123,6 +123,41 @@
         ]
       },
       "options": []
+    }, {
+      "id": 5,
+      "title": "보기의 낱말로 문장을 만드세요.",
+      "content": "",
+      "answer_config": {
+        "type": 6,
+        "shouldBeOrdered": true,
+        "canBeDuplicate": false,
+        "correct_answer_ids": [],
+        "correct_answer_values": [
+          ""
+        ]
+      },
+      "options": [
+        {
+          "id": 1,
+          "option": "let"
+        },
+        {
+          "id": 2,
+          "option": "the"
+        },
+        {
+          "id": 3,
+          "option": "Who"
+        },
+        {
+          "id": 4,
+          "option": "out?"
+        },
+        {
+          "id": 5,
+          "option": "dogs"
+        }
+      ]
     }
   ]
 }
