@@ -40,44 +40,6 @@
     },
     {
       "id": 2,
-      "title": "사람의 몸에 있는 모든 세포들 중 세균이 몇퍼센트를 차지하나요?",
-      "content": "",
-      "answer_config": {
-        "type": 1,
-        "shouldBeOrdered": false,
-        "canBeDuplicate": false,
-        "correct_answer_ids": [
-          3
-        ],
-        "correct_answer_values": [
-          ""
-        ]
-      },
-      "options": [
-        {
-          "id": 1,
-          "option": "15%"
-        },
-        {
-          "id": 2,
-          "option": "35%"
-        },
-        {
-          "id": 3,
-          "option": "55%"
-        },
-        {
-          "id": 4,
-          "option": "75%"
-        },
-        {
-          "id": 5,
-          "option": "95%"
-        }
-      ]
-    },
-    {
-      "id": 3,
       "title": "다음 중 신체 부위를 재생할 수 있는 동물들을 고르세요.",
       "content": "",
       "answer_config": {
@@ -119,7 +81,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "태양계 중 가장 큰 행성의 이름은 무엇인가요?",
       "content": "",
       "answer_config": {
@@ -134,7 +96,7 @@
       "options": []
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "보기의 낱말로 문장을 만드세요.",
       "content": "",
       "answer_config": {
