@@ -1,4 +1,4 @@
-import Answers from './Answers'
+import Answers from './answer/Answers.tsx'
 import QuestionTitle from './QuestionTitle'
 import type { QuestionType } from './questionType.ts'
 

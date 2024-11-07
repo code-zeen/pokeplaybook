@@ -1,5 +1,5 @@
-import { AnswerTypeEnum } from '../../types/enum.ts'
-import { AnswerConfigType, OptionType, QuestionType } from './questionType.ts'
+import { AnswerTypeEnum } from '../../../types/enum.ts'
+import { AnswerConfigType, OptionType, QuestionType } from '../questionType.ts'
 
 interface AnswerMultipleChoiceProps {
   qId: QuestionType['id']
@@ -8,7 +8,7 @@ interface AnswerMultipleChoiceProps {
   option: OptionType
 }
 
-function AnswerMultipleChoice({ qId, oId, type, option }: AnswerMultipleChoiceProps) {
+function MultipleChoice({ qId, oId, type, option }: AnswerMultipleChoiceProps) {
   return (
     <div className="flex items-center gap-1 min-w-max">
       <input key={oId} type={AnswerTypeEnum[type].toLowerCase()} name={String(qId)} id={`${qId}-${oId}`} value={oId} />
@@ -17,4 +17,4 @@ function AnswerMultipleChoice({ qId, oId, type, option }: AnswerMultipleChoicePr
   )
 }
 
-export default AnswerMultipleChoice
+export default MultipleChoice
