@@ -14,13 +14,13 @@ function DropArea() {
       isOver: monitor.isOver(),
     }),
   }))
-  const { droppedItems, addDroppedItem } = useDragAndDrop()
+  const { droppedItems, addDroppedItem, removeClickedItem } = useDragAndDrop()
 
   return (
     <div ref={drop}
          className={`flex gap-2 border border-gray-300 min-h-12 rounded p-4 hover:border-sky-600 ${isOver && 'border-sky-600'}`}>
-      {droppedItems.map(item => (
-        <TextBox key={item.id} text={item.option} />
+      {droppedItems.map(i => (
+        <TextBox key={i.id} text={i.option} onClick={() => removeClickedItem(i)} />
       ))}
     </div>
   )

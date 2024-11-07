@@ -12,8 +12,11 @@ const useDragAndDrop = () => {
       return prev
     })
   }
+  const removeClickedItem = (item: OptionType) => {
+    setDroppedItems(prev => prev.filter((e) => e.id !== item.id))
+  }
 
-  return { droppedItems, addDroppedItem }
+  return { droppedItems, addDroppedItem, removeClickedItem }
 }
 
 export default useDragAndDrop
