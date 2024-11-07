@@ -14,7 +14,7 @@ function Answers({ qId, answerConfig, options }: AnswerProps) {
   const isText = type === AnswerTypeEnum.TEXT
 
   return (
-    <div className="flex flex-col p-4 gap-4 md:flex-row md:gap-8">
+    <div className="flex flex-col p-8 gap-4 md:flex-row md:gap-8">
       {isMultipleChoice && options.map(o => (
         <MultipleChoice key={o.id} qId={qId} oId={o.id} type={answerConfig.type} option={o} />
       ))}

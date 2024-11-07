@@ -8,7 +8,7 @@ interface QuestionProps {
 
 function Question({ question }: QuestionProps) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 border rounded overflow-hidden">
       <QuestionTitle id={question.id} title={question.title} />
       <Answers qId={question.id} answerConfig={question.answer_config} options={question.options} />
     </div>
