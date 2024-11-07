@@ -1,22 +1,32 @@
 import { useDrag } from 'react-dnd'
-import TextBox, { Item } from './TextBox.tsx'
+import { cloneElement, isValidElement, ReactElement } from 'react'
+import { TextBoxProps } from './TextBox.tsx'
 
-interface ItemProps {
-  item: Item
+interface DraggableItemProps {
+  children: ReactElement<TextBoxProps>
 }
 
-function DraggableItem({ item }: ItemProps) {
+function DraggableItem({ children }: DraggableItemProps) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'any',
-    item: { id: item.id },
+    item: children,
     collect: monitor => ({
       isDragging: monitor.isDragging(),
     }),
   }))
 
-  return (
-    <TextBox ref={drag} item={item} className={`${isDragging ? 'opacity-50' : 'opacity-1'}`} />
-  )
+  if (!isValidElement(children)) {
+    return null
+  }
+
+  return cloneElement(children, {
+    ...children.props,
+    ref: drag,
+    style: {
+      ...children.props.style,
+      opacity: isDragging ? 0.5 : 1,
+    },
+  } as TextBoxProps)
 }
 
 export default DraggableItem

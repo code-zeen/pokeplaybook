@@ -1,18 +1,18 @@
-import { useState } from 'react'
+import { ReactElement, useState } from 'react'
 
 const useDragAndDrop = () => {
-  const [droppedItemIds, setDroppedItemIds] = useState<number[]>([])
+  const [droppedItems, setDroppedItems] = useState<ReactElement[]>([])
 
-  const addDroppedItemId = (id: number) => {
-    setDroppedItemIds(prev => {
-      if (!prev.includes(id)) {
-        return [...prev, id]
+  const addDroppedItem = (node: ReactElement) => {
+    setDroppedItems(prev => {
+      if (!prev.includes(node)) {
+        return [...prev, node]
       }
       return prev
     })
   }
 
-  return { droppedItemIds, addDroppedItemId }
+  return { droppedItems, addDroppedItem }
 }
 
 export default useDragAndDrop
