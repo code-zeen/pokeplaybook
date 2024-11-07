@@ -2,6 +2,7 @@ import type { OptionType, QuestionType } from '../questionType.ts'
 import MultipleChoice from './MultipleChoice.tsx'
 import { AnswerTypeEnum } from '../../../types/enum.ts'
 import DragAndDrop from './DragAndDrop.tsx'
+import TextInput from './TextInput.tsx'
 
 interface AnswerProps {
   qId: QuestionType['id']
@@ -20,7 +21,7 @@ function Answers({ qId, answerConfig, options }: AnswerProps) {
       {isMultipleChoice && options.map(o => (
         <MultipleChoice key={o.id} qId={qId} oId={o.id} type={answerConfig.type} option={o} />
       ))}
-      {isText && <input type="text" className="border-2" />}
+      {isText && <TextInput />}
       {isDragAndDrop && <DragAndDrop options={options} />}
     </div>
   )
