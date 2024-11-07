@@ -8,7 +8,7 @@ interface DraggableItemProps {
 }
 
 function DraggableItem({ item }: DraggableItemProps) {
-  const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
+  const [{ isDragging }, drag] = useDrag(() => ({
     type: 'any',
     item: { id: item.id },
     collect: monitor => ({
@@ -16,13 +16,8 @@ function DraggableItem({ item }: DraggableItemProps) {
     }),
   }))
 
-  return isDragging ? (
-    <div ref={dragPreview}
-         className="inline-flex border border-gray-300 rounded px-4 py-1.5 cursor-grab bg-gray-50 hover:border-sky-600 hover:bg-sky-50 select-none">
-    </div>
-  ) : (
-    <div ref={drag}
-         className="inline-flex border border-gray-300 rounded px-4 py-1.5 cursor-grab bg-gray-50 hover:border-sky-600 hover:bg-sky-50 select-none">
+  return (
+    <div ref={drag} className={`inline-flex border border-gray-300 rounded px-4 py-1.5 cursor-grab bg-gray-50 hover:border-sky-600 hover:bg-sky-50 select-none ${isDragging && 'opacity-50'}`}>
       {item.value}
     </div>
   )
