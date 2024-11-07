@@ -1,13 +1,11 @@
 import { useDrag } from 'react-dnd'
+import TextBox, { Item } from './TextBox.tsx'
 
-interface DraggableItemProps {
-  item: {
-    id: number
-    value: string
-  }
+interface ItemProps {
+  item: Item
 }
 
-function DraggableItem({ item }: DraggableItemProps) {
+function DraggableItem({ item }: ItemProps) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'any',
     item: { id: item.id },
@@ -17,9 +15,7 @@ function DraggableItem({ item }: DraggableItemProps) {
   }))
 
   return (
-    <div ref={drag} className={`inline-flex border border-gray-300 rounded px-4 py-1.5 cursor-grab bg-gray-50 hover:border-sky-600 hover:bg-sky-50 select-none ${isDragging && 'opacity-50'}`}>
-      {item.value}
-    </div>
+    <TextBox ref={drag} item={item} className={`${isDragging ? 'opacity-50' : 'opacity-1'}`} />
   )
 }
 
