@@ -4,7 +4,9 @@ function TextInput() {
   const [input, setInput] = useState('')
 
   return (
-    <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="border-2" />
+    <div className="flex border border-blue-200">
+      <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="border-2" />
+    </div>
   )
 }
 

@@ -17,10 +17,8 @@ function Answers({ qId, answerConfig, options }: AnswerProps) {
   const isDragAndDrop = type === AnswerTypeEnum.DRAGNDROP
 
   return (
-    <div className="flex flex-col p-8 gap-4 md:flex-row md:gap-8">
-      {isMultipleChoice && options.map(o => (
-        <MultipleChoice key={o.id} qId={qId} oId={o.id} type={answerConfig.type} option={o} />
-      ))}
+    <div className="flex justify-center p-8">
+      {isMultipleChoice && <MultipleChoice options={options} qId={qId} type={answerConfig.type} />}
       {isText && <TextInput />}
       {isDragAndDrop && <DragAndDrop options={options} />}
     </div>
