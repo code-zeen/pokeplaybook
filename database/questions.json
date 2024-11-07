@@ -10,6 +10,9 @@
         "canBeDuplicate": false,
         "correct_answer_ids": [
           5
+        ],
+        "correct_answer_values": [
+          ""
         ]
       },
       "options": [
@@ -45,6 +48,9 @@
         "canBeDuplicate": false,
         "correct_answer_ids": [
           3
+        ],
+        "correct_answer_values": [
+          ""
         ]
       },
       "options": [
@@ -84,6 +90,9 @@
           3,
           4,
           5
+        ],
+        "correct_answer_values": [
+          ""
         ]
       },
       "options": [
@@ -123,7 +132,8 @@
         ]
       },
       "options": []
-    }, {
+    },
+    {
       "id": 5,
       "title": "보기의 낱말로 문장을 만드세요.",
       "content": "",
@@ -131,7 +141,13 @@
         "type": 6,
         "shouldBeOrdered": true,
         "canBeDuplicate": false,
-        "correct_answer_ids": [],
+        "correct_answer_ids": [
+          3,
+          1,
+          2,
+          5,
+          4
+        ],
         "correct_answer_values": [
           ""
         ]
