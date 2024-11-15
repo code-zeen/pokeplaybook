@@ -12,6 +12,9 @@ export interface PokedexInfo extends PokemonType {
     owned: number
 }
 
+const SEEN = 10
+const OWNED = 10
+
 function App() {
     // const [ questions, setQuestions ] = useState<QuestionType[]>([])
     const [ pokemons, setPokemons ] = useState<PokedexInfo[]>([])
@@ -39,8 +42,8 @@ function App() {
 
         setPokemons(data.results.map((pokemon: { name: string, url: string }) => ({
             ...pokemon,
-            seen: 10,
-            owned: 2
+            seen: SEEN,
+            owned: OWNED,
         })))
     }
 
@@ -56,8 +59,8 @@ function App() {
 
         setPokemon({
             ...dataPokemon,
-            seen: 10,
-            owned: 2,
+            seen: SEEN,
+            owned: OWNED,
         })
         setAbility(dataAbility)
         setMove(dataMove)
