@@ -38,7 +38,7 @@ function PokemonCard() {
           <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat} />
         </div>
         <div className="flex justify-center border">
-          <img src={pokemon.sprites.front_default} alt={pokemon?.name} />
+          <img src={pokemon.sprites.front_default ?? ''} alt={pokemon?.name} />
         </div>
         <div className="flex flex-col">
           <div className="flex">
