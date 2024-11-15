@@ -97,6 +97,43 @@
     },
     {
       "id": 4,
+      "title": "인간의 몸에서 가장 큰 신체 기관은 무엇일까요?",
+      "content": "",
+      "answer_config": {
+        "type": 4,
+        "shouldBeOrdered": false,
+        "canBeDuplicate": false,
+        "correct_answer_ids": [
+          4
+        ],
+        "correct_answer_values": [
+          ""
+        ]
+      },
+      "options": [
+        {
+          "id": 1,
+          "option": "간"
+        },
+        {
+          "id": 2,
+          "option": "심장"
+        },
+        {
+          "id": 3,
+          "option": "신장"
+        },
+        {
+          "id": 4,
+          "option": "피부"
+        },
+        {
+          "id": 5,
+          "option": "폐"
+        }
+      ]
+    }, {
+      "id": 5,
       "title": "보기의 낱말로 문장을 만드세요.",
       "content": "",
       "answer_config": {
