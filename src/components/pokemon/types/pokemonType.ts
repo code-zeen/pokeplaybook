@@ -50,28 +50,3 @@ export interface StatType {
   }
 }
 
-export interface AbilityType {
-  id: number
-  name: string
-  flavor_text_entries: {
-    flavor_text: string
-    language: {
-      name: string
-    }
-    version_group: {
-      id: number
-      name: string
-      order: number
-    }
-  }[]
-}
-
-export interface MoveType {
-  id: number
-  name: string
-  accuracy: number
-  effect_chance: number
-  pp: number
-  priority: number
-  power: number | null
-}
