@@ -17,20 +17,22 @@ function App() {
     setQuestions(data)
   }
 
-  return (
-    <DndProvider backend={HTML5Backend}>
-      {/*<div className="max-w-5xl mx-auto">*/}
-      {/*  <div className="flex flex-col p-1 border gap-2">*/}
-      {/*    {questions.map(q => (*/}
-      {/*      <Question key={q.id} question={q} />*/}
-      {/*    ))}*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      <div className="flex flex-col items-center border">
-        <PokemonCard />
-      </div>
-    </DndProvider>
-  )
+    return (
+        <DndProvider backend={HTML5Backend}>
+            {/*<div className="max-w-5xl mx-auto">*/}
+            {/*  <div className="flex flex-col p-1 border gap-2">*/}
+            {/*    {questions.map(q => (*/}
+            {/*      <Question key={q.id} question={q} />*/}
+            {/*    ))}*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            <div className="m-4">
+                <div className="flex flex-col items-center">
+                    <PokemonCard />
+                </div>
+            </div>
+        </DndProvider>
+    )
 }
 
 export default App

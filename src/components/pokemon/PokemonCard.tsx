@@ -9,7 +9,7 @@ import PokemonPhysicalInfo from "./PokemonPhysicalInfo.tsx";
 import PokemonMove from "./PokemonMove.tsx";
 import { AbilityType } from "./types/abilityType.ts";
 import { MoveType } from "./types/moveType.ts";
-import { typeColorClasses } from "./typeColorClasses";
+import { cardBgClass } from "./typeColorClasses";
 
 function PokemonCard() {
     const [ pokemon, setPokemon ] = useState<PokemonType>()
@@ -17,7 +17,7 @@ function PokemonCard() {
     const [ move, setMove ] = useState<MoveType>()
     useEffect(() => {
         (async () => {
-            await fetchPokemonByName('ditto')
+            await fetchPokemonByName('charizard')
         })()
     }, [])
 
@@ -46,15 +46,17 @@ function PokemonCard() {
 
     if (!pokemon || !ability || !move) return null
 
+    const type = pokemon.types[0].type.name
+
     return (
-        <div className="p-2 bg-gray-50 w-72 h-96 border rounded">
-            <div className={`flex flex-col ${typeColorClasses[pokemon.types[0].type.name]} h-full rounded-lg`}>
+        <div className="p-2 bg-gray-300 w-72 h-96 border rounded">
+            <div className={`flex flex-col ${cardBgClass[type]} h-full rounded-lg`}>
                 <div className="flex justify-between">
                     <PokemonName name={pokemon.name} />
                     <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat}
                                type={pokemon.types[0].type.name} />
                 </div>
-                <PokemonImage src={pokemon.sprites.front_default ?? ''} name={pokemon.name} />
+                <PokemonImage src={pokemon.sprites.front_default ?? ''} name={pokemon.name} type={type} />
                 <PokemonPhysicalInfo number={pokemon.id} height={pokemon.height} weight={pokemon.weight} />
                 <div className="flex flex-col justify-around h-full p-2">
                     <PokemonAbility name={ability.name}
