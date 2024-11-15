@@ -22,28 +22,28 @@ interface TypeIconProps {
     type: TypeEnum
 }
 
-const typeIcons = {
-    bug,
-    dark,
-    dragon,
-    electric,
-    fairy,
-    fighting,
-    fire,
-    flying,
-    ghost,
-    grass,
-    ground,
-    ice,
-    normal,
-    poison,
-    psychic,
-    rock,
-    steel,
-    water,
+const typeIcons: Record<TypeEnum, string> = {
+    [TypeEnum.BUG]: bug,
+    [TypeEnum.DARK]: dark,
+    [TypeEnum.DRAGON]: dragon,
+    [TypeEnum.ELECTRIC]: electric,
+    [TypeEnum.FAIRY]: fairy,
+    [TypeEnum.FIGHTING]: fighting,
+    [TypeEnum.FIRE]: fire,
+    [TypeEnum.FLYING]: flying,
+    [TypeEnum.GHOST]: ghost,
+    [TypeEnum.GRASS]: grass,
+    [TypeEnum.GROUND]: ground,
+    [TypeEnum.ICE]: ice,
+    [TypeEnum.NORMAL]: normal,
+    [TypeEnum.POISON]: poison,
+    [TypeEnum.PSYCHIC]: psychic,
+    [TypeEnum.ROCK]: rock,
+    [TypeEnum.STEEL]: steel,
+    [TypeEnum.WATER]: water,
 }
 
-function TypeIcon ({ type }): TypeIconProps {
+function TypeIcon ({ type }: TypeIconProps) {
     return (
         <img src={typeIcons[type]} alt={type} />
     )
