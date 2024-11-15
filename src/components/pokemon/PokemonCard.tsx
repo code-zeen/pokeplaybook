@@ -71,6 +71,7 @@ function PokemonCard() {
                 <div className="flex gap-0.5 p-1">
                     <div className="flex border rounded bg-white text-xs px-0.5">G</div>
                     <div className="flex border rounded bg-black text-xs text-white px-0.5">sv2a</div>
+                    <div className="flex text-white text-xs">{pokemon.id}/1125 AR</div>
                 </div>
             </div>
         </div>
