@@ -15,17 +15,21 @@ function Pokedex({ pokemons }: PokedexProps) {
                 </div>
 
                 <div className="flex">
-                    <div className="bg-red-500">
-                        <PokeballContainer>
-                            <Pokeball />
-                        </PokeballContainer>
-                    </div>
+
                     <ol>
                         {pokemons.map((pokemon, index) => (
                             <li key={index}>
-                                <div className="flex gap-2">
-                                    <span>{index + 1}</span>
-                                    <span>{pokemon.name}</span>
+
+                                <div className="flex gap-1">
+                                    <div className="bg-red-500 p-1">
+                                        <PokeballContainer>
+                                            <Pokeball />
+                                        </PokeballContainer>
+                                    </div>
+                                    <div className="flex gap-3 p-1">
+                                        <span className="font-mono w-6 text-right">{index + 1}</span>
+                                        <span className="capitalize">{pokemon.name}</span>
+                                    </div>
                                 </div>
                             </li>
                         ))}
