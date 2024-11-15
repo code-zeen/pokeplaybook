@@ -1,10 +1,19 @@
-function PokemonMove({ move }) {
+interface PokemonMoveProps {
+    name: string
+    power: number
+    flavorText: string
+}
+
+function PokemonMove({ name, power, flavorText }: PokemonMoveProps) {
     return (
-        <div className="flex justify-between">
-            <div className="flex gap-3">
-                <span>splup</span>
+        <div className="flex flex-col">
+            <div className="flex justify-between">
+                <div className="flex gap-3">
+                    <span className="capitalize"><b>{name}</b></span>
+                </div>
+                <span>{power}</span>
             </div>
-            <span>10</span>
+            <p className="text-xs">{flavorText}</p>
         </div>
     )
 }
