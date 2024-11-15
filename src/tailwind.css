@@ -595,6 +595,10 @@ video {
   min-height: 4rem;
 }
 
+.w-72 {
+  width: 18rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -646,6 +650,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-1 {
@@ -724,6 +732,11 @@ video {
 .bg-slate-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
 }
 
 .p-1 {
