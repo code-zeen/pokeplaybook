@@ -74,5 +74,5 @@ export interface MoveType {
   effect_chance: number
   pp: number
   priority: number
-  power: number
+  power: number | null
 }
