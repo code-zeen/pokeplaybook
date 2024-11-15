@@ -1,3 +1,5 @@
+import { FlavorTextEntryType } from "./pokemonType.ts";
+
 export interface MoveType {
     id: number
     name: string
@@ -6,4 +8,5 @@ export interface MoveType {
     pp: number
     priority: number
     power: number | null
+    flavor_text_entries: FlavorTextEntryType[]
 }

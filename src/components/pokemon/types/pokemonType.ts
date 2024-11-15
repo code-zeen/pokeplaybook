@@ -50,3 +50,18 @@ export interface StatType {
   }
 }
 
+export interface FlavorTextEntryType {
+  flavor_text: string
+  language: {
+    id: number
+    name: string
+    official: boolean
+    iso639: string
+    iso3166: string
+  }
+  version_group: {
+    id: number
+    name: string
+    order: number
+  }
+}

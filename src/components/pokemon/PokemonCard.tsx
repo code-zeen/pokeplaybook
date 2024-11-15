@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { PokemonType, StatType } from './types/pokemonType.ts'
+import { FlavorTextEntryType, PokemonType, StatType } from './types/pokemonType.ts'
 import PokemonName from './PokemonName.tsx'
 import PokemonHp from './PokemonHp.tsx'
 import { StatNameEnum } from '../../enum/pokemonEnum.ts'
@@ -39,7 +39,7 @@ function PokemonCard() {
     return stats.find(each => each.stat.name === name)!
   }
 
-  const findEnglishFlavorText = (flavorTextEntries) => {
+  const findEnglishFlavorText = (flavorTextEntries: FlavorTextEntryType[]) => {
     return flavorTextEntries.find(each => each.language.name === 'en')!
   }
 
