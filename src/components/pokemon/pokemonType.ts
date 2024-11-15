@@ -13,6 +13,12 @@ export interface PokemonType {
   }[]
   height: number
   weight: number
+  moves: {
+    move: {
+      name: string
+      url: string
+    }[]
+  }
   stats: StatType[]
   sprites: {
     back_default: string | null
@@ -30,6 +36,11 @@ export interface PokemonType {
   }
 }
 
+export interface TypeType {
+  name: string
+  url: string
+}
+
 export interface StatType {
   base_stat: number
   effort: number
@@ -38,7 +49,6 @@ export interface StatType {
     url: string
   }
 }
-
 
 export interface AbilityType {
   id: number
@@ -56,7 +66,13 @@ export interface AbilityType {
   }[]
 }
 
-export interface TypeType {
+
+export interface MoveType {
+  id: number
   name: string
-  url: string
+  accuracy: number
+  effect_chance: number
+  pp: number
+  priority: number
+  power: number
 }
