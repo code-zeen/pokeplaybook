@@ -8,7 +8,7 @@ interface PokedexListProps {
 
 function PokedexList({ pokemons }: PokedexListProps) {
     return (
-        <div className="flex border-2 rounded overflow-auto border-black w-56">
+        <div className="flex border-2 rounded overflow-auto bg-white border-black w-56 h-96">
             <ol>
                 {pokemons.map((pokemon, index) => (
                     <li key={index}>
