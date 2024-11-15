@@ -8,8 +8,8 @@ import { PokedexInfo } from "../../../App";
 
 interface PokedexProps {
     pokemons: PokemonType[]
-    selectedPokemonId: number
     pokemon: PokedexInfo | null
+    selectedPokemonId?: number
     setSelectedPokemonId: (id: number) => void
 }
 

@@ -4,7 +4,7 @@ import { PokemonType } from "../types/pokemonType";
 
 interface PokedexListProps {
     pokemons: PokemonType[]
-    selectedPokemonId: number
+    selectedPokemonId?: number
     setSelectedPokemonId: (id: number) => void
 }
 
