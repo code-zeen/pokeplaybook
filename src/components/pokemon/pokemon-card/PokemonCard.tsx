@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import { FlavorTextEntryType, PokemonType, StatType } from './types/pokemonType.ts'
+import { FlavorTextEntryType, PokemonType, StatType } from '../types/pokemonType.ts'
 import PokemonName from './PokemonName.tsx'
 import PokemonHp from './PokemonHp.tsx'
-import { StatNameEnum } from '../../enum/pokemonEnum.ts'
+import { StatNameEnum } from '../../../enum/pokemonEnum.ts'
 import PokemonAbility from './PokemonAbility.tsx'
 import PokemonImage from './PokemonImage.tsx'
 import PokemonPhysicalInfo from "./PokemonPhysicalInfo.tsx";
 import PokemonMove from "./PokemonMove.tsx";
-import { AbilityType } from "./types/abilityType.ts";
-import { MoveType } from "./types/moveType.ts";
-import { cardBgClass } from "./typeColorClasses";
+import { AbilityType } from "../types/abilityType.ts";
+import { MoveType } from "../types/moveType.ts";
+import { cardBgClass } from "../typeColorClasses";
 
 function PokemonCard() {
     const [ pokemon, setPokemon ] = useState<PokemonType>()
