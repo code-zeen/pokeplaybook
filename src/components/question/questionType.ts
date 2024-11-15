@@ -1,4 +1,4 @@
-import { AnswerTypeEnum } from '../../enum/enum.ts'
+import { AnswerTypeEnum } from '../../enum/questionEnum.ts'
 
 export interface QuestionType {
   id: number
