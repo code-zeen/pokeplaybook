@@ -3,6 +3,7 @@ import type { AbilityType, PokemonType, StatType } from './pokemonType.ts'
 import PokemonName from './PokemonName.tsx'
 import PokemonHp from './PokemonHp.tsx'
 import { StatNameEnum } from '../../enum/pokemonEnum.ts'
+import PokemonAbility from './PokemonAbility.tsx'
 
 function PokemonCard() {
   const [pokemon, setPokemon] = useState<PokemonType>()
@@ -40,14 +41,7 @@ function PokemonCard() {
         <div className="flex justify-center border">
           <img src={pokemon.sprites.front_default ?? ''} alt={pokemon?.name} />
         </div>
-        <div className="flex flex-col">
-          <div className="flex">
-            <span>Ability</span>
-            <span>{ability.name}</span>
-          </div>
-
-          {ability.flavor_text_entries.find(each => each.language.name === 'en')?.flavor_text}
-        </div>
+        <PokemonAbility name={ability.name} flavorText={ability.flavor_text_entries.find(each => each.language.name === 'en')?.flavor_text} />
       </div>
     </div>
   )
