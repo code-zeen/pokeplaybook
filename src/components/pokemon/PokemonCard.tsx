@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
-import type { AbilityType, PokemonType } from './pokemonType.ts'
+import type { AbilityType, PokemonType, StatType } from './pokemonType.ts'
+import PokemonName from './PokemonName.tsx'
+import PokemonHp from './PokemonHp.tsx'
+import { StatNameEnum } from '../../enum/pokemonEnum.ts'
 
 function PokemonCard() {
   const [pokemon, setPokemon] = useState<PokemonType>()
@@ -21,14 +24,18 @@ function PokemonCard() {
     setAbility(dataAbility)
   }
 
+  const findStat = (stats: StatType[], name: StatNameEnum): StatType =>  {
+    return stats.find(each => each.stat.name === name)!
+  }
+
   if (!pokemon || !ability) return null
 
   return (
     <div className="p-2 bg-yellow-200 w-72 border rounded">
       <div className="flex flex-col bg-gray-100 rounded-lg">
         <div className="flex justify-between">
-        <span>{pokemon.name}</span>
-        <span>HP {pokemon.stats.find(each => each.stat.name === 'hp')?.base_stat}</span>
+        <PokemonName name={pokemon.name} />
+          <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat} />
         </div>
         <div className="flex justify-center border">
           <img src={pokemon.sprites.front_default} alt={pokemon?.name} />
