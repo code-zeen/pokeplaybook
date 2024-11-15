@@ -7,33 +7,37 @@ import PokeballGrayBg from "./PokeballGrayBg";
 
 interface PokedexProps {
     pokemons: PokemonType[]
+    pokemon: PokemonType | null
+    setSelectedPokemonId: (id: number) => void
 }
 
-function Pokedex({ pokemons }: PokedexProps) {
+function Pokedex({ pokemons, pokemon, setSelectedPokemonId }: PokedexProps) {
     return (
         <div className="h-96">
             <div className="flex flex-col bg-gray-100">
                 <PokedexHeader />
                 <div className="flex p-2 gap-2">
-                    <div className="flex flex-col justify-between">
-                        <PokemonName />
+                    {pokemon && <div className="flex flex-col justify-between">
+                        <PokemonName name={pokemon.name} />
 
-                        <PokeballGrayBg />
+                        <PokeballGrayBg spriteSrc={pokemon.sprites.front_default ?? ''} name={pokemon.name} />
+
 
                         <ContainerWithSideBorder>
                             <div className="w-full px-4">
                                 <div className="flex justify-between">
                                     <span>Seen: </span>
-                                    <span>11</span>
+                                    <span>{pokemon.seen}</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span>Owned: </span>
-                                    <span>4</span>
+                                    <span>{pokemon.owned}</span>
                                 </div>
                             </div>
                         </ContainerWithSideBorder>
                     </div>
-                    <PokedexList pokemons={pokemons} />
+                    }
+                    <PokedexList pokemons={pokemons} setSelectedPokemonId={setSelectedPokemonId} />
 
 
                 </div>

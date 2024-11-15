@@ -10,7 +10,7 @@ import { MoveType } from "./components/pokemon/types/moveType";
 function App() {
     // const [ questions, setQuestions ] = useState<QuestionType[]>([])
     const [ pokemons, setPokemons ] = useState<PokemonType[]>([])
-    const [ pokemon, setPokemon ] = useState<PokemonType>()
+    const [ pokemon, setPokemon ] = useState<PokemonType | null>(null)
     const [ ability, setAbility ] = useState<AbilityType>()
     const [ move, setMove ] = useState<MoveType>()
     const [ selectedPokemonId, setSelectedPokemonId ] = useState<number>()
@@ -53,7 +53,6 @@ function App() {
     //     setQuestions(data)
     // }
 
-
     const fetchAllPokemons = async () => {
         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
         const data = await res.json()
@@ -72,8 +71,12 @@ function App() {
             {/*</div>*/}
             <div>
                 <div className="flex gap-4">
-                    <Pokedex pokemons={pokemons} />
-                    {(pokemon && ability && move) && <PokemonCard pokemon={pokemon} ability={ability} move={move} />}
+                    <Pokedex pokemons={pokemons} pokemon={pokemon}
+                             setSelectedPokemonId={setSelectedPokemonId} />
+
+                    {(pokemon && ability && move) &&
+                        <PokemonCard pokemon={pokemon} ability={ability} move={move} />
+                    }
                 </div>
             </div>
         </DndProvider>

@@ -1,9 +1,13 @@
 import ContainerWithSideBorder from "./ContainerWithSideBorder";
 
-function PokemonName() {
+interface PokemonNameProps {
+    name: string
+}
+
+function PokemonName({ name }: PokemonNameProps) {
     return (
         <ContainerWithSideBorder>
-            Charmander
+            <span className="capitalize">{name}</span>
         </ContainerWithSideBorder>
     )
 }
