@@ -10,7 +10,7 @@ interface PokemonImageProps {
 function PokemonImage({ src, name, type }: PokemonImageProps) {
     return (
         <div
-            className={`flex justify-center mx-2 border border-b-0 ${spriteBgClass[type]}`}>
+            className={`flex justify-center mx-2 border border-white border-b-0 ${spriteBgClass[type]}`}>
             <img src={src} alt={name} />
         </div>
     )
