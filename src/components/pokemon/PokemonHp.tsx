@@ -4,7 +4,10 @@ interface PokemonHpProps {
 
 function PokemonHp({ hp }: PokemonHpProps) {
   return (
-    <span>HP {hp}</span>
+      <div className="flex items-baseline gap-0.5">
+        <span className="text-xs">HP</span>
+        <span><b>{hp}</b></span>
+      </div>
   )
 }
 
