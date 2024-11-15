@@ -5,7 +5,7 @@ function TextInput() {
 
   return (
     <div className="flex">
-      <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="h-10 px-2 border-2 rounded" />
+      <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="h-10 px-2 border rounded" />
     </div>
   )
 }
