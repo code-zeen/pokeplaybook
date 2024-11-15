@@ -17,11 +17,11 @@ function PokemonCard() {
     const [ move, setMove ] = useState<MoveType>()
     useEffect(() => {
         (async () => {
-            await fetchPokemonByName('charizard')
+            await fetchPokemonByNameOrId('mewtwo')
         })()
     }, [])
 
-    const fetchPokemonByName = async (name: string) => {
+    const fetchPokemonByNameOrId = async (name: string | number) => {
         const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         const dataPokemon = await resPokemon.json()
 
