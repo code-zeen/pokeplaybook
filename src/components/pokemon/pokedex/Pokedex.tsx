@@ -19,10 +19,18 @@ function Pokedex({ pokemons }: PokedexProps) {
                         <PokemonName />
 
                         <PokeballGrayBg />
-                        
+
                         <ContainerWithSideBorder>
-                            <p>seen: 11</p>
-                            <p>owned: 2</p>
+                            <div className="w-full px-4">
+                                <div className="flex justify-between">
+                                    <span>Seen: </span>
+                                    <span>11</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span>Owned: </span>
+                                    <span>4</span>
+                                </div>
+                            </div>
                         </ContainerWithSideBorder>
                     </div>
                     <PokedexList pokemons={pokemons} />
