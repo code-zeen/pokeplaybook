@@ -43,7 +43,7 @@ const typeIcons: Record<TypeEnum, string> = {
     [TypeEnum.WATER]: water,
 }
 
-function TypeIcon ({ type }: TypeIconProps) {
+function TypeIcon({ type }: TypeIconProps) {
     const size = '16px'
     return (
         <img src={typeIcons[type]} alt={type} style={{ width: size, height: size }} />
