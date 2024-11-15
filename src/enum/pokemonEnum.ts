@@ -25,6 +25,5 @@ export enum TypeEnum {
   PSYCHIC = 'psychic',
   ROCK = 'rock',
   STEEL = 'steel',
-  STELLAR = 'stellar',
   WATER = 'water',
 }
