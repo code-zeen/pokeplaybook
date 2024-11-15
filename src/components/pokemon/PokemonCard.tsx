@@ -4,6 +4,7 @@ import PokemonName from './PokemonName.tsx'
 import PokemonHp from './PokemonHp.tsx'
 import { StatNameEnum } from '../../enum/pokemonEnum.ts'
 import PokemonAbility from './PokemonAbility.tsx'
+import PokemonImage from './PokemonImage.tsx'
 
 function PokemonCard() {
   const [pokemon, setPokemon] = useState<PokemonType>()
@@ -38,9 +39,7 @@ function PokemonCard() {
         <PokemonName name={pokemon.name} />
           <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat} />
         </div>
-        <div className="flex justify-center border">
-          <img src={pokemon.sprites.front_default ?? ''} alt={pokemon?.name} />
-        </div>
+        <PokemonImage src={pokemon.sprites.front_default ?? ''} name={pokemon.name} />
         <PokemonAbility name={ability.name} flavorText={ability.flavor_text_entries.find(each => each.language.name === 'en')?.flavor_text} />
       </div>
     </div>
