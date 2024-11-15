@@ -1,4 +1,4 @@
-import { StatNameEnum } from '../../enum/pokemonEnum.ts'
+import { StatNameEnum } from '../../../enum/pokemonEnum.ts'
 
 export interface PokemonType {
   name: string
@@ -65,7 +65,6 @@ export interface AbilityType {
     }
   }[]
 }
-
 
 export interface MoveType {
   id: number

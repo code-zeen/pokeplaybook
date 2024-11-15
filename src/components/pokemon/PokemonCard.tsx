@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { AbilityType, MoveType, PokemonType, StatType } from './pokemonType.ts'
+import type { AbilityType, MoveType, PokemonType, StatType } from './types/pokemonType.ts'
 import PokemonName from './PokemonName.tsx'
 import PokemonHp from './PokemonHp.tsx'
 import { StatNameEnum } from '../../enum/pokemonEnum.ts'
