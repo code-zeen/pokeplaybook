@@ -2,9 +2,20 @@ export interface PokemonType {
   name: string
   id: number
   abilities: {
-    ability: AbilityType
+    ability: {
+      name: string
+      url: string
+    }
     is_hidden: boolean
     slot: number
+  }[]
+  stats: {
+    base_stat: number
+    effort: number
+    stat: {
+      name: string
+      url: string
+    }
   }[]
   sprites: {
     back_default: string | null
@@ -23,10 +34,21 @@ export interface PokemonType {
 }
 
 export interface AbilityType {
+  id: number
   name: string
-  url: string
-
+  flavor_text_entries: {
+    flavor_text: string
+    language: {
+      name: string
+    }
+    version_group: {
+      id: number
+      name: string
+      order: number
+    }
+  }[]
 }
+
 export interface TypeType {
   name: string
   url: string
