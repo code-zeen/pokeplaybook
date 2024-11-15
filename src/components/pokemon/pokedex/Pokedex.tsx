@@ -8,10 +8,11 @@ import PokeballGrayBg from "./PokeballGrayBg";
 interface PokedexProps {
     pokemons: PokemonType[]
     pokemon: PokemonType | null
+    selectedPokemonId: number
     setSelectedPokemonId: (id: number) => void
 }
 
-function Pokedex({ pokemons, pokemon, setSelectedPokemonId }: PokedexProps) {
+function Pokedex({ pokemons, pokemon, selectedPokemonId, setSelectedPokemonId }: PokedexProps) {
     return (
         <div className="h-96">
             <div className="flex flex-col bg-gray-100">
@@ -21,7 +22,6 @@ function Pokedex({ pokemons, pokemon, setSelectedPokemonId }: PokedexProps) {
                         <PokemonName name={pokemon.name} />
 
                         <PokeballGrayBg spriteSrc={pokemon.sprites.front_default ?? ''} name={pokemon.name} />
-
 
                         <ContainerWithSideBorder>
                             <div className="w-full px-4">
@@ -37,7 +37,8 @@ function Pokedex({ pokemons, pokemon, setSelectedPokemonId }: PokedexProps) {
                         </ContainerWithSideBorder>
                     </div>
                     }
-                    <PokedexList pokemons={pokemons} setSelectedPokemonId={setSelectedPokemonId} />
+                    <PokedexList pokemons={pokemons} selectedPokemonId={selectedPokemonId}
+                                 setSelectedPokemonId={setSelectedPokemonId} />
 
 
                 </div>

@@ -71,7 +71,7 @@ function App() {
             {/*</div>*/}
             <div>
                 <div className="flex gap-4">
-                    <Pokedex pokemons={pokemons} pokemon={pokemon}
+                    <Pokedex pokemons={pokemons} pokemon={pokemon} selectedPokemonId={selectedPokemonId}
                              setSelectedPokemonId={setSelectedPokemonId} />
 
                     {(pokemon && ability && move) &&
