@@ -11,6 +11,8 @@ export interface PokemonType {
     is_hidden: boolean
     slot: number
   }[]
+  height: number
+  weight: number
   stats: StatType[]
   sprites: {
     back_default: string | null
