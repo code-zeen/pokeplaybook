@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { FlavorTextEntryType, PokemonType, StatType } from '../types/pokemonType.ts'
 import PokemonName from './PokemonName.tsx'
 import PokemonHp from './PokemonHp.tsx'
@@ -11,31 +10,13 @@ import { AbilityType } from "../types/abilityType.ts";
 import { MoveType } from "../types/moveType.ts";
 import { cardBgClass } from "../typeColorClasses";
 
-function PokemonCard() {
-    const [ pokemon, setPokemon ] = useState<PokemonType>()
-    const [ ability, setAbility ] = useState<AbilityType>()
-    const [ move, setMove ] = useState<MoveType>()
-    useEffect(() => {
-        (async () => {
-            await fetchPokemonByNameOrId('mewtwo')
-        })()
-    }, [])
+interface PokemonCardProps {
+    pokemon: PokemonType
+    ability: AbilityType
+    move: MoveType
+}
 
-    const fetchPokemonByNameOrId = async (name: string | number) => {
-        const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-        const dataPokemon = await resPokemon.json()
-
-        const resAbility = await fetch(`https://pokeapi.co/api/v2/ability/${dataPokemon?.abilities[0].ability.name}`)
-        const dataAbility = await resAbility.json()
-
-        const resMove = await fetch(`https://pokeapi.co/api/v2/move/${dataPokemon?.moves[0].move.name}`)
-        const dataMove = await resMove.json()
-
-        setPokemon(dataPokemon)
-        setAbility(dataAbility)
-        setMove(dataMove)
-    }
-
+function PokemonCard({ pokemon, ability, move }: PokemonCardProps) {
     const findStat = (stats: StatType[], name: StatNameEnum): StatType => {
         return stats.find(each => each.stat.name === name)!
     }
