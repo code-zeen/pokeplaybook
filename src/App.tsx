@@ -3,11 +3,12 @@ import { QuestionType } from './components/question/questionType.ts'
 import Question from './components/question/Question.tsx'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import PokemonCard from './components/pokemon/PokemonCard.tsx'
 
 function App() {
   const [questions, setQuestions] = useState<QuestionType[]>([])
   useEffect(() => {
-    fetchQuestions()
+    // fetchQuestions()
   }, [])
 
 
@@ -26,6 +27,7 @@ function App() {
           ))}
         </div>
       </div>
+      <PokemonCard />
     </DndProvider>
   )
 }
