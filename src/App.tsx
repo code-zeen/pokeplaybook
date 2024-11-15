@@ -7,10 +7,15 @@ import Pokedex from "./components/pokemon/pokedex/Pokedex";
 import { AbilityType } from "./components/pokemon/types/abilityType";
 import { MoveType } from "./components/pokemon/types/moveType";
 
+export interface PokedexInfo extends PokemonType {
+    seen: number
+    owned: number
+}
+
 function App() {
     // const [ questions, setQuestions ] = useState<QuestionType[]>([])
     const [ pokemons, setPokemons ] = useState<PokemonType[]>([])
-    const [ pokemon, setPokemon ] = useState<PokemonType | null>(null)
+    const [ pokemon, setPokemon ] = useState<PokedexInfo | null>(null)
     const [ ability, setAbility ] = useState<AbilityType>()
     const [ move, setMove ] = useState<MoveType>()
     const [ selectedPokemonId, setSelectedPokemonId ] = useState<number>()

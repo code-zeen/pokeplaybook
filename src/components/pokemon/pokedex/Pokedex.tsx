@@ -4,11 +4,12 @@ import PokedexList from "./PokedexList";
 import PokemonName from "./PokemonName";
 import ContainerWithSideBorder from "./ContainerWithSideBorder";
 import PokeballGrayBg from "./PokeballGrayBg";
+import { PokedexInfo } from "../../../App";
 
 interface PokedexProps {
     pokemons: PokemonType[]
-    pokemon: PokemonType | null
     selectedPokemonId: number
+    pokemon: PokedexInfo | null
     setSelectedPokemonId: (id: number) => void
 }
 
