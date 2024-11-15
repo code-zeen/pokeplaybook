@@ -9,4 +9,8 @@ export interface MoveType {
     priority: number
     power: number | null
     flavor_text_entries: FlavorTextEntryType[]
+    type: {
+        name: string
+        url: string
+    }
 }

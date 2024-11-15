@@ -58,7 +58,7 @@ function PokemonCard() {
                 <div className="flex flex-col justify-around h-full p-2">
                     <PokemonAbility name={ability.name}
                                     flavorText={findEnglishFlavorText(ability.flavor_text_entries).flavor_text} />
-                    <PokemonMove name={move.name} power={move.power}
+                    <PokemonMove name={move.name} power={move.power} type={move.type.name}
                                  flavorText={findEnglishFlavorText(move.flavor_text_entries).flavor_text} />
                 </div>
             </div>

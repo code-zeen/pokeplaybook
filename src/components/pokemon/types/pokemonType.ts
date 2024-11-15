@@ -1,4 +1,4 @@
-import { StatNameEnum } from '../../../enum/pokemonEnum.ts'
+import { StatNameEnum, TypeEnum } from '../../../enum/pokemonEnum.ts'
 
 export interface PokemonType {
     name: string
@@ -33,11 +33,11 @@ export interface PokemonType {
     types: {
         slot: number
         type: TypeType
-    }
+    }[]
 }
 
 export interface TypeType {
-    name: string
+    name: TypeEnum
     url: string
 }
 
