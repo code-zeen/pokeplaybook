@@ -1,3 +1,5 @@
+import { StatNameEnum } from '../../enum/pokemonEnum.ts'
+
 export interface PokemonType {
   name: string
   id: number
@@ -9,14 +11,7 @@ export interface PokemonType {
     is_hidden: boolean
     slot: number
   }[]
-  stats: {
-    base_stat: number
-    effort: number
-    stat: {
-      name: string
-      url: string
-    }
-  }[]
+  stats: StatType[]
   sprites: {
     back_default: string | null
     back_female: string | null
@@ -32,6 +27,16 @@ export interface PokemonType {
     type: TypeType
   }
 }
+
+export interface StatType {
+  base_stat: number
+  effort: number
+  stat: {
+    name: StatNameEnum
+    url: string
+  }
+}
+
 
 export interface AbilityType {
   id: number
