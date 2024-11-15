@@ -1,6 +1,6 @@
 interface PokemonMoveProps {
     name: string
-    power: number
+    power: number | null
     flavorText: string
 }
 
