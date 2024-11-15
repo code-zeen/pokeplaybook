@@ -9,6 +9,7 @@ import PokemonPhysicalInfo from "./PokemonPhysicalInfo.tsx";
 import PokemonMove from "./PokemonMove.tsx";
 import { AbilityType } from "./types/abilityType.ts";
 import { MoveType } from "./types/moveType.ts";
+import { typeColorClasses } from "./typeColorClasses";
 
 function PokemonCard() {
     const [ pokemon, setPokemon ] = useState<PokemonType>()
@@ -46,8 +47,8 @@ function PokemonCard() {
     if (!pokemon || !ability || !move) return null
 
     return (
-        <div className="p-2 bg-yellow-200 w-72 h-96 border rounded">
-            <div className="flex flex-col bg-gray-100 h-full rounded-lg">
+        <div className="p-2 bg-gray-50 w-72 h-96 border rounded">
+            <div className={`flex flex-col ${typeColorClasses[pokemon.types[0].type.name]} h-full rounded-lg`}>
                 <div className="flex justify-between">
                     <PokemonName name={pokemon.name} />
                     <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat}
