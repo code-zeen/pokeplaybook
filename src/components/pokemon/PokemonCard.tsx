@@ -50,7 +50,7 @@ function PokemonCard() {
       <div className="flex flex-col bg-gray-100 h-full rounded-lg">
         <div className="flex justify-between">
           <PokemonName name={pokemon.name} />
-          <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat} />
+          <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat} type={pokemon.types[0].type.name} />
         </div>
         <PokemonImage src={pokemon.sprites.front_default ?? ''} name={pokemon.name} />
         <PokemonPhysicalInfo number={pokemon.id} height={pokemon.height} weight={pokemon.weight} />

@@ -44,8 +44,9 @@ const typeIcons: Record<TypeEnum, string> = {
 }
 
 function TypeIcon ({ type }: TypeIconProps) {
+    const size = '16px'
     return (
-        <img src={typeIcons[type]} alt={type} />
+        <img src={typeIcons[type]} alt={type} style={{ width: size, height: size }} />
     )
 }
 
