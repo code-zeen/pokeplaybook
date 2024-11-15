@@ -50,8 +50,8 @@ function PokemonCard() {
 
     return (
         <div className="p-2 bg-gray-300 w-72 h-96 border rounded">
-            <div className={`flex flex-col ${cardBgClass[type]} h-full rounded-lg`}>
-                <div className="flex justify-between">
+            <div className={`flex flex-col ${cardBgClass[type]} h-full border rounded-lg`}>
+                <div className="flex justify-between px-2 py-0.5">
                     <PokemonName name={pokemon.name} />
                     <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat}
                                type={pokemon.types[0].type.name} />
@@ -63,6 +63,14 @@ function PokemonCard() {
                                     flavorText={findEnglishFlavorText(ability.flavor_text_entries).flavor_text} />
                     <PokemonMove name={move.name} power={move.power} type={move.type.name}
                                  flavorText={findEnglishFlavorText(move.flavor_text_entries).flavor_text} />
+                </div>
+                <div className="flex gap-0.5 m-1 px-1 justify-between text-xs border border-r-0 border-l-0">
+                    <span>weakness</span>
+                    <span>retreat</span>
+                </div>
+                <div className="flex gap-0.5 p-1">
+                    <div className="flex border rounded bg-white text-xs px-0.5">G</div>
+                    <div className="flex border rounded bg-black text-xs text-white px-0.5">sv2a</div>
                 </div>
             </div>
         </div>
