@@ -1,4 +1,3 @@
-import { PokemonType } from "../types/pokemonType";
 import PokedexHeader from "./PokedexHeader";
 import PokedexList from "./PokedexList";
 import PokemonName from "./PokemonName";
@@ -7,7 +6,7 @@ import PokeballGrayBg from "./PokeballGrayBg";
 import { PokedexInfo } from "../../../App";
 
 interface PokedexProps {
-    pokemons: PokemonType[]
+    pokemons: PokedexInfo[]
     pokemon: PokedexInfo | null
     selectedPokemonId?: number
     setSelectedPokemonId: (id: number) => void

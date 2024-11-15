@@ -14,7 +14,7 @@ export interface PokedexInfo extends PokemonType {
 
 function App() {
     // const [ questions, setQuestions ] = useState<QuestionType[]>([])
-    const [ pokemons, setPokemons ] = useState<PokemonType[]>([])
+    const [ pokemons, setPokemons ] = useState<PokedexInfo[]>([])
     const [ pokemon, setPokemon ] = useState<PokedexInfo | null>(null)
     const [ ability, setAbility ] = useState<AbilityType>()
     const [ move, setMove ] = useState<MoveType>()
@@ -31,6 +31,18 @@ function App() {
             })()
         }
     }, [ selectedPokemonId ])
+
+
+    const fetchAllPokemons = async () => {
+        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
+        const data = await res.json()
+
+        setPokemons(data.results.map((pokemon: { name: string, url: string }) => ({
+            ...pokemon,
+            seen: 10,
+            owned: 2
+        })))
+    }
 
     const fetchPokemonByNameOrId = async (name: string | number) => {
         const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
@@ -58,12 +70,6 @@ function App() {
     //     setQuestions(data)
     // }
 
-    const fetchAllPokemons = async () => {
-        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
-        const data = await res.json()
-
-        setPokemons(data.results)
-    }
 
     return (
         <DndProvider backend={HTML5Backend}>
