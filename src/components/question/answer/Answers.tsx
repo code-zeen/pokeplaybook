@@ -1,6 +1,6 @@
 import type { OptionType, QuestionType } from '../questionType.ts'
 import MultipleChoice from './MultipleChoice.tsx'
-import { AnswerTypeEnum } from '../../../types/enum.ts'
+import { AnswerTypeEnum } from '../../../enum/enum.ts'
 import DragAndDrop from './DragAndDrop.tsx'
 import TextInput from './TextInput.tsx'
 import Select from './Select.tsx'
