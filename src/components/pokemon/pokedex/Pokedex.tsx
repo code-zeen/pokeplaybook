@@ -8,11 +8,11 @@ import { PokedexInfo } from "../../../App";
 interface PokedexProps {
     pokemons: PokedexInfo[]
     pokemon: PokedexInfo | null
-    selectedPokemonId?: number
-    setSelectedPokemonId: (id: number) => void
+    selectedPokemonName?: string
+    setSelectedPokemonName: (name: string) => void
 }
 
-function Pokedex({ pokemons, pokemon, selectedPokemonId, setSelectedPokemonId }: PokedexProps) {
+function Pokedex({ pokemons, pokemon, selectedPokemonName, setSelectedPokemonName }: PokedexProps) {
     return (
         <div className="h-96">
             <div className="flex flex-col bg-gray-100">
@@ -37,8 +37,8 @@ function Pokedex({ pokemons, pokemon, selectedPokemonId, setSelectedPokemonId }:
                         </ContainerWithSideBorder>
                     </div>
                     }
-                    <PokedexList pokemons={pokemons} selectedPokemonId={selectedPokemonId}
-                                 setSelectedPokemonId={setSelectedPokemonId} />
+                    <PokedexList pokemons={pokemons} selectedPokemonName={selectedPokemonName}
+                                 setSelectedPokemonName={setSelectedPokemonName} />
 
 
                 </div>

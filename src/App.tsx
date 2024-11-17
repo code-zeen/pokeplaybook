@@ -22,19 +22,19 @@ function App() {
     const [ pokemon, setPokemon ] = useState<PokedexInfo | null>(null)
     const [ ability, setAbility ] = useState<AbilityType>()
     const [ move, setMove ] = useState<MoveType>()
-    const [ selectedPokemonId, setSelectedPokemonId ] = useState<number>()
+    const [ selectedPokemonName, setSelectedPokemonName ] = useState<string>()
 
     useEffect(() => {
         (async () => await fetchAllPokemons())()
     }, [])
 
     useEffect(() => {
-        if (selectedPokemonId) {
+        if (selectedPokemonName) {
             (async () => {
-                await fetchPokemonByNameOrId(selectedPokemonId)
+                await fetchPokemonByNameOrId(selectedPokemonName)
             })()
         }
-    }, [ selectedPokemonId ])
+    }, [ selectedPokemonName ])
 
 
     const fetchAllPokemons = async () => {
@@ -87,8 +87,8 @@ function App() {
             {/*</div>*/}
             <div>
                 <div className="flex gap-4">
-                    <Pokedex pokemons={pokemons} pokemon={pokemon} selectedPokemonId={selectedPokemonId}
-                             setSelectedPokemonId={setSelectedPokemonId} />
+                    <Pokedex pokemons={pokemons} pokemon={pokemon} selectedPokemonName={selectedPokemonName}
+                             setSelectedPokemonName={setSelectedPokemonName} />
 
                     {(pokemon && ability && move) &&
                         <PokemonCard pokemon={pokemon} ability={ability} move={move} />
