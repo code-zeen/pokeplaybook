@@ -8,7 +8,7 @@ function PokemonAbility({ name, flavorText }: PokemonAbilityProps) {
         <div className="flex flex-col">
             <div className="flex gap-1">
                 <div
-                    className="border border-gray-400 bg-white rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg px-0.5">
+                    className="border border-gray-300 bg-white rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg px-0.5">
                     <div
                         className="bg-rose-500 rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg pl-3 pr-4 pb-0.5">
                         <b className="text-xs text-white italic">Ability</b>
