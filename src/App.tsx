@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, KeyboardEvent } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import PokemonCard from './components/pokemon/pokemon-card/PokemonCard.tsx'
@@ -68,6 +68,12 @@ function App() {
         setMove(dataMove)
     }
 
+    const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            e.preventDefault()
+            setSelectedPokemonName(e.currentTarget.value)
+        }
+    }
 
     // const fetchQuestions = async () => {
     //     const res = await fetch('http://localhost:3001/questions')
@@ -86,6 +92,7 @@ function App() {
             {/*  </div>*/}
             {/*</div>*/}
             <div>
+                <input type="text" placeholder="Search..." onKeyDown={handleKeyDown} />
                 <div className="flex gap-4">
                     <Pokedex pokemons={pokemons} pokemon={pokemon} selectedPokemonName={selectedPokemonName}
                              setSelectedPokemonName={setSelectedPokemonName} />
