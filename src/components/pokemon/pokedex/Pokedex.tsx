@@ -4,6 +4,8 @@ import PokemonName from "./PokemonName";
 import ContainerWithSideBorder from "./ContainerWithSideBorder";
 import PokeballGrayBg from "./PokeballGrayBg";
 import { PokedexInfo } from "../../../App";
+import { SpriteEnum } from '../getSprite'
+import useSprite from '../useSprite'
 
 interface PokedexProps {
     pokemons: PokedexInfo[]
@@ -13,6 +15,8 @@ interface PokedexProps {
 }
 
 function Pokedex({ pokemons, pokemon, selectedPokemonName, setSelectedPokemonName }: PokedexProps) {
+    const { spriteSrc } = useSprite(SpriteEnum.GEN_V, 151)
+
     return (
         <div className="h-96">
             <div className="flex flex-col bg-gray-100">
@@ -21,7 +25,7 @@ function Pokedex({ pokemons, pokemon, selectedPokemonName, setSelectedPokemonNam
                     {pokemon && <div className="flex flex-col justify-between">
                         <PokemonName name={pokemon.name} />
 
-                        <PokeballGrayBg spriteSrc={pokemon.sprites.front_default ?? ''} name={pokemon.name} />
+                        <PokeballGrayBg spriteSrc={spriteSrc} name={pokemon.name} />
 
                         <ContainerWithSideBorder>
                             <div className="w-full px-4">
