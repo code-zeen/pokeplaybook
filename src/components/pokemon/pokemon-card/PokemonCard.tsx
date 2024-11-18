@@ -37,7 +37,7 @@ function PokemonCard({ pokemon, ability, move }: PokemonCardProps) {
                     <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat}
                                type={pokemon.types[0].type.name} />
                 </div>
-                <PokemonImage src={pokemon.sprites.front_default ?? ''} name={pokemon.name} type={type} />
+                <PokemonImage name={pokemon.name} type={type} />
                 <PokemonPhysicalInfo number={pokemon.id} height={pokemon.height} weight={pokemon.weight} />
                 <div className="flex flex-col justify-around h-full p-2">
                     <PokemonAbility name={ability.name}

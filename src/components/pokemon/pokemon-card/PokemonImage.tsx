@@ -1,21 +1,20 @@
 import { spriteBgClass } from "../typeColorClasses";
 import { TypeEnum } from "../../../enum/pokemonEnum";
-import { getSprite } from '../getSprite'
+import { SpriteEnum } from '../getSprite'
+import useSprite from '../useSprite'
 
 interface PokemonImageProps {
-    src: string
     name: string
     type: TypeEnum
 }
 
-function PokemonImage({ src, name, type }: PokemonImageProps) {
-
-    const sprite = getSprite(29)
+function PokemonImage({ name, type }: PokemonImageProps) {
+    const { spriteSrc } = useSprite(SpriteEnum.SHOWDOWN, 151)
 
     return (
         <div
             className={`flex justify-center mx-2 border border-white border-b-0 ${spriteBgClass[type]}`}>
-            <img src={sprite} alt={name} />
+            <img src={spriteSrc} alt={name} />
         </div>
     )
 }
