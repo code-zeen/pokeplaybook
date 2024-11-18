@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 function PokeballContainer({ children }: { children: ReactNode }) {
     return (

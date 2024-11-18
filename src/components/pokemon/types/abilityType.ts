@@ -1,4 +1,4 @@
-import { FlavorTextEntryType } from "./pokemonType.ts";
+import { FlavorTextEntryType } from './pokemonType.ts';
 
 export interface AbilityType {
     id: number

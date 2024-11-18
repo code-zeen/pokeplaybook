@@ -4,11 +4,11 @@ import PokemonHp from './PokemonHp.tsx'
 import { StatNameEnum } from '../../../enum/pokemonEnum.ts'
 import PokemonAbility from './PokemonAbility.tsx'
 import PokemonImage from './PokemonImage.tsx'
-import PokemonPhysicalInfo from "./PokemonPhysicalInfo.tsx";
-import PokemonMove from "./PokemonMove.tsx";
-import { AbilityType } from "../types/abilityType.ts";
-import { MoveType } from "../types/moveType.ts";
-import { cardBgClass } from "../typeColorClasses";
+import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx';
+import PokemonMove from './PokemonMove.tsx';
+import { AbilityType } from '../types/abilityType.ts';
+import { MoveType } from '../types/moveType.ts';
+import { cardBgClass } from '../typeColorClasses';
 
 interface PokemonCardProps {
     pokemon: PokemonType

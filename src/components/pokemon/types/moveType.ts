@@ -1,5 +1,5 @@
-import { FlavorTextEntryType } from "./pokemonType.ts";
-import { TypeEnum } from "../../../enum/pokemonEnum";
+import { FlavorTextEntryType } from './pokemonType.ts';
+import { TypeEnum } from '../../../enum/pokemonEnum';
 
 export interface MoveType {
     id: number

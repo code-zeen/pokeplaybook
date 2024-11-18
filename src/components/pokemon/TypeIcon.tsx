@@ -1,4 +1,4 @@
-import { TypeEnum } from "../../enum/pokemonEnum.ts";
+import { TypeEnum } from '../../enum/pokemonEnum.ts';
 import bug from '../../assets/Bug_icon_SwSh.png'
 import dark from '../../assets/Dark_icon_SwSh.png'
 import dragon from '../../assets/Dragon_icon_SwSh.png'

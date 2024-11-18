@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { getSprite, SpriteEnum } from './getSprite'
 
 const useSprite = (spriteEnum: SpriteEnum, id: number) => {
-    const [spriteSrc, setSpriteSrc] = useState<string>("")
+    const [ spriteSrc, setSpriteSrc ] = useState<string>('')
 
     useEffect(() => {
         const fetchSprite = async () => {
@@ -10,7 +10,7 @@ const useSprite = (spriteEnum: SpriteEnum, id: number) => {
             setSpriteSrc(sprite || '')
         }
         fetchSprite()
-    }, [spriteEnum, id])
+    }, [ spriteEnum, id ])
 
     return { spriteSrc }
 }

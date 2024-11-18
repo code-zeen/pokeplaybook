@@ -1,4 +1,4 @@
-import ContainerWithSideBorder from "./ContainerWithSideBorder";
+import ContainerWithSideBorder from './ContainerWithSideBorder';
 
 interface PokemonNameProps {
     name: string

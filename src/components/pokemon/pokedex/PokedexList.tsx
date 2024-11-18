@@ -1,6 +1,6 @@
-import PokeballContainer from "./PokeballContainer";
-import Pokeball from "./Pokeball";
-import { PokedexInfo } from "../../../App";
+import PokeballContainer from './PokeballContainer';
+import Pokeball from './Pokeball';
+import { PokedexInfo } from '../../../App';
 
 interface PokedexListProps {
     pokemons: PokedexInfo[]

@@ -1,9 +1,9 @@
-import PokedexHeader from "./PokedexHeader";
-import PokedexList from "./PokedexList";
-import PokemonName from "./PokemonName";
-import ContainerWithSideBorder from "./ContainerWithSideBorder";
-import PokeballGrayBg from "./PokeballGrayBg";
-import { PokedexInfo } from "../../../App";
+import PokedexHeader from './PokedexHeader';
+import PokedexList from './PokedexList';
+import PokemonName from './PokemonName';
+import ContainerWithSideBorder from './ContainerWithSideBorder';
+import PokeballGrayBg from './PokeballGrayBg';
+import { PokedexInfo } from '../../../App';
 
 interface PokedexProps {
     pokemons: PokedexInfo[]
