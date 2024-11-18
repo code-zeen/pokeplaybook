@@ -1,1 +1,1 @@
-/// <reference enum="vite/client" />
+/// <reference types="vite/client" />
