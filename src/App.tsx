@@ -38,7 +38,7 @@ function App() {
 
 
     const fetchAllPokemons = async () => {
-        const index = 8
+        const index = 0
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${generations[index].offset}&limit=${generations[index].limit}`)
         const data = await res.json()
 
