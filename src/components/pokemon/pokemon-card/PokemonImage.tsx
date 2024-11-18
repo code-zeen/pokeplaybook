@@ -13,8 +13,7 @@ function PokemonImage({ id, name, type }: PokemonImageProps) {
     const { spriteSrc } = useSprite(SpriteEnum.SHOWDOWN, id)
 
     return (
-        <div
-            className={`flex justify-center mx-2 border border-white border-b-0 ${spriteBgClass[type]}`}>
+        <div className={`flex justify-center items-center mx-2 border border-white border-b-0 h-full ${spriteBgClass[type]}`}>
             <img src={spriteSrc} alt={name} />
         </div>
     )
