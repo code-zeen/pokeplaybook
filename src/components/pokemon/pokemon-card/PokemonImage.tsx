@@ -4,12 +4,13 @@ import { SpriteEnum } from '../getSprite'
 import useSprite from '../useSprite'
 
 interface PokemonImageProps {
+    id: number
     name: string
     type: TypeEnum
 }
 
-function PokemonImage({ name, type }: PokemonImageProps) {
-    const { spriteSrc } = useSprite(SpriteEnum.SHOWDOWN, 151)
+function PokemonImage({ id, name, type }: PokemonImageProps) {
+    const { spriteSrc } = useSprite(SpriteEnum.SHOWDOWN, id)
 
     return (
         <div
