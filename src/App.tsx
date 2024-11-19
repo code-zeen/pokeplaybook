@@ -6,10 +6,16 @@ import Pokedex from './components/pokemon/pokedex/Pokedex';
 import { AbilityType } from './components/pokemon/types/abilityType';
 import { MoveType } from './components/pokemon/types/moveType';
 import { generations } from './components/pokemon/pokedex/generationQuery';
+import { PokemonType } from './components/pokemon/types/pokemonType.ts';
 
 export interface PokedexInfo {
     name: string
     url: string
+    seen: number
+    owned: number
+}
+
+export interface ExtendedPokemonType extends PokemonType {
     seen: number
     owned: number
 }
@@ -20,7 +26,7 @@ const OWNED = 10
 function App() {
     // const [ questions, setQuestions ] = useState<QuestionType[]>([])
     const [ pokemons, setPokemons ] = useState<PokedexInfo[]>([])
-    const [ pokemon, setPokemon ] = useState<PokedexInfo | null>(null)
+    const [ pokemon, setPokemon ] = useState<ExtendedPokemonType | null>(null)
     const [ ability, setAbility ] = useState<AbilityType>()
     const [ move, setMove ] = useState<MoveType>()
     const [ selectedGenerationIndex, setSelectedGenerationIndex ] = useState<number>(0)

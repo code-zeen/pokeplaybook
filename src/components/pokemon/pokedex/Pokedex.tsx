@@ -3,12 +3,12 @@ import PokedexList from './PokedexList';
 import PokemonName from './PokemonName';
 import ContainerWithSideBorder from './ContainerWithSideBorder';
 import PokeballGrayBg from './PokeballGrayBg';
-import { PokedexInfo } from '../../../App';
+import { ExtendedPokemonType, PokedexInfo } from '../../../App';
 import GenerationSelector from './GenerationSelector.tsx';
 
 interface PokedexProps {
     pokemons: PokedexInfo[]
-    pokemon: PokedexInfo | null
+    pokemon: ExtendedPokemonType | null
     selectedGenerationIndex: number
     setSelectedGenerationIndex: (index: number) => void
     selectedPokemonName?: string
