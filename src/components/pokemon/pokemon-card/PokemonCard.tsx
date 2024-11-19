@@ -30,7 +30,7 @@ function PokemonCard({ pokemon, ability, move }: PokemonCardProps) {
     const type = pokemon.types[0].type.name
 
     return (
-        <div className="p-2 bg-gray-300 w-72 h-96 border rounded">
+        <div className="p-2 bg-gray-300 w-72 min-h-96 border rounded">
             <div className={`flex flex-col ${cardBgClass[type]} h-full border rounded-lg`}>
                 <div className="flex justify-between px-2 py-0.5">
                     <PokemonName name={pokemon.name} />
