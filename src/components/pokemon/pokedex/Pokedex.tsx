@@ -4,6 +4,7 @@ import PokemonName from './PokemonName';
 import ContainerWithSideBorder from './ContainerWithSideBorder';
 import PokeballGrayBg from './PokeballGrayBg';
 import { PokedexInfo } from '../../../App';
+import GenerationSelector from './GenerationSelector.tsx';
 
 interface PokedexProps {
     pokemons: PokedexInfo[]
@@ -38,10 +39,11 @@ function Pokedex({ pokemons, pokemon, selectedPokemonName, setSelectedPokemonNam
                         </ContainerWithSideBorder>
                     </div>
                     }
-                    <PokedexList pokemons={pokemons} selectedPokemonName={selectedPokemonName}
-                                 setSelectedPokemonName={setSelectedPokemonName} />
-
-
+                    <div className="flex flex-col gap-1">
+                        <GenerationSelector />
+                        <PokedexList pokemons={pokemons} selectedPokemonName={selectedPokemonName}
+                                     setSelectedPokemonName={setSelectedPokemonName} />
+                    </div>
                 </div>
             </div>
         </div>
