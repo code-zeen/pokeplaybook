@@ -1,5 +1,4 @@
-import useSprite from '../useSprite'
-import { SpriteEnum } from '../getSprite'
+import useSprite, { SpriteEnum } from '../useSprite.ts';
 
 interface PokeballGrayBgProps {
     id: number
@@ -7,7 +6,7 @@ interface PokeballGrayBgProps {
 }
 
 function PokeballGrayBg({ id, name }: PokeballGrayBgProps) {
-    const { spriteSrc } = useSprite(SpriteEnum.GEN_V_ANIMATED, id)
+    const { spriteUrl } = useSprite(SpriteEnum.GEN_V_ANIMATED, id)
 
     return (
         <div className="flex flex-col relative justify-center items-center">
@@ -22,7 +21,9 @@ function PokeballGrayBg({ id, name }: PokeballGrayBgProps) {
             <div className="bg-gray-100 w-24 h-24 rounded-full absolute"></div>
             <div className="bg-gray-200 w-16 h-16 rounded-full absolute"></div>
             <div className="absolute">
-                <img src={spriteSrc} alt={name} />
+                <img
+                    src={spriteUrl}
+                    alt={name} />
             </div>
         </div>
     )
