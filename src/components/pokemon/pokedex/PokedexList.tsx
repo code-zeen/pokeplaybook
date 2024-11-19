@@ -14,7 +14,7 @@ function PokedexList({ pokemons, selectedPokemonName, setSelectedPokemonName }: 
     }
 
     return (
-        <div className="flex border-2 rounded overflow-auto bg-white border-black min-w-56 h-96">
+        <div className="flex border-2 rounded overflow-auto bg-white border-black min-w-56 h-72">
             <ol className="w-full">
                 {pokemons.map((pokemon, index) => (
                     <li key={index}>
