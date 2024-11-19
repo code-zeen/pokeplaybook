@@ -26,7 +26,7 @@ export const getSpriteUrl = async (type: SpriteEnum, id: number): Promise<string
         return gifUrl
     }
     const pngUrl = `${baseUrl}/${id}.png`
-    if (await checkUrl(gifUrl)) {
+    if (await checkUrl(pngUrl)) {
         return pngUrl
     }
 
