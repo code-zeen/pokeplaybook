@@ -1,14 +1,14 @@
 const sprites = import.meta.glob('/node_modules/pokemon-sprites/sprites/pokemon/**/*.gif', { eager: false })
 
 export enum SpriteEnum {
-    GEN_V,
+    GEN_V_ANIMATED,
     SHOWDOWN,
 }
 
 export const getSprite = async (type: SpriteEnum, id: number): Promise<string | undefined> => {
     const baseUrl = () => {
         switch (type) {
-            case SpriteEnum.GEN_V:
+            case SpriteEnum.GEN_V_ANIMATED:
                 return 'versions/generation-v/black-white/animated'
             case SpriteEnum.SHOWDOWN:
                 return 'other/showdown'

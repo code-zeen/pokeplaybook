@@ -7,7 +7,7 @@ interface PokeballGrayBgProps {
 }
 
 function PokeballGrayBg({ id, name }: PokeballGrayBgProps) {
-    const { spriteSrc } = useSprite(SpriteEnum.GEN_V, id)
+    const { spriteSrc } = useSprite(SpriteEnum.GEN_V_ANIMATED, id)
 
     return (
         <div className="flex flex-col relative justify-center items-center">
