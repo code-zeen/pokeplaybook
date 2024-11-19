@@ -31,7 +31,8 @@ function PokedexList({ pokemons, selectedPokemonName, setSelectedPokemonName }: 
                                 }
                             </div>
                             <div className="flex gap-3 p-1 pr-4">
-                                <span className="font-mono w-6 text-right">{index + 1}</span>
+                                <span
+                                    className="font-mono w-10 text-right">{pokemon.url.match(/\/(\d+)\/$/)?.[1]}</span>
                                 <span className="capitalize">{pokemon.name}</span>
                             </div>
                         </div>
