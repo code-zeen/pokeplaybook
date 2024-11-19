@@ -1,6 +1,4 @@
 import { KeyboardEvent, useEffect, useState } from 'react'
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
 import PokemonCard from './components/pokemon/pokemon-card/PokemonCard.tsx'
 import Pokedex from './components/pokemon/pokedex/Pokedex';
 import { AbilityType } from './components/pokemon/types/abilityType';
@@ -90,7 +88,7 @@ function App() {
 
 
     return (
-        <DndProvider backend={HTML5Backend}>
+        <div>
             {/*<div className="max-w-5xl mx-auto">*/}
             {/*  <div className="flex flex-col p-1 border gap-2">*/}
             {/*    {questions.map(q => (*/}
@@ -111,7 +109,7 @@ function App() {
                     }
                 </div>
             </div>
-        </DndProvider>
+        </div>
     )
 }
 
