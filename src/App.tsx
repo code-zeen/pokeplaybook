@@ -5,6 +5,7 @@ import { AbilityType } from './components/pokemon/types/abilityType';
 import { MoveType } from './components/pokemon/types/moveType';
 import { generations } from './components/pokemon/pokedex/generationQuery';
 import { PokemonType } from './components/pokemon/types/pokemonType.ts';
+import MenuBar from '@/components/layout/MenuBar.tsx';
 
 export interface PokedexInfo {
     name: string
@@ -96,6 +97,7 @@ function App() {
             {/*    ))}*/}
             {/*  </div>*/}
             {/*</div>*/}
+            <MenuBar />
             <div className="flex flex-col items-center p-4 gap-4">
                 <input type="text" placeholder="Search..." onKeyDown={handleKeyDown} />
                 <div className="flex gap-4">
