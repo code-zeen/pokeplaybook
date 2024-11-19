@@ -2,13 +2,14 @@ import { KeyboardEvent, useEffect, useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import PokemonCard from './components/pokemon/pokemon-card/PokemonCard.tsx'
-import { PokemonType } from './components/pokemon/types/pokemonType';
 import Pokedex from './components/pokemon/pokedex/Pokedex';
 import { AbilityType } from './components/pokemon/types/abilityType';
 import { MoveType } from './components/pokemon/types/moveType';
 import { generations } from './components/pokemon/pokedex/generationQuery';
 
-export interface PokedexInfo extends PokemonType {
+export interface PokedexInfo {
+    name: string
+    url: string
     seen: number
     owned: number
 }
