@@ -1,15 +1,19 @@
 import { generations } from './generationQuery.ts';
 import GenerationButton from './GenerationButton.tsx';
 
-function GenerationSelector() {
-    const handleClick = () => {
+interface GenerationSelectorProps {
+    setSelectedGenerationIndex: (index: number) => void;
+}
 
+function GenerationSelector({ setSelectedGenerationIndex }: GenerationSelectorProps) {
+    const handleClick = (index: number) => {
+        setSelectedGenerationIndex(index)
     }
 
     return (
         <div className="flex gap-1 flex-wrap">
-            {generations.map(each => (
-                <GenerationButton onClick={handleClick}>{each.name}</GenerationButton>
+            {generations.map((each, index) => (
+                <GenerationButton onClick={() => handleClick(index)}>{each.name}</GenerationButton>
             ))}
         </div>
     )

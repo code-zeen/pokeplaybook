@@ -1,4 +1,4 @@
-import { useEffect, useState, KeyboardEvent } from 'react'
+import { KeyboardEvent, useEffect, useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import PokemonCard from './components/pokemon/pokemon-card/PokemonCard.tsx'
@@ -22,11 +22,12 @@ function App() {
     const [ pokemon, setPokemon ] = useState<PokedexInfo | null>(null)
     const [ ability, setAbility ] = useState<AbilityType>()
     const [ move, setMove ] = useState<MoveType>()
+    const [ selectedGenerationIndex, setSelectedGenerationIndex ] = useState<number>(0)
     const [ selectedPokemonName, setSelectedPokemonName ] = useState<string>()
 
     useEffect(() => {
-        (async () => await fetchAllPokemons())()
-    }, [])
+        (async () => await fetchPokemonsByGeneration(selectedGenerationIndex))()
+    }, [ selectedGenerationIndex ])
 
     useEffect(() => {
         if (selectedPokemonName) {
@@ -37,8 +38,7 @@ function App() {
     }, [ selectedPokemonName ])
 
 
-    const fetchAllPokemons = async () => {
-        const index = 0
+    const fetchPokemonsByGeneration = async (index: number) => {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${generations[index].offset}&limit=${generations[index].limit}`)
         const data = await res.json()
 
@@ -94,7 +94,9 @@ function App() {
             <div className="flex flex-col items-center p-4 gap-4">
                 <input type="text" placeholder="Search..." onKeyDown={handleKeyDown} />
                 <div className="flex gap-4">
-                    <Pokedex pokemons={pokemons} pokemon={pokemon} selectedPokemonName={selectedPokemonName}
+                    <Pokedex pokemons={pokemons} pokemon={pokemon}
+                             setSelectedGenerationIndex={setSelectedGenerationIndex}
+                             selectedPokemonName={selectedPokemonName}
                              setSelectedPokemonName={setSelectedPokemonName} />
 
                     {(pokemon && ability && move) &&

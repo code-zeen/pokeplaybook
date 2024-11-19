@@ -9,11 +9,18 @@ import GenerationSelector from './GenerationSelector.tsx';
 interface PokedexProps {
     pokemons: PokedexInfo[]
     pokemon: PokedexInfo | null
+    setSelectedGenerationIndex: (index: number) => void
     selectedPokemonName?: string
     setSelectedPokemonName: (name: string) => void
 }
 
-function Pokedex({ pokemons, pokemon, selectedPokemonName, setSelectedPokemonName }: PokedexProps) {
+function Pokedex({
+                     pokemons,
+                     pokemon,
+                     setSelectedGenerationIndex,
+                     selectedPokemonName,
+                     setSelectedPokemonName
+                 }: PokedexProps) {
 
     return (
         <div className="h-96">
@@ -40,7 +47,7 @@ function Pokedex({ pokemons, pokemon, selectedPokemonName, setSelectedPokemonNam
                     </div>
                     }
                     <div className="flex flex-col gap-1">
-                        <GenerationSelector />
+                        <GenerationSelector setSelectedGenerationIndex={setSelectedGenerationIndex} />
                         <PokedexList pokemons={pokemons} selectedPokemonName={selectedPokemonName}
                                      setSelectedPokemonName={setSelectedPokemonName} />
                     </div>
