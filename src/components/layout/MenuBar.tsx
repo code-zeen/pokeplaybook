@@ -32,14 +32,14 @@ function MenuBar() {
                         </DropdownMenuTrigger>
 
                         <DropdownMenuContent className="bg-gray-900 text-white">
-                            <DropdownMenuItem className="hover:bg-gray-700">
+                            <DropdownMenuItem>
                                 Profile
                             </DropdownMenuItem>
-                            <DropdownMenuItem className="hover:bg-gray-700">
+                            <DropdownMenuItem>
                                 Settings
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem className="hover:bg-red-700">
+                            <DropdownMenuItem>
                                 Logout
                             </DropdownMenuItem>
                         </DropdownMenuContent>
