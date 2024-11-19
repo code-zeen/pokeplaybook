@@ -1,4 +1,5 @@
-const sprites = import.meta.glob('/node_modules/pokemon-sprites/sprites/pokemon/**/*.gif', { eager: false })
+const spriteGif = import.meta.glob('/node_modules/pokemon-sprites/sprites/pokemon/**/*.gif', { eager: false })
+const spritePng = import.meta.glob('/node_modules/pokemon-sprites/sprites/pokemon/**/*.png', { eager: false })
 
 export enum SpriteEnum {
     GEN_V_ANIMATED,
@@ -15,10 +16,15 @@ export const getSprite = async (type: SpriteEnum, id: number): Promise<string | 
         }
     }
 
-    const spriteImporter = sprites[`/node_modules/pokemon-sprites/sprites/pokemon/${baseUrl()}/${id}.gif`]
+    let spriteImporter = spriteGif[`/node_modules/pokemon-sprites/sprites/pokemon/${baseUrl()}/${id}.gif`]
+
     if (!spriteImporter) {
-        console.error(`Sprite not found for ID: ${id}`)
-        return undefined
+        spriteImporter = spritePng[`/node_modules/pokemon-sprites/sprites/pokemon/${id}.png`]
+
+        if (!spriteImporter) {
+            console.error(`Sprite not found for ID: ${id}`)
+            return undefined
+        }
     }
 
     try {
