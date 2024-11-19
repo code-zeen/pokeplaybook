@@ -2,10 +2,11 @@ import { generations } from './generationQuery.ts';
 import GenerationButton from './GenerationButton.tsx';
 
 interface GenerationSelectorProps {
+    selectedGenerationIndex: number
     setSelectedGenerationIndex: (index: number) => void;
 }
 
-function GenerationSelector({ setSelectedGenerationIndex }: GenerationSelectorProps) {
+function GenerationSelector({ selectedGenerationIndex, setSelectedGenerationIndex }: GenerationSelectorProps) {
     const handleClick = (index: number) => {
         setSelectedGenerationIndex(index)
     }
@@ -13,7 +14,8 @@ function GenerationSelector({ setSelectedGenerationIndex }: GenerationSelectorPr
     return (
         <div className="flex gap-1 flex-wrap">
             {generations.map((each, index) => (
-                <GenerationButton onClick={() => handleClick(index)}>{each.name}</GenerationButton>
+                <GenerationButton onClick={() => handleClick(index)}
+                                  active={selectedGenerationIndex === index}>{each.name}</GenerationButton>
             ))}
         </div>
     )

@@ -693,6 +693,10 @@ video {
   min-width: max-content;
 }
 
+.min-w-56 {
+  min-width: 14rem;
+}
+
 .max-w-5xl {
   max-width: 64rem;
 }
