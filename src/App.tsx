@@ -97,9 +97,8 @@ function App() {
             {/*    ))}*/}
             {/*  </div>*/}
             {/*</div>*/}
-            <MenuBar />
+            <MenuBar handleKeyDown={handleKeyDown} />
             <div className="flex flex-col items-center p-4 gap-4">
-                <input type="text" placeholder="Search..." onKeyDown={handleKeyDown} />
                 <div className="flex gap-4">
                     <Pokedex pokemons={pokemons} pokemon={pokemon} selectedGenerationIndex={selectedGenerationIndex}
                              setSelectedGenerationIndex={setSelectedGenerationIndex}

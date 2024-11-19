@@ -7,8 +7,13 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu.tsx';
+import { KeyboardEventHandler } from 'react';
 
-function MenuBar() {
+interface MenuBarProps {
+    handleKeyDown: KeyboardEventHandler<HTMLInputElement>
+}
+
+function MenuBar({ handleKeyDown }: MenuBarProps) {
     return (
         <div className="top-0 left-0 w-full bg-gray-800 text-white shadow-md z-50">
             <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
@@ -19,6 +24,7 @@ function MenuBar() {
                         type="text"
                         name="pokemon"
                         placeholder="Search..."
+                        onKeyDown={handleKeyDown}
                     />
                 </div>
 
