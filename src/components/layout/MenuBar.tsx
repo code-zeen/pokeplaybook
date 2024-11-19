@@ -1,5 +1,12 @@
 import { Input } from '@/components/ui/input.tsx';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar.tsx';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu.tsx';
 
 function MenuBar() {
     return (
@@ -12,15 +19,31 @@ function MenuBar() {
                         type="text"
                         name="pokemon"
                         placeholder="Search..."
-                        className="w-full bg-gray-900 text-white border border-gray-700 focus:border-blue-500 rounded"
                     />
                 </div>
 
                 <div>
-                    <Avatar className="bg-gray-900">
-                        <AvatarImage src="/razz-berry.png" alt="User Avatar" />
-                        <AvatarFallback>U</AvatarFallback>
-                    </Avatar>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger>
+                            <Avatar>
+                                <AvatarImage src="/razz-berry.png" alt="User Avatar" />
+                                <AvatarFallback>U</AvatarFallback>
+                            </Avatar>
+                        </DropdownMenuTrigger>
+
+                        <DropdownMenuContent className="bg-gray-900 text-white">
+                            <DropdownMenuItem className="hover:bg-gray-700">
+                                Profile
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="hover:bg-gray-700">
+                                Settings
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem className="hover:bg-red-700">
+                                Logout
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                 </div>
             </div>
         </div>
