@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import questionPng from '/missing.png'
 
 export enum SpriteEnum {
     GEN_V_ANIMATED,
@@ -34,12 +35,14 @@ export const getSpriteUrl = async (type: SpriteEnum, id: number): Promise<string
     return undefined
 }
 const useSprite = (spriteEnum: SpriteEnum, id: number) => {
-    const [ spriteUrl, setSpriteUrl ] = useState<string>()
+    const [ spriteUrl, setSpriteUrl ] = useState<string>(questionPng)
+    console.log(questionPng)
 
     useEffect(() => {
         (async () => {
+            setSpriteUrl(questionPng)
             const url = await getSpriteUrl(spriteEnum, id)
-            setSpriteUrl(url)
+            setSpriteUrl(url || questionPng)
         })()
     }, [ spriteEnum, id ]);
 
