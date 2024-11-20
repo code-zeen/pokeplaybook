@@ -4,15 +4,16 @@ import { MoveType } from '@/components/pokemon/types/moveType.ts'
 import { PokemonType } from '@/components/pokemon/types/pokemonType.ts'
 import { useEffect, useState } from 'react'
 
-export interface ExtendedPokemonType extends PokemonType {
+export interface ExtendedPokemonType {
+    baseData: PokemonType
+    ability: AbilityType
+    move: MoveType
     seen: number
     owned: number
 }
 
-const usePokemon = (nameOrId: string | number | null) => {
-    const [ pokemon, setPokemon ] = useState<ExtendedPokemonType | null>(null)
-    const [ ability, setAbility ] = useState<AbilityType | null>(null)
-    const [ move, setMove ] = useState<MoveType | null>(null)
+const usePokemonCards = (nameOrId: string | number | null) => {
+    const [ pokemonCards, setPokemonCards ] = useState<ExtendedPokemonType[]>([])
 
     useEffect(() => {
         if (nameOrId) {
@@ -21,17 +22,18 @@ const usePokemon = (nameOrId: string | number | null) => {
     }, [ nameOrId ])
 
     const getCard = async (nameOrId: string | number) => {
-        const { pokemon, ability, move } = await fetchPokemonByNameOrId(nameOrId)
-        setPokemon({
-            ...pokemon,
+        const { baseData, ability, move } = await fetchPokemonByNameOrId(nameOrId)
+        const pokemonData = {
+            baseData,
+            ability,
+            move,
             seen: 5,
             owned: 2,
-        })
-        setAbility(ability)
-        setMove(move)
+        }
+        setPokemonCards(prev => [ ...prev, pokemonData ])
     }
 
-    return { pokemon, ability, move }
+    return { pokemonCards }
 }
 
-export default usePokemon
+export default usePokemonCards

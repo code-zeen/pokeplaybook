@@ -8,5 +8,5 @@ export const fetchPokemonByNameOrId = async (nameOrId: string | number) => {
     const resMove = await fetch(`https://pokeapi.co/api/v2/move/${dataPokemon?.moves[0].move.name}`)
     const dataMove = await resMove.json()
 
-    return { pokemon: dataPokemon, ability: dataAbility, move: dataMove }
+    return { baseData: dataPokemon, ability: dataAbility, move: dataMove }
 }

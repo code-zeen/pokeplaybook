@@ -16,7 +16,7 @@ function PokemonAbility({ name, flavorText }: PokemonAbilityProps) {
                 </div>
                 <span className="capitalize text-rose-500"><b>{name}</b></span>
             </div>
-            <p className="text-xs">{flavorText}</p>
+            <p className="text-xs overflow-hidden text-ellipsis line-clamp-2">{flavorText}</p>
         </div>
     )
 }
