@@ -6,6 +6,7 @@ import { MoveType } from './components/pokemon/types/moveType';
 import { generations } from './components/pokemon/pokedex/generationQuery';
 import { PokemonType } from './components/pokemon/types/pokemonType.ts';
 import MenuBar from '@/components/layout/MenuBar.tsx';
+import Layout from '@/components/layout/Layout.jsx.tsx';
 
 export interface PokedexInfo {
     name: string
@@ -81,7 +82,7 @@ function App() {
     }
 
     return (
-        <div>
+        <Layout>
             <MenuBar handleKeyDown={handleKeyDown} />
             <div className="flex flex-col items-center p-4 gap-4">
                 <div className="flex gap-4">
@@ -95,7 +96,7 @@ function App() {
                     }
                 </div>
             </div>
-        </div>
+        </Layout>
     )
 }
 
