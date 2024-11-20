@@ -1,7 +1,7 @@
-import Layout from '@/components/layout/Layout.tsx';
-import { createBrowserRouter, RouteObject } from 'react-router-dom';
-import PokemonCard from '@/components/pokemon/pokemon-card/PokemonCard.tsx'
-import PokedexPage from '@/pages/pokemon/pokedex/PokedexPage.tsx'
+import Layout from '@/components/layout/Layout.tsx'
+import PokedexPage from '@/pages/pokemon/PokedexPage.tsx'
+import PokemonCardPage from '@/pages/pokemon/PokemonCardPage.tsx'
+import { createBrowserRouter, RouteObject } from 'react-router-dom'
 
 const routes: RouteObject[] = [
     {
@@ -11,14 +11,15 @@ const routes: RouteObject[] = [
             {
                 path: 'pokedex',
                 element: <PokedexPage />,
+                index: true,
             }, {
-                path: 'cards',
-                element: <PokemonCard />,
+                path: 'pokemon-cards',
+                element: <PokemonCardPage />,
             }
         ]
     }
 ]
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes)
 
 export default router

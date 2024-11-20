@@ -8,10 +8,11 @@ import {
     SidebarMenuButton,
     SidebarMenuItem
 } from '@/components/ui/sidebar.tsx'
+import { Link } from 'react-router-dom'
 
 const menuItems = [
     { title: 'Pokedex', url: '/pokedex' },
-    { title: 'Cards', url: '/settings' }
+    { title: 'Cards', url: '/pokemon-cards' }
 ]
 
 function AppSidebar() {
@@ -25,9 +26,9 @@ function AppSidebar() {
                             {menuItems.map((each) => (
                                 <SidebarMenuItem key={each.title}>
                                     <SidebarMenuButton asChild>
-                                        <a href={each.url}>
+                                        <Link to={each.url}>
                                             <span>{each.title}</span>
-                                        </a>
+                                        </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
