@@ -1,3 +1,4 @@
+import MenuBar from '@/components/layout/MenuBar.tsx'
 import { generations } from '@/components/pokemon/pokedex/generationQuery.ts'
 import Pokedex from '@/components/pokemon/pokedex/Pokedex.tsx'
 import { AbilityType } from '@/components/pokemon/types/abilityType.ts'
@@ -79,9 +80,14 @@ function PokedexPage() {
     }
 
     return (
-        <Pokedex pokemons={pokemons} pokemon={pokemon} selectedGenerationIndex={selectedGenerationIndex}
-                 setSelectedGenerationIndex={setSelectedGenerationIndex}
-                 setSelectedPokemonName={setSelectedPokemonName} />
+        <div className="flex flex-col">
+            <MenuBar handleKeyDown={handleKeyDown} />
+            <div className="flex justify-center p-4">
+                <Pokedex pokemons={pokemons} pokemon={pokemon} selectedGenerationIndex={selectedGenerationIndex}
+                         setSelectedGenerationIndex={setSelectedGenerationIndex}
+                         setSelectedPokemonName={setSelectedPokemonName} />
+            </div>
+        </div>
     )
 }
 
