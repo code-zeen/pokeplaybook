@@ -29,6 +29,7 @@ function MenuBar({ handleKeyDown }: MenuBarProps) {
                         name="pokemon"
                         placeholder="Search..."
                         onKeyDown={handleKeyDown}
+                        className="bg-gray-900 text-white border-gray-700 focus:border-blue-500"
                     />
                 </div>
 
