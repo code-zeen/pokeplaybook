@@ -10,9 +10,8 @@ import {
 } from '@/components/ui/sidebar.tsx';
 
 const menuItems = [
-    { title: 'Home', url: '/' },
     { title: 'Pokedex', url: '/pokedex' },
-    { title: 'Settings', url: '/settings' }
+    { title: 'Cards', url: '/settings' }
 ]
 
 function AppSidebar() {
@@ -20,7 +19,7 @@ function AppSidebar() {
         <Sidebar>
             <SidebarContent>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Applications</SidebarGroupLabel>
+                    <SidebarGroupLabel>Pokemon</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {menuItems.map((each) => (

@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout.tsx';
-import PokedexPage from '@/pages/pokemon/pokedex/PokedexPage.tsx';
-import PokemonPage from '@/pages/pokemon/PokemonPage.tsx';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
+import PokemonCard from '@/components/pokemon/pokemon-card/PokemonCard.tsx'
+import PokedexPage from '@/pages/pokemon/pokedex/PokedexPage.tsx'
 
 const routes: RouteObject[] = [
     {
@@ -9,14 +9,11 @@ const routes: RouteObject[] = [
         element: <Layout />,
         children: [
             {
-                path: 'pokemon',
-                element: <PokemonPage />,
-                children: [
-                    {
-                        path: 'pokedex',
-                        element: <PokedexPage />
-                    }
-                ]
+                path: 'pokedex',
+                element: <PokedexPage />,
+            }, {
+                path: 'cards',
+                element: <PokemonCard />,
             }
         ]
     }
