@@ -1,7 +1,7 @@
 import { useDrop } from 'react-dnd'
-import useDragAndDrop from './useDragAndDrop.ts'
 import { OptionType } from '../questionType.ts'
 import TextBox from './TextBox.tsx'
+import useDragAndDrop from './useDragAndDrop.ts'
 
 
 function DropArea() {

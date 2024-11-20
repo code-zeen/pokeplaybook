@@ -1,5 +1,5 @@
-import TypeIcon from '../TypeIcon';
-import { TypeEnum } from '../../../enum/pokemonEnum';
+import { TypeEnum } from '../../../enum/pokemonEnum'
+import TypeIcon from '../TypeIcon'
 
 interface PokemonMoveProps {
     name: string

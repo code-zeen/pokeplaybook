@@ -1,4 +1,4 @@
-import PokedexPage from '@/pages/pokemon/pokedex/PokedexPage.tsx';
+import PokedexPage from '@/pages/pokemon/pokedex/PokedexPage.tsx'
 
 function PokemonPage() {
     return (

@@ -1,10 +1,10 @@
-import PokedexHeader from './PokedexHeader';
-import PokedexList from './PokedexList';
-import PokemonName from './PokemonName';
-import ContainerWithSideBorder from './ContainerWithSideBorder';
-import PokeballGrayBg from './PokeballGrayBg';
-import { ExtendedPokemonType, PokedexInfo } from '../../../App';
-import GenerationSelector from './GenerationSelector.tsx';
+import { ExtendedPokemonType, PokedexInfo } from '../../../App'
+import ContainerWithSideBorder from './ContainerWithSideBorder'
+import GenerationSelector from './GenerationSelector.tsx'
+import PokeballGrayBg from './PokeballGrayBg'
+import PokedexHeader from './PokedexHeader'
+import PokedexList from './PokedexList'
+import PokemonName from './PokemonName'
 
 interface PokedexProps {
     pokemons: PokedexInfo[]

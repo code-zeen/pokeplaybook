@@ -1,9 +1,9 @@
-import type { OptionType, QuestionType } from '../questionType.ts'
-import MultipleChoice from './MultipleChoice.tsx'
 import { AnswerTypeEnum } from '../../../enum/questionEnum.ts'
+import type { OptionType, QuestionType } from '../questionType.ts'
 import DragAndDrop from './DragAndDrop.tsx'
-import TextInput from './TextInput.tsx'
+import MultipleChoice from './MultipleChoice.tsx'
 import Select from './Select.tsx'
+import TextInput from './TextInput.tsx'
 
 interface AnswerProps {
     qId: QuestionType['id']

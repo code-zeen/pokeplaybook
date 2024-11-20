@@ -1,14 +1,14 @@
-import { Input } from '@/components/ui/input.tsx';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar.tsx';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar.tsx'
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu.tsx';
-import { KeyboardEventHandler } from 'react';
-import { SidebarTrigger } from '@/components/ui/sidebar.tsx';
+} from '@/components/ui/dropdown-menu.tsx'
+import { Input } from '@/components/ui/input.tsx'
+import { SidebarTrigger } from '@/components/ui/sidebar.tsx'
+import { KeyboardEventHandler } from 'react'
 
 interface MenuBarProps {
     handleKeyDown: KeyboardEventHandler<HTMLInputElement>

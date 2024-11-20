@@ -1,15 +1,15 @@
-import { FlavorTextEntryType, StatType } from '../types/pokemonType.ts'
-import PokemonName from './PokemonName.tsx'
-import PokemonHp from './PokemonHp.tsx'
+import { ExtendedPokemonType } from '../../../App.tsx'
 import { StatNameEnum } from '../../../enum/pokemonEnum.ts'
+import { cardBgClass } from '../typeColorClasses'
+import { AbilityType } from '../types/abilityType.ts'
+import { MoveType } from '../types/moveType.ts'
+import { FlavorTextEntryType, StatType } from '../types/pokemonType.ts'
 import PokemonAbility from './PokemonAbility.tsx'
+import PokemonHp from './PokemonHp.tsx'
 import PokemonImage from './PokemonImage.tsx'
-import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx';
-import PokemonMove from './PokemonMove.tsx';
-import { AbilityType } from '../types/abilityType.ts';
-import { MoveType } from '../types/moveType.ts';
-import { cardBgClass } from '../typeColorClasses';
-import { ExtendedPokemonType } from '../../../App.tsx';
+import PokemonMove from './PokemonMove.tsx'
+import PokemonName from './PokemonName.tsx'
+import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx'
 
 interface PokemonCardProps {
     pokemon: ExtendedPokemonType

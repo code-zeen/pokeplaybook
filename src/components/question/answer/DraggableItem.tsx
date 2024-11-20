@@ -1,7 +1,7 @@
-import { useDrag } from 'react-dnd'
 import { cloneElement, isValidElement, ReactElement } from 'react'
-import { TextBoxProps } from './TextBox.tsx'
+import { useDrag } from 'react-dnd'
 import { OptionType } from '../questionType.ts'
+import { TextBoxProps } from './TextBox.tsx'
 
 interface DraggableItemProps {
     children: ReactElement<TextBoxProps>

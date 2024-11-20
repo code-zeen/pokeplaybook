@@ -1,5 +1,5 @@
-import { generations } from './generationQuery.ts';
-import GenerationButton from './GenerationButton.tsx';
+import GenerationButton from './GenerationButton.tsx'
+import { generations } from './generationQuery.ts'
 
 interface GenerationSelectorProps {
     selectedGenerationIndex: number

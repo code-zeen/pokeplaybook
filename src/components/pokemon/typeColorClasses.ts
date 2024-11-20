@@ -1,4 +1,4 @@
-import { TypeEnum } from '../../enum/pokemonEnum';
+import { TypeEnum } from '../../enum/pokemonEnum'
 
 export const cardBgClass = {
     [TypeEnum.BUG]: 'bg-lime-400',

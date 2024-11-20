@@ -1,4 +1,3 @@
-import { TypeEnum } from '../../enum/pokemonEnum.ts';
 import bug from '../../assets/Bug_icon_SwSh.png'
 import dark from '../../assets/Dark_icon_SwSh.png'
 import dragon from '../../assets/Dragon_icon_SwSh.png'
@@ -17,6 +16,7 @@ import psychic from '../../assets/Psychic_icon_SwSh.png'
 import rock from '../../assets/Rock_icon_SwSh.png'
 import steel from '../../assets/Steel_icon_SwSh.png'
 import water from '../../assets/Water_icon_SwSh.png'
+import { TypeEnum } from '../../enum/pokemonEnum.ts'
 
 interface TypeIconProps {
     type: TypeEnum

@@ -1,6 +1,6 @@
+import { OptionType } from '../questionType.ts'
 import DraggableItem from './DraggableItem.tsx'
 import TextBox from './TextBox.tsx'
-import { OptionType } from '../questionType.ts'
 
 function Draggable({ options }: { options: OptionType[] }) {
     return (

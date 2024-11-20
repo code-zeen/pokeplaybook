@@ -7,7 +7,7 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem
-} from '@/components/ui/sidebar.tsx';
+} from '@/components/ui/sidebar.tsx'
 
 const menuItems = [
     { title: 'Pokedex', url: '/pokedex' },

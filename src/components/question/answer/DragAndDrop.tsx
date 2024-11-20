@@ -1,6 +1,6 @@
+import { OptionType } from '../questionType.ts'
 import Draggable from './Draggable.tsx'
 import DropArea from './DropArea.tsx'
-import { OptionType } from '../questionType.ts'
 
 function DragAndDrop({ options }: { options: OptionType[] }) {
     return (

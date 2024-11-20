@@ -1,5 +1,5 @@
-import { spriteBgClass } from '../typeColorClasses';
-import { TypeEnum } from '../../../enum/pokemonEnum';
+import { TypeEnum } from '../../../enum/pokemonEnum'
+import { spriteBgClass } from '../typeColorClasses'
 import useSprite, { SpriteEnum } from '../useSprite'
 
 interface PokemonImageProps {
