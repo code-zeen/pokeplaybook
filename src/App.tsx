@@ -23,7 +23,6 @@ const SEEN = 10
 const OWNED = 10
 
 function App() {
-    // const [ questions, setQuestions ] = useState<QuestionType[]>([])
     const [ pokemons, setPokemons ] = useState<PokedexInfo[]>([])
     const [ pokemon, setPokemon ] = useState<ExtendedPokemonType | null>(null)
     const [ ability, setAbility ] = useState<AbilityType>()
@@ -81,22 +80,8 @@ function App() {
         }
     }
 
-    // const fetchQuestions = async () => {
-    //     const res = await fetch('http://localhost:3001/questions')
-    //     const data = await res.json()
-    //     setQuestions(data)
-    // }
-
-
     return (
         <div>
-            {/*<div className="max-w-5xl mx-auto">*/}
-            {/*  <div className="flex flex-col p-1 border gap-2">*/}
-            {/*    {questions.map(q => (*/}
-            {/*      <Question key={q.id} question={q} />*/}
-            {/*    ))}*/}
-            {/*  </div>*/}
-            {/*</div>*/}
             <MenuBar handleKeyDown={handleKeyDown} />
             <div className="flex flex-col items-center p-4 gap-4">
                 <div className="flex gap-4">
