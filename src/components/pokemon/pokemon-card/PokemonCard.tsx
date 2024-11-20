@@ -1,5 +1,5 @@
 import { ExtendedPokemonType } from '../../../App.tsx'
-import { StatNameEnum } from '../../../enum/pokemonEnum.ts'
+import { StatNameEnum, TypeEnum } from '../../../enum/pokemonEnum.ts'
 import { cardBgClass } from '../typeColorClasses'
 import { AbilityType } from '../types/abilityType.ts'
 import { MoveType } from '../types/moveType.ts'
@@ -28,11 +28,11 @@ function PokemonCard({ pokemon, ability, move }: PokemonCardProps) {
 
     if (!pokemon || !ability || !move) return null
 
-    const type = pokemon.types[0].type.name
+    const type = pokemon.types[0].type.name as TypeEnum
 
     return (
-        <div className="p-2 bg-gray-300 w-72 min-h-96 border rounded">
-            <div className={`flex flex-col ${cardBgClass[type]} h-full border rounded-lg`}>
+        <div className="p-2 bg-gray-300 w-72 border rounded">
+            <div className={`${cardBgClass[type]} border rounded-lg`}>
                 <div className="flex justify-between px-2 py-0.5">
                     <PokemonName name={pokemon.name} />
                     <PokemonHp hp={findStat(pokemon.stats, StatNameEnum.HP).base_stat}
@@ -40,7 +40,7 @@ function PokemonCard({ pokemon, ability, move }: PokemonCardProps) {
                 </div>
                 <PokemonImage id={pokemon.id} name={pokemon.name} type={type} />
                 <PokemonPhysicalInfo number={pokemon.id} height={pokemon.height} weight={pokemon.weight} />
-                <div className="flex flex-col justify-around h-full p-2">
+                <div className="flex flex-col justify-around p-4 gap-4">
                     <PokemonAbility name={ability.name}
                                     flavorText={findEnglishFlavorText(ability.flavor_text_entries).flavor_text} />
                     <PokemonMove name={move.name} power={move.power} type={move.type.name}

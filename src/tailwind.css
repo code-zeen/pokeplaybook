@@ -826,6 +826,10 @@ body {
   height: 0.875rem;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -888,6 +892,14 @@ body {
 
 .min-h-svh {
   min-height: 100svh;
+}
+
+.min-h-36 {
+  min-height: 9rem;
+}
+
+.min-h-32 {
+  min-height: 8rem;
 }
 
 .w-1\/4 {
@@ -991,18 +1003,6 @@ body {
   max-width: var(--skeleton-width);
 }
 
-.max-w-xl {
-  max-width: 36rem;
-}
-
-.max-w-md {
-  max-width: 28rem;
-}
-
-.max-w-sm {
-  max-width: 24rem;
-}
-
 .max-w-xs {
   max-width: 20rem;
 }
@@ -1088,6 +1088,10 @@ body {
   align-items: center;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1098,6 +1102,10 @@ body {
 
 .justify-around {
   justify-content: space-around;
+}
+
+.justify-stretch {
+  justify-content: stretch;
 }
 
 .gap-0\.5 {
@@ -1118,6 +1126,14 @@ body {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {

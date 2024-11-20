@@ -13,7 +13,7 @@ function PokemonImage({ id, name, type }: PokemonImageProps) {
 
     return (
         <div
-            className={`flex justify-center items-center mx-2 border border-white border-b-0 h-full ${spriteBgClass[type]}`}>
+            className={`flex justify-center items-center mx-2 border border-white border-b-0 min-h-32 h-full ${spriteBgClass[type]}`}>
             <img src={spriteUrl} alt={name} />
         </div>
     )
