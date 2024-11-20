@@ -1,7 +1,5 @@
 import { generations } from '@/components/pokemon/pokedex/generationQuery.ts'
 import Pokedex from '@/components/pokemon/pokedex/Pokedex.tsx'
-import { AbilityType } from '@/components/pokemon/types/abilityType.ts'
-import { MoveType } from '@/components/pokemon/types/moveType.ts'
 import { PokemonType } from '@/components/pokemon/types/pokemonType.ts'
 import { Input } from '@/components/ui/input.tsx'
 import { KeyboardEvent, useEffect, useState } from 'react'
@@ -24,8 +22,6 @@ const OWNED = 10
 function PokedexPage() {
     const [ pokemons, setPokemons ] = useState<PokedexInfo[]>([])
     const [ pokemon, setPokemon ] = useState<ExtendedPokemonType | null>(null)
-    const [ ability, setAbility ] = useState<AbilityType>()
-    const [ move, setMove ] = useState<MoveType>()
     const [ selectedGenerationIndex, setSelectedGenerationIndex ] = useState<number>(0)
     const [ selectedPokemonName, setSelectedPokemonName ] = useState<string>()
 
@@ -57,19 +53,11 @@ function PokedexPage() {
         const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         const dataPokemon = await resPokemon.json()
 
-        const resAbility = await fetch(`https://pokeapi.co/api/v2/ability/${dataPokemon?.abilities[0].ability.name}`)
-        const dataAbility = await resAbility.json()
-
-        const resMove = await fetch(`https://pokeapi.co/api/v2/move/${dataPokemon?.moves[0].move.name}`)
-        const dataMove = await resMove.json()
-
         setPokemon({
             ...dataPokemon,
             seen: SEEN,
             owned: OWNED,
         })
-        setAbility(dataAbility)
-        setMove(dataMove)
     }
 
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
