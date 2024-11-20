@@ -1,10 +1,19 @@
 import PokemonCard from '@/components/pokemon/pokemon-card/PokemonCard.tsx'
-import usePokemon from '@/components/pokemon/usePokemon.ts'
+import { AbilityType } from '@/components/pokemon/types/abilityType.ts'
+import { MoveType } from '@/components/pokemon/types/moveType.ts'
+import usePokemon, { ExtendedPokemonType } from '@/components/pokemon/usePokemon.ts'
 import { Button } from '@/components/ui/button.tsx'
 import { useState } from 'react'
 
+interface PokemonHistoryType {
+    pokemon: ExtendedPokemonType
+    ability: AbilityType
+    move: MoveType
+}
+
 function PokemonCardPage() {
     const [ randomId, setRandomId ] = useState<number | null>(null)
+    const [ pokemonHistory, setPokemonHistory ] = useState<PokemonHistoryType[]>([])
     const { pokemon, ability, move } = usePokemon(randomId)
 
     const getRandomPokemonId = () => {
@@ -13,6 +22,13 @@ function PokemonCardPage() {
     const handleClick = () => {
         const pokemonId = getRandomPokemonId()
         setRandomId(pokemonId)
+
+        if (pokemon && ability && move) {
+            setPokemonHistory(prev => ([
+                ...prev,
+                { pokemon, ability, move, seen: 3, owned: 1, },
+            ]))
+        }
     }
 
     return (
@@ -20,6 +36,13 @@ function PokemonCardPage() {
             <Button variant="secondary" onClick={handleClick}>Pull!</Button>
             {pokemon && ability && move && (
                 <PokemonCard pokemon={pokemon} ability={ability} move={move} />
+            )}
+            {pokemonHistory.length > 0 && (
+                <div className="flex flex-wrap gap-1">
+                    {pokemonHistory.map((each) => (
+                        <PokemonCard pokemon={each.pokemon} ability={each.ability} move={each.move} />
+                    ))}
+                </div>
             )}
         </div>
     )

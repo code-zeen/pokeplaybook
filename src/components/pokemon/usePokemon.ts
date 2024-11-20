@@ -4,7 +4,7 @@ import { MoveType } from '@/components/pokemon/types/moveType.ts'
 import { PokemonType } from '@/components/pokemon/types/pokemonType.ts'
 import { useEffect, useState } from 'react'
 
-interface ExtendedPokemonType extends PokemonType {
+export interface ExtendedPokemonType extends PokemonType {
     seen: number
     owned: number
 }
