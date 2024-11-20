@@ -1,9 +1,9 @@
-import MenuBar from '@/components/layout/MenuBar.tsx'
 import { generations } from '@/components/pokemon/pokedex/generationQuery.ts'
 import Pokedex from '@/components/pokemon/pokedex/Pokedex.tsx'
 import { AbilityType } from '@/components/pokemon/types/abilityType.ts'
 import { MoveType } from '@/components/pokemon/types/moveType.ts'
 import { PokemonType } from '@/components/pokemon/types/pokemonType.ts'
+import { Input } from '@/components/ui/input.tsx'
 import { KeyboardEvent, useEffect, useState } from 'react'
 
 export interface PokedexInfo {
@@ -81,8 +81,14 @@ function PokedexPage() {
 
     return (
         <div className="flex flex-col">
-            <MenuBar handleKeyDown={handleKeyDown} />
-            <div className="flex justify-center p-4">
+            <div className="flex flex-col items-center p-2 gap-2">
+                <Input
+                    type="text"
+                    name="pokemon"
+                    placeholder="Search..."
+                    onKeyDown={handleKeyDown}
+                    className="max-w-xs bg-gray-900 text-white border-gray-700 focus:border-blue-500"
+                />
                 <Pokedex pokemons={pokemons} pokemon={pokemon} selectedGenerationIndex={selectedGenerationIndex}
                          setSelectedGenerationIndex={setSelectedGenerationIndex}
                          setSelectedPokemonName={setSelectedPokemonName} />

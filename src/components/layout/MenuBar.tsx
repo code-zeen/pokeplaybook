@@ -6,31 +6,19 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu.tsx'
-import { Input } from '@/components/ui/input.tsx'
 import { SidebarTrigger } from '@/components/ui/sidebar.tsx'
-import { KeyboardEventHandler } from 'react'
 
 interface MenuBarProps {
-    handleKeyDown: KeyboardEventHandler<HTMLInputElement>
+
 }
 
-function MenuBar({ handleKeyDown }: MenuBarProps) {
+function MenuBar() {
     return (
         <div className="top-0 left-0 w-full bg-gray-800 text-white shadow-md z-50">
             <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
                 <div className="flex items-center gap-2">
                     <SidebarTrigger />
                     <h1 className="text-xl font-bold">Bareruya</h1>
-                </div>
-
-                <div className="flex-grow mx-8">
-                    <Input
-                        type="text"
-                        name="pokemon"
-                        placeholder="Search..."
-                        onKeyDown={handleKeyDown}
-                        className="bg-gray-900 text-white border-gray-700 focus:border-blue-500"
-                    />
                 </div>
 
                 <div>
