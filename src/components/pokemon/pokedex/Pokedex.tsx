@@ -1,4 +1,4 @@
-import { ExtendedPokemonType, PokedexInfo } from '../../../App'
+import { ExtendedPokemonType, PokedexInfo } from '@/pages/pokemon/PokedexPage.tsx'
 import ContainerWithSideBorder from './ContainerWithSideBorder'
 import GenerationSelector from './GenerationSelector.tsx'
 import PokeballGrayBg from './PokeballGrayBg'

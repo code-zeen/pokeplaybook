@@ -8,10 +8,6 @@ import {
 } from '@/components/ui/dropdown-menu.tsx'
 import { SidebarTrigger } from '@/components/ui/sidebar.tsx'
 
-interface MenuBarProps {
-
-}
-
 function MenuBar() {
     return (
         <div className="top-0 left-0 w-full bg-gray-800 text-white shadow-md z-50">

@@ -1,4 +1,4 @@
-import { ExtendedPokemonType } from '../../../App.tsx'
+import { ExtendedPokemonType } from '@/pages/pokemon/PokedexPage.tsx'
 import { StatNameEnum, TypeEnum } from '../../../enum/pokemonEnum.ts'
 import { cardBgClass } from '../typeColorClasses'
 import { AbilityType } from '../types/abilityType.ts'

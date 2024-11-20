@@ -1,4 +1,4 @@
-import { PokedexInfo } from '../../../App'
+import { PokedexInfo } from '@/pages/pokemon/PokedexPage.tsx'
 import Pokeball from './Pokeball'
 import PokeballContainer from './PokeballContainer'
 
