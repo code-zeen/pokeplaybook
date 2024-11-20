@@ -1,14 +1,12 @@
-import PokedexPage from '@/pages/pokemon/pokedex/PokedexPage.tsx'
-
-function PokemonPage() {
+function PokemonCardPage() {
     return (
         <div className="flex flex-col items-center p-4 gap-4">
             <div className="flex gap-4">
                 {/*<MenuBar handleKeyDown={handleKeyDown} />*/}
-                <PokedexPage />
+                pokemon cards
             </div>
         </div>
     )
 }
 
-export default PokedexPage
+export default PokemonCardPage

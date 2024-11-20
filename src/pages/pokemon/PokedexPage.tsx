@@ -1,4 +1,5 @@
 import { generations } from '@/components/pokemon/pokedex/generationQuery.ts'
+import Pokedex from '@/components/pokemon/pokedex/Pokedex.tsx'
 import { AbilityType } from '@/components/pokemon/types/abilityType.ts'
 import { MoveType } from '@/components/pokemon/types/moveType.ts'
 import { PokemonType } from '@/components/pokemon/types/pokemonType.ts'
@@ -78,7 +79,9 @@ function PokedexPage() {
     }
 
     return (
-        <div>asdf</div>
+        <Pokedex pokemons={pokemons} pokemon={pokemon} selectedGenerationIndex={selectedGenerationIndex}
+                 setSelectedGenerationIndex={setSelectedGenerationIndex}
+                 setSelectedPokemonName={setSelectedPokemonName} />
     )
 }
 
