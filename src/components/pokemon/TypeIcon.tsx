@@ -80,23 +80,24 @@ const iconSets = {
 }
 
 interface TypeIconProps {
-    type: TypeEnum;
+    type?: TypeEnum;
     variant?: 'swSh' | 'sv';
-    size?: string;
+    height?: string;
     className?: string;
 }
 
 function TypeIcon({
                       type,
                       variant = 'swSh',
-                      size = '16px',
+                      height = '16px',
                       className = ''
                   }: TypeIconProps) {
+    if (!type) return null
     return (
         <img
             src={iconSets[variant][type]}
             alt={type}
-            style={{ width: size, height: size }}
+            style={{ height: height }}
             className={className}
         />
     )
