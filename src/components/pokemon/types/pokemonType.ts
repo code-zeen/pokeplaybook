@@ -11,6 +11,10 @@ export interface PokemonType {
         is_hidden: boolean
         slot: number
     }[]
+    cries: {
+        latest: string
+        legacy: string
+    }
     height: number
     weight: number
     moves: {
