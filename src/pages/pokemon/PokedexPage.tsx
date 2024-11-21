@@ -86,9 +86,8 @@ function PokedexPage() {
                         value={searchInput}
                         onChange={(e) => setSearchInput(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        className="max-w-xs bg-gray-900 text-white border-gray-700 focus:border-blue-500"
                     />
-                    <Button onClick={handleSearch} variant="secondary">Search</Button>
+                    <Button onClick={handleSearch}>Search</Button>
                 </div>
                 <Pokedex pokemons={pokemons} pokemon={pokemon} selectedGenerationIndex={selectedGenerationIndex}
                          setSelectedGenerationIndex={setSelectedGenerationIndex}
