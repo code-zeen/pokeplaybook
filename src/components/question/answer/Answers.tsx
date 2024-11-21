@@ -1,4 +1,4 @@
-import { AnswerTypeEnum } from '../../../enum/questionEnum.ts'
+import { AnswerTypeEnum } from '@/enum/questionEnum.ts'
 import type { OptionType, QuestionType } from '../questionType.ts'
 import DragAndDrop from './DragAndDrop.tsx'
 import MultipleChoice from './MultipleChoice.tsx'

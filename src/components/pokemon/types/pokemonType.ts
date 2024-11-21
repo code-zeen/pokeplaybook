@@ -1,4 +1,4 @@
-import { StatNameEnum, TypeEnum } from '../../../enum/pokemonEnum.ts'
+import { StatNameEnum, TypeEnum } from '@/enum/pokemonEnum.ts'
 
 export interface PokemonType {
     name: string

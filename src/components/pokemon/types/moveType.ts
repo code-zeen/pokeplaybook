@@ -1,4 +1,4 @@
-import { TypeEnum } from '../../../enum/pokemonEnum'
+import { TypeEnum } from '@/enum/pokemonEnum.ts'
 import { FlavorTextEntryType } from './pokemonType.ts'
 
 export interface MoveType {

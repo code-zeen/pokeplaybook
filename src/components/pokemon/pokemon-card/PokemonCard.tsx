@@ -1,6 +1,6 @@
 import { ExtendedPokemonType } from '@/components/pokemon/usePokemonCards.ts'
+import { StatNameEnum, TypeEnum } from '@/enum/pokemonEnum.ts'
 import { motion } from 'framer-motion'
-import { StatNameEnum, TypeEnum } from '../../../enum/pokemonEnum.ts'
 import { cardBgClass } from '../typeColorClasses'
 import { FlavorTextEntryType, StatType } from '../types/pokemonType.ts'
 import PokemonAbility from './PokemonAbility.tsx'

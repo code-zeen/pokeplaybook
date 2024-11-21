@@ -1,4 +1,4 @@
-import { TypeEnum } from '../../../enum/pokemonEnum'
+import { TypeEnum } from '@/enum/pokemonEnum.ts'
 import { spriteBgClass } from '../typeColorClasses'
 import useSprite, { SpriteEnum } from '../useSprite'
 

@@ -1,4 +1,4 @@
-import { AnswerTypeEnum } from '../../../enum/questionEnum.ts'
+import { AnswerTypeEnum } from '@/enum/questionEnum.ts'
 import { AnswerConfigType, OptionType, QuestionType } from '../questionType.ts'
 
 interface AnswerMultipleChoiceProps {

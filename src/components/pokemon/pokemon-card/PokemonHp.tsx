@@ -1,4 +1,4 @@
-import { TypeEnum } from '../../../enum/pokemonEnum'
+import { TypeEnum } from '@/enum/pokemonEnum.ts'
 import TypeIcon from '../TypeIcon'
 
 interface PokemonHpProps {
