@@ -47,7 +47,7 @@ function PokemonCard({ pokemon, index = 0 }: PokemonCardProps) {
             whileHover={{
                 scale: 1.02,
                 rotate: rotationOffset,
-                translateY: '-32px',
+                translateY: '-48px',
                 transition: { duration: 0.2 }
             }}>
             <div className={`flex flex-col h-full ${cardBgClass[type]} border rounded-lg`}>

@@ -17,7 +17,7 @@ function PokemonView({ pokemon }: PokemonViewProps) {
                 <div className="w-3/12">
                     <PokemonCryButton pokemonId={pokemon?.id} />
                 </div>
-                <div className="w-6/12">
+                <div className="w-6/12 relative p-20 border">
                     <PokeballGrayBg id={pokemon?.id || 0} name={pokemon?.name || ''} />
                 </div>
                 <div className="flex flex-col w-3/12 items-end gap-1">
