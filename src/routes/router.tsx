@@ -9,10 +9,14 @@ const routes: RouteObject[] = [
         element: <Layout />,
         children: [
             {
+                index: true,
+                element: <PokedexPage />,
+            },
+            {
                 path: 'pokedex',
                 element: <PokedexPage />,
-                index: true,
-            }, {
+            },
+            {
                 path: 'pokemon-cards',
                 element: <PokemonCardPage />,
             }
