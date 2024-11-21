@@ -68,7 +68,7 @@ function PokedexPage() {
             setSelectedPokemonName(searchInput)
         }
     }
-    
+
     const handleSearch = () => {
         if (searchInput) {
             setSelectedPokemonName(searchInput)
@@ -77,8 +77,8 @@ function PokedexPage() {
 
     return (
         <div className="flex flex-col">
-            <div className="flex flex-col items-center p-2 gap-2">
-                <div className="flex w-full max-w-xs gap-2">
+            <div className="flex flex-col items-center px-1 py-2 gap-2">
+                <div className="flex w-full max-w-sm gap-1">
                     <Input
                         type="text"
                         name="pokemon"

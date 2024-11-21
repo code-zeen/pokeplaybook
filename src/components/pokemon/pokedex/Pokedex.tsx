@@ -1,10 +1,8 @@
+import PokemonView from '@/components/pokemon/pokedex/PokemonView.tsx'
 import { ExtendedPokemonType, PokedexInfo } from '@/pages/pokemon/PokedexPage.tsx'
-import ContainerWithSideBorder from './ContainerWithSideBorder'
 import GenerationSelector from './GenerationSelector.tsx'
-import PokeballGrayBg from './PokeballGrayBg'
 import PokedexHeader from './PokedexHeader'
 import PokedexList from './PokedexList'
-import PokemonName from './PokemonName'
 
 interface PokedexProps {
     pokemons: PokedexInfo[]
@@ -25,37 +23,13 @@ function Pokedex({
                  }: PokedexProps) {
 
     return (
-        <div className="h-96">
-            <div className="flex flex-col bg-gray-100">
-                <PokedexHeader />
-                <div className="flex p-2 gap-2">
-                    {pokemon && <div className="flex flex-col justify-between">
-                        <PokemonName name={pokemon.name} />
-
-                        <PokeballGrayBg id={pokemon.id} name={pokemon.name} />
-
-                        <ContainerWithSideBorder>
-                            <div className="w-full px-4">
-                                <div className="flex justify-between">
-                                    <span>Seen: </span>
-                                    <span>{pokemon.seen}</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span>Owned: </span>
-                                    <span>{pokemon.owned}</span>
-                                </div>
-                            </div>
-                        </ContainerWithSideBorder>
-                    </div>
-                    }
-                    <div className="flex flex-col gap-1">
-                        <GenerationSelector selectedGenerationIndex={selectedGenerationIndex}
-                                            setSelectedGenerationIndex={setSelectedGenerationIndex} />
-                        <PokedexList pokemons={pokemons} selectedPokemonName={selectedPokemonName}
-                                     setSelectedPokemonName={setSelectedPokemonName} />
-                    </div>
-                </div>
-            </div>
+        <div className="flex flex-col bg-gray w-full gap-1">
+            <PokedexHeader />
+            <PokemonView pokemon={pokemon} />
+            <GenerationSelector selectedGenerationIndex={selectedGenerationIndex}
+                                setSelectedGenerationIndex={setSelectedGenerationIndex} />
+            <PokedexList pokemons={pokemons} selectedPokemonName={selectedPokemonName}
+                         setSelectedPokemonName={setSelectedPokemonName} />
         </div>
     )
 }
