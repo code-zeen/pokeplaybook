@@ -14,6 +14,7 @@ export interface ExtendedPokemonType {
 
 const usePokemonCards = (nameOrId: string | number | null) => {
     const [ pokemonCards, setPokemonCards ] = useState<ExtendedPokemonType[]>([])
+    const [ isLoading, setIsLoading ] = useState(false)
 
     useEffect(() => {
         if (nameOrId) {
@@ -22,18 +23,25 @@ const usePokemonCards = (nameOrId: string | number | null) => {
     }, [ nameOrId ])
 
     const getCard = async (nameOrId: string | number) => {
-        const { baseData, ability, move } = await fetchPokemonByNameOrId(nameOrId)
-        const pokemonData = {
-            baseData,
-            ability,
-            move,
-            seen: 5,
-            owned: 2,
+        setIsLoading(true)
+        try {
+            const { baseData, ability, move } = await fetchPokemonByNameOrId(nameOrId)
+            const pokemonData = {
+                baseData,
+                ability,
+                move,
+                seen: 5,
+                owned: 2,
+            }
+            setPokemonCards(prev => [ ...prev, pokemonData ])
+        } catch (error) {
+            console.error('Error fetching pokemon:', error)
+        } finally {
+            setIsLoading(false)
         }
-        setPokemonCards(prev => [ ...prev, pokemonData ])
     }
 
-    return { pokemonCards }
+    return { pokemonCards, isLoading }
 }
 
 export default usePokemonCards
