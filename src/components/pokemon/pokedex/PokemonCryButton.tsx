@@ -21,7 +21,7 @@ function PokemonCryButton({ pokemonId, onError }: PokemonCryButtonProps) {
 
             audio.addEventListener('play', () => setIsPlaying(true))
             audio.addEventListener('ended', () => setIsPlaying(false))
-            audio.addEventListener('error', (e) => {
+            audio.addEventListener('error', () => {
                 setIsError(true)
                 setIsPlaying(false)
             })
