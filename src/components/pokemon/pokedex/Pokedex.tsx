@@ -23,7 +23,7 @@ function Pokedex({
                  }: PokedexProps) {
 
     return (
-        <div className="flex flex-col bg-gray w-full gap-1">
+        <div className="flex flex-col bg-gray w-full max-w-sm gap-1">
             <PokedexHeader />
             <PokemonView pokemon={pokemon} />
             <GenerationSelector selectedGenerationIndex={selectedGenerationIndex}
