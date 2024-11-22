@@ -66,7 +66,7 @@ function PokemonCryButton({ pokemonId, onError }: PokemonCryButtonProps) {
                 onError(error)
             }
 
-            alert(error)
+            alert(JSON.stringify(error, null, 2))
         }
     }
 
