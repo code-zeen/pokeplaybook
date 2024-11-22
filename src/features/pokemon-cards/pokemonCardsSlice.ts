@@ -2,14 +2,14 @@ import { fetchPokemonByNameOrId } from '@/features/pokemon-cards/fetch/fetchPoke
 import { PokemonCardType } from '@/features/pokemon-cards/types/pokemonCardType.ts'
 import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-interface ExtendedPokemonType {
+interface PokemonCardSliceType {
     isLoading: boolean
     error: string | null
 
     pokemonCards: PokemonCardType[]
 }
 
-const initialState: ExtendedPokemonType = {
+const initialState: PokemonCardSliceType = {
     isLoading: false,
     error: null,
 
@@ -34,7 +34,7 @@ const pokemonCardsSlice = createSlice({
     name: 'pokemonCards',
     initialState,
     reducers: {},
-    extraReducers: (builder: ActionReducerMapBuilder<ExtendedPokemonType>) => {
+    extraReducers: (builder: ActionReducerMapBuilder<PokemonCardSliceType>) => {
         builder
             .addCase(fetchPokemonCardByNameOrId.pending, (state) => {
                 state.isLoading = true
