@@ -66,7 +66,7 @@ function PokemonCryButton({ pokemonId, onError }: PokemonCryButtonProps) {
                 onError(error)
             }
 
-            console.error('Error playing Pokemon cry:', error)
+            alert(error)
         }
     }
 
