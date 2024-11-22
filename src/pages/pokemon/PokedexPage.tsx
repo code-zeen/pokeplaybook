@@ -1,8 +1,9 @@
-import { generations } from '@/components/pokemon/pokedex/generationQuery.ts'
-import Pokedex from '@/components/pokemon/pokedex/Pokedex.tsx'
-import { PokemonType } from '@/components/pokemon/types/pokemonType.ts'
-import { Button } from '@/components/ui/button.tsx'
-import { Input } from '@/components/ui/input.tsx'
+import { PokemonType } from '@/entities/pokemon/types/pokemonType.ts'
+import { generations } from '@/features/pokedex/generationQuery.ts'
+import Pokedex from '@/features/pokedex/Pokedex.tsx'
+import { Button } from '@/shared/ui/button'
+import { Input } from '@/shared/ui/input'
+
 import { KeyboardEvent, useEffect, useState } from 'react'
 
 export interface PokedexInfo {
