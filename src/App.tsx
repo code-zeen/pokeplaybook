@@ -1,5 +1,5 @@
 import router from '@/app/routes/router.tsx'
-import { store } from '@/app/store/store.ts'
+import store from '@/app/store/store.ts'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Provider } from 'react-redux'
