@@ -6,22 +6,22 @@ import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from '@reduxjs
 
 interface ExtendedPokemonType {
     isLoading: boolean
+    error: string | null
 
-    baseData: PokemonType | null
-    ability: AbilityType | null
-    move: MoveType | null
-    seen: number | null
-    owned: number | null
+    pokemonCards: {
+        baseData: PokemonType
+        ability: AbilityType
+        move: MoveType
+        seen: number
+        owned: number
+    }[]
 }
 
 const initialState: ExtendedPokemonType = {
     isLoading: false,
-
-    baseData: null,
-    ability: null,
-    move: null,
-    seen: null,
-    owned: null,
+    error: null,
+    
+    pokemonCards: [],
 }
 
 export const fetchPokemonCardByNameOrId = createAsyncThunk(
@@ -31,12 +31,9 @@ export const fetchPokemonCardByNameOrId = createAsyncThunk(
             return await fetchPokemonByNameOrId(nameOrId)
         } catch (error: unknown) {
             if (error instanceof Error) {
-                console.log('rejectedWithValue: ', error.message)
                 return rejectWithValue(error.message)
-            } else {
-                console.log('rejectedWithValue: ', error)
-                return rejectWithValue('An unknown error occurred')
             }
+            return rejectWithValue('An unknown error occurred')
         }
     }
 )
@@ -49,18 +46,24 @@ export const pokemonCardsSlice = createSlice({
         builder
             .addCase(fetchPokemonCardByNameOrId.pending, (state) => {
                 state.isLoading = true
+                state.error = null
             })
-            .addCase(fetchPokemonCardByNameOrId.rejected, (state) => {
+            .addCase(fetchPokemonCardByNameOrId.rejected, (state, action) => {
                 state.isLoading = false
-                state.baseData = initialState.baseData
-                state.ability = initialState.ability
-                state.move = initialState.move
+                state.error = action.payload as string
             })
             .addCase(fetchPokemonCardByNameOrId.fulfilled, (state, { payload }) => {
+                const { baseData, ability, move } = payload
+                const newCard = {
+                    baseData,
+                    ability,
+                    move,
+                    seen: 5,
+                    owned: 2,
+                }
                 state.isLoading = false
-                state.baseData = payload.baseData
-                state.ability = payload.ability
-                state.move = payload.move
+                state.pokemonCards.push(newCard)
+                state.error = null
             })
     }
 })
