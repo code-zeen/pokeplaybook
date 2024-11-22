@@ -1,10 +1,10 @@
-import { pokemonCardsSlice } from '@/features/pokemon-cards/pokemonCardsSlice.ts'
+import pokemonCardsSlice from '@/features/pokemon-cards/pokemonCardsSlice.ts'
 import { configureStore } from '@reduxjs/toolkit'
 import { Reducer } from 'redux'
 
 const store = configureStore({
     reducer: {
-        pokemonCards: pokemonCardsSlice.reducer as Reducer,
+        pokemonCards: pokemonCardsSlice,
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware({
         serializableCheck: false,

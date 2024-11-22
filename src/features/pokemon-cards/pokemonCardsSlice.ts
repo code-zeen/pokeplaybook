@@ -30,7 +30,7 @@ export const fetchPokemonCardByNameOrId = createAsyncThunk(
     }
 )
 
-export const pokemonCardsSlice = createSlice({
+const pokemonCardsSlice = createSlice({
     name: 'pokemonCards',
     initialState,
     reducers: {},
