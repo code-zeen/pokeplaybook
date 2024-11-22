@@ -1,26 +1,18 @@
-import { AbilityType } from '@/entities/pokemon/types/abilityType.ts'
-import { MoveType } from '@/entities/pokemon/types/moveType.ts'
-import { PokemonType } from '@/entities/pokemon/types/pokemonType.ts'
 import { fetchPokemonByNameOrId } from '@/features/pokemon-cards/fetch/fetchPokemon.ts'
+import { PokemonCardType } from '@/features/pokemon-cards/types/pokemonCardType.ts'
 import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 interface ExtendedPokemonType {
     isLoading: boolean
     error: string | null
 
-    pokemonCards: {
-        baseData: PokemonType
-        ability: AbilityType
-        move: MoveType
-        seen: number
-        owned: number
-    }[]
+    pokemonCards: PokemonCardType[]
 }
 
 const initialState: ExtendedPokemonType = {
     isLoading: false,
     error: null,
-    
+
     pokemonCards: [],
 }
 
