@@ -1,6 +1,6 @@
-import PokemonCard from '@/components/pokemon/pokemon-card/PokemonCard.tsx'
-import usePokemonCards from '@/components/pokemon/usePokemonCards.ts'
-import { Button } from '@/components/ui/button.tsx'
+import usePokemonCards from '@/entities/pokemon/usePokemonCards.ts'
+import PokemonCard from '@/features/pokemon-cards/PokemonCard.tsx'
+import { Button } from '@/shared/ui/button.tsx'
 import { LoaderCircle } from 'lucide-react'
 import { useState } from 'react'
 
