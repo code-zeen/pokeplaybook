@@ -1,5 +1,5 @@
 import { TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
-import TypeIcon from '../../entities/pokemon/TypeIcon.tsx'
+import TypeIcon from '../../../entities/pokemon/TypeIcon.tsx'
 
 interface PokemonHpProps {
     hp: number

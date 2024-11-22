@@ -1,6 +1,6 @@
 import { TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
-import { spriteBgClass } from '../../entities/pokemon/typeColorClasses.ts'
-import useSprite, { SpriteEnum } from '../../entities/pokemon/useSprite.ts'
+import { spriteBgClass } from '../../../entities/pokemon/typeColorClasses.ts'
+import useSprite, { SpriteEnum } from '../../../entities/pokemon/useSprite.ts'
 
 interface PokemonImageProps {
     id: number

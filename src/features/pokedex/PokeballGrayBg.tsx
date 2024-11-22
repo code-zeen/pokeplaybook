@@ -1,4 +1,4 @@
-import useSprite, { SpriteEnum } from '../pokemon/useSprite.ts'
+import useSprite, { SpriteEnum } from '@/entities/pokemon/useSprite.ts'
 
 interface PokeballGrayBgProps {
     id: number
