@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button.tsx'
-import { Volume2, VolumeX } from 'lucide-react'
-import { useState } from 'react'
+import { Loader2, Volume2, VolumeX } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 interface PokemonCryButtonProps {
     pokemonId?: number
@@ -9,28 +9,58 @@ interface PokemonCryButtonProps {
 
 function PokemonCryButton({ pokemonId, onError }: PokemonCryButtonProps) {
     const [ isPlaying, setIsPlaying ] = useState(false)
+    const [ isLoading, setIsLoading ] = useState(false)
     const [ isError, setIsError ] = useState(false)
+    const audioRef = useRef<HTMLAudioElement | null>(null)
 
-    const playPokemonCry = async () => {
+    useEffect(() => {
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.pause()
+                audioRef.current = null
+            }
+        }
+    }, [ pokemonId ])
+
+    const initializeAudio = async () => {
         if (!pokemonId) return
+
+        setIsLoading(true)
+        setIsError(false)
 
         const audioUrl = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemonId}.ogg`
 
         try {
-            const audio = new Audio(audioUrl)
+            const audio = new Audio()
 
             audio.addEventListener('play', () => setIsPlaying(true))
-            audio.addEventListener('ended', () => setIsPlaying(false))
-            audio.addEventListener('error', () => {
-                setIsError(true)
+            audio.addEventListener('ended', () => {
                 setIsPlaying(false)
+                setIsLoading(false)
+            })
+            audio.addEventListener('error', () => {
+                setIsPlaying(false)
+                setIsLoading(false)
+                setIsError(true)
             })
 
+            audio.preload = 'auto'
+            audio.src = audioUrl
+
+            await new Promise((resolve, reject) => {
+                audio.addEventListener('canplaythrough', resolve, { once: true })
+                audio.addEventListener('error', reject, { once: true })
+                audio.load()
+            })
+
+            audioRef.current = audio
+            setIsLoading(false)
+
             await audio.play()
-            setIsError(false)
         } catch (error) {
-            setIsError(true)
             setIsPlaying(false)
+            setIsLoading(false)
+            setIsError(true)
 
             if (onError && error instanceof Error) {
                 onError(error)
@@ -40,14 +70,32 @@ function PokemonCryButton({ pokemonId, onError }: PokemonCryButtonProps) {
         }
     }
 
+    const handleClick = async () => {
+        if (isPlaying && audioRef.current) {
+            audioRef.current.pause()
+            audioRef.current.currentTime = 0
+            setIsPlaying(false)
+            return
+        }
+        await initializeAudio()
+    }
+
     return (
         <Button
-            onClick={playPokemonCry}
+            onClick={handleClick}
             disabled={!pokemonId || isPlaying}
             variant={isError ? 'destructive' : 'outline'}
             size="icon"
         >
-            {isError ? <VolumeX /> : <Volume2 />}
+            {isLoading ? (
+                <Loader2 className="animate-spin" />
+            ) : isError ? (
+                <VolumeX />
+            ) : isPlaying ? (
+                <Volume2 className="text-primary" />
+            ) : (
+                <Volume2 />
+            )}
         </Button>
     )
 }
