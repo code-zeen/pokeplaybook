@@ -44,7 +44,7 @@ This is a toy project where I am creating my own Pokedex for fun.
 - #1부터 #1025까지의 포켓몬 중 랜덤으로 카드를 뽑아보세요!
 
 ## 추가될 기능
-- 로그인하여 카드 컬렉션을 추적하기
+- 로그인 후 개인 컬렉션 db에 저장
 
 ## 스택
 - React
