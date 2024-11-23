@@ -43,20 +43,33 @@ function PokemonCryButton({ pokemonId }: PokemonCryButtonProps) {
                 <Volume2 />
             )}
             <audio
-                ref={audioRef} src={audioUrl}
+                ref={audioRef}
+                src={audioUrl}
+                preload="auto"
                 onLoadedMetadata={() => {
+                    console.log("Loaded metadata")
                     if (audioRef.current) {
                         audioRef.current.volume = 0.1
                     }
                     setIsLoading(false)
                 }}
+                onEnded={() => {
+                    setIsPlaying(false)
+                    console.log("Audio ended");
+                }}
+                onLoadStart={() => {
+                    setIsLoading(true)
+                    console.log("Loading started")
+                }}
+                onCanPlay={() => {
+                    console.error("Can play")
+                    setIsLoading(false)
+                }}
                 onError={() => {
+                    console.error("Error loading audio")
                     setIsError(true)
                     setIsLoading(false)
                 }}
-                onEnded={() => setIsPlaying(false)}
-                onLoadStart={() => setIsLoading(true)}
-                onCanPlay={() => setIsLoading(false)}
             />
         </Button>
     ) : (
