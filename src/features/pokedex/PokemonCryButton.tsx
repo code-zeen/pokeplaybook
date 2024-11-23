@@ -48,6 +48,11 @@ function PokemonCryButton({ pokemonId }: PokemonCryButtonProps) {
                     if (audioRef.current) {
                         audioRef.current.volume = 0.1
                     }
+                    setIsLoading(false)
+                }}
+                onError={() => {
+                    setIsError(true)
+                    setIsLoading(false)
                 }}
                 onEnded={() => setIsPlaying(false)}
                 onLoadStart={() => setIsLoading(true)}
