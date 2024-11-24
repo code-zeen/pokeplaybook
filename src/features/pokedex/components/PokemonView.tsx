@@ -1,8 +1,8 @@
 import TypeIcon from '@/entities/pokemon/TypeIcon.tsx'
-import ContainerWithSideBorder from '@/features/pokedex/ContainerWithSideBorder.tsx'
-import PokeballGrayBg from '@/features/pokedex/PokeballGrayBg.tsx'
-import PokemonCryButton from '@/features/pokedex/PokemonCryButton.tsx'
-import PokemonName from '@/features/pokedex/PokemonName.tsx'
+import ContainerWithSideBorder from '@/features/pokedex/components/ContainerWithSideBorder.tsx'
+import PokeballGrayBg from '@/features/pokedex/components/PokeballGrayBg.tsx'
+import PokemonCryButton from '@/features/pokedex/components/PokemonCryButton.tsx'
+import PokemonName from '@/features/pokedex/components/PokemonName.tsx'
 import { ExtendedPokemonType } from '@/pages/pokemon/PokedexPage.tsx'
 
 interface PokemonViewProps {

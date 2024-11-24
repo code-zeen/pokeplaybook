@@ -1,5 +1,5 @@
 import GenerationButton from './GenerationButton.tsx'
-import { generations } from './generationQuery.ts'
+import { generations } from '../../../entities/pokemon/fetch/generationQuery.ts'
 
 interface GenerationSelectorProps {
     selectedGenerationIndex: number
@@ -14,7 +14,7 @@ function GenerationSelector({ selectedGenerationIndex, setSelectedGenerationInde
     return (
         <div className="flex gap-1 flex-wrap">
             {generations.map((each, index) => (
-                <GenerationButton onClick={() => handleClick(index)}
+                <GenerationButton key={each.name} onClick={() => handleClick(index)}
                                   active={selectedGenerationIndex === index}>{each.name}</GenerationButton>
             ))}
         </div>

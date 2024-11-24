@@ -1,10 +1,10 @@
 import { PokemonType } from '@/entities/pokemon/types/pokemonType.ts'
-import { generations } from '@/features/pokedex/generationQuery.ts'
-import Pokedex from '@/features/pokedex/Pokedex.tsx'
+import Pokedex from '@/features/pokedex/components/Pokedex.tsx'
 import { Button } from '@/shared/ui/button'
 import { Input } from '@/shared/ui/input'
 
 import { KeyboardEvent, useEffect, useState } from 'react'
+import { fetchPokedexEntryByNameOrId, fetchPokedexListByGenerationIndex } from "@/entities/pokemon/fetch/pokeapi.ts";
 
 export interface PokedexInfo {
     name: string
@@ -29,21 +29,20 @@ function PokedexPage() {
     const [ selectedPokemonName, setSelectedPokemonName ] = useState<string>()
 
     useEffect(() => {
-        (async () => await fetchPokemonsByGeneration(selectedGenerationIndex))()
+        (async () => await getPokemonsByGeneration(selectedGenerationIndex))()
     }, [ selectedGenerationIndex ])
 
     useEffect(() => {
         if (selectedPokemonName) {
             (async () => {
-                await fetchPokemonByNameOrId(selectedPokemonName)
+                await getPokemonByNameOrId(selectedPokemonName)
             })()
         }
     }, [ selectedPokemonName ])
 
 
-    const fetchPokemonsByGeneration = async (index: number) => {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${generations[index].offset}&limit=${generations[index].limit}`)
-        const data = await res.json()
+    const getPokemonsByGeneration = async (index: number) => {
+        const data = await fetchPokedexListByGenerationIndex(index)
 
         setPokemons(data.results.map((pokemon: { name: string, url: string }) => ({
             ...pokemon,
@@ -52,12 +51,11 @@ function PokedexPage() {
         })))
     }
 
-    const fetchPokemonByNameOrId = async (name: string | number) => {
-        const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-        const dataPokemon = await resPokemon.json()
+    const getPokemonByNameOrId = async (name: string | number) => {
+        const data = await fetchPokedexEntryByNameOrId(name)
 
         setPokemon({
-            ...dataPokemon,
+            ...data,
             seen: SEEN,
             owned: OWNED,
         })

@@ -1,4 +1,4 @@
-import PokemonView from '@/features/pokedex/PokemonView.tsx'
+import PokemonView from '@/features/pokedex/components/PokemonView.tsx'
 import { ExtendedPokemonType, PokedexInfo } from '@/pages/pokemon/PokedexPage.tsx'
 import GenerationSelector from './GenerationSelector.tsx'
 import PokedexHeader from './PokedexHeader.tsx'

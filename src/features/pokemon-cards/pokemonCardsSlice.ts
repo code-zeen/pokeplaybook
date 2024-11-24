@@ -1,6 +1,6 @@
-import { fetchPokemonByNameOrId } from '@/features/pokemon-cards/fetch/fetchPokemon.ts'
 import { PokemonCardType } from '@/features/pokemon-cards/types/pokemonCardType.ts'
 import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { fetchPokemonCardByNameOrId } from "@/entities/pokemon/fetch/pokeapi.ts";
 
 interface PokemonCardSliceType {
     isLoading: boolean
@@ -20,7 +20,7 @@ export const fetchPokemonCardByNameOrId = createAsyncThunk(
     'pokemon/cards/get',
     async (nameOrId: string | number, { rejectWithValue }) => {
         try {
-            return await fetchPokemonByNameOrId(nameOrId)
+            return await fetchPokemonCardByNameOrId(nameOrId)
         } catch (error: unknown) {
             if (error instanceof Error) {
                 return rejectWithValue(error.message)
