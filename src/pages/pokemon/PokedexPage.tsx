@@ -4,10 +4,8 @@ import { Button } from '@/shared/ui/button'
 import { Input } from '@/shared/ui/input'
 
 import { KeyboardEvent, useEffect, useState } from 'react'
-import {
-    fetchPokedexEntryApiByNameOrId,
-    fetchPokedexListApiByGenerationIndex
-} from "@/entities/pokemon/fetch/pokeapi.ts";
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks.ts";
+import { fetchPokedexEntryByNameOrId, fetchPokedexListbyGenerationIndex } from "@/features/pokedex/pokedexSlice.ts";
 
 export interface PokedexInfo {
     name: string
@@ -21,48 +19,22 @@ export interface ExtendedPokemonType extends PokemonType {
     owned: number
 }
 
-const SEEN = 10
-const OWNED = 10
-
 function PokedexPage() {
     const [ searchInput, setSearchInput ] = useState<string>('')
-    const [ pokemons, setPokemons ] = useState<PokedexInfo[]>([])
-    const [ pokemon, setPokemon ] = useState<ExtendedPokemonType | null>(null)
     const [ selectedGenerationIndex, setSelectedGenerationIndex ] = useState<number>(0)
     const [ selectedPokemonName, setSelectedPokemonName ] = useState<string>()
+    const { pokedexList: pokemons, pokedexEntry: pokemon } = useAppSelector(state => state.pokedex)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
-        (async () => await getPokemonsByGeneration(selectedGenerationIndex))()
+        dispatch(fetchPokedexListbyGenerationIndex(selectedGenerationIndex))
     }, [ selectedGenerationIndex ])
 
     useEffect(() => {
         if (selectedPokemonName) {
-            (async () => {
-                await getPokemonByNameOrId(selectedPokemonName)
-            })()
+            dispatch(fetchPokedexEntryByNameOrId(selectedPokemonName))
         }
     }, [ selectedPokemonName ])
-
-
-    const getPokemonsByGeneration = async (index: number) => {
-        const data = await fetchPokedexListApiByGenerationIndex(index)
-
-        setPokemons(data.results.map((pokemon: { name: string, url: string }) => ({
-            ...pokemon,
-            seen: SEEN,
-            owned: OWNED,
-        })))
-    }
-
-    const getPokemonByNameOrId = async (name: string | number) => {
-        const data = await fetchPokedexEntryApiByNameOrId(name)
-
-        setPokemon({
-            ...data,
-            seen: SEEN,
-            owned: OWNED,
-        })
-    }
 
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {

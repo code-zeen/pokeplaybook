@@ -15,9 +15,9 @@ import {
 interface PokedexSliceType {
     isLoading: boolean
     error: string | null
-    
+
     pokedexList: PokedexInfo[]
-    pokemonEntry: ExtendedPokemonType | null
+    pokedexEntry: ExtendedPokemonType | null
 }
 
 const initialState: PokedexSliceType = {
@@ -25,7 +25,7 @@ const initialState: PokedexSliceType = {
     error: null,
 
     pokedexList: [],
-    pokemonEntry: null,
+    pokedexEntry: null,
 }
 
 export const fetchPokedexListbyGenerationIndex = createAsyncThunk(
@@ -62,8 +62,15 @@ const pokedexSlice = createSlice({
     reducers: {},
     extraReducers: (builder: ActionReducerMapBuilder<PokedexSliceType>) => {
         builder
+            .addCase(fetchPokedexListbyGenerationIndex.fulfilled, (state, { payload }) => {
+                state.pokedexList = payload.results.map((pokemon: { name: string, url: string }) => ({
+                    ...pokemon,
+                    seen: 5,
+                    owned: 2,
+                }))
+            })
             .addCase(fetchPokedexEntryByNameOrId.fulfilled, (state, { payload }) => {
-                state.pokemonEntry = { ...payload, seen: 5, owned: 2 }
+                state.pokedexEntry = { ...payload, seen: 5, owned: 2 }
             })
 
             .addMatcher(
