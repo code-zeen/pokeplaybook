@@ -27,13 +27,13 @@ function PokedexPage() {
 
     useEffect(() => {
         dispatch(fetchPokedexListbyGenerationIndex(selectedGenerationIndex))
-    }, [ selectedGenerationIndex ])
+    }, [ dispatch, selectedGenerationIndex ])
 
     useEffect(() => {
         if (selectedPokemonName) {
             dispatch(fetchPokedexEntryByNameOrId(selectedPokemonName))
         }
-    }, [ selectedPokemonName ])
+    }, [ dispatch, selectedPokemonName ])
 
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {

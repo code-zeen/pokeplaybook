@@ -10,7 +10,7 @@ function GenerationSelector() {
 
     useEffect(() => {
         dispatch(fetchPokedexListbyGenerationIndex(generationIndex))
-    }, [ generationIndex ]);
+    }, [ dispatch, generationIndex ]);
 
     const handleClick = (index: number) => {
         dispatch(setGenerationIndex(index))
