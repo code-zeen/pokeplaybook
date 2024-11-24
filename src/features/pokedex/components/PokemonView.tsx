@@ -3,13 +3,11 @@ import ContainerWithSideBorder from '@/features/pokedex/components/ContainerWith
 import PokeballGrayBg from '@/features/pokedex/components/PokeballGrayBg.tsx'
 import PokemonCryButton from '@/features/pokedex/components/PokemonCryButton.tsx'
 import PokemonName from '@/features/pokedex/components/PokemonName.tsx'
-import { ExtendedPokemonType } from '@/pages/pokemon/PokedexPage.tsx'
+import { useAppSelector } from "@/app/store/hooks.ts";
 
-interface PokemonViewProps {
-    pokemon: ExtendedPokemonType | null
-}
+function PokemonView() {
+    const { pokedexEntry: pokemon } = useAppSelector(state => state.pokedex)
 
-function PokemonView({ pokemon }: PokemonViewProps) {
     return (
         <div className="flex flex-col justify-between">
             <PokemonName name={pokemon?.name || '-'} />
@@ -26,7 +24,6 @@ function PokemonView({ pokemon }: PokemonViewProps) {
                     ))}
                 </div>
             </div>
-
 
             <div className="flex justify-between">
                 <ContainerWithSideBorder>

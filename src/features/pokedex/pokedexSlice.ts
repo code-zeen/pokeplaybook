@@ -7,16 +7,15 @@ import {
     isPending,
     isRejected
 } from "@reduxjs/toolkit";
-import {
-    fetchPokedexEntryApiByNameOrId,
-    fetchPokedexListApiByGenerationIndex
-} from "@/entities/pokemon/fetch/pokeapi.ts";
+import { fetchPokemon, fetchPokemonList } from "@/entities/pokemon/fetch/pokeapi.ts";
 
 interface PokedexSliceType {
     isLoading: boolean
     error: string | null
 
+    searchKeyword: string
     generationIndex: number
+
     pokedexList: PokedexInfo[]
     pokedexEntry: ExtendedPokemonType | null
 }
@@ -25,7 +24,9 @@ const initialState: PokedexSliceType = {
     isLoading: false,
     error: null,
 
+    searchKeyword: '',
     generationIndex: 0,
+
     pokedexList: [],
     pokedexEntry: null,
 }
@@ -34,7 +35,7 @@ export const fetchPokedexListbyGenerationIndex = createAsyncThunk(
     'pokemon/pokedex/list/get',
     async (index: number, { rejectWithValue }) => {
         try {
-            return await fetchPokedexListApiByGenerationIndex(index)
+            return await fetchPokemonList(index)
         } catch (error: unknown) {
             if (error instanceof Error) {
                 return rejectWithValue(error.message)
@@ -48,7 +49,7 @@ export const fetchPokedexEntryByNameOrId = createAsyncThunk(
     'pokemon/pokedex/entry/get',
     async (nameOrId: string | number, { rejectWithValue }) => {
         try {
-            return await fetchPokedexEntryApiByNameOrId(nameOrId)
+            return await fetchPokemon(nameOrId)
         } catch (error: unknown) {
             if (error instanceof Error) {
                 return rejectWithValue(error.message)
@@ -62,6 +63,9 @@ const pokedexSlice = createSlice({
     name: 'pokedex',
     initialState,
     reducers: {
+        setSearchKeyword: (state, action) => {
+            state.searchKeyword = action.payload
+        },
         setGenerationIndex: (state, action) => {
             state.generationIndex = action.payload
         }
@@ -101,6 +105,7 @@ const pokedexSlice = createSlice({
 })
 
 export const {
+    setSearchKeyword,
     setGenerationIndex
 } = pokedexSlice.actions
 export default pokedexSlice.reducer

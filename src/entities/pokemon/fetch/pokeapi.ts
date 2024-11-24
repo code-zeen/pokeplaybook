@@ -3,7 +3,7 @@ import { generations } from "@/entities/pokemon/fetch/generationQuery.ts";
 const baseUrl = 'https://pokeapi.co/api/v2'
 
 /***** Pokemon Card *****/
-export const fetchPokemonCardApiByNameOrId = async (nameOrId: string | number) => {
+export const fetchPokemonCard = async (nameOrId: string | number) => {
     const resPokemon = await fetch(`${baseUrl}/pokemon/${nameOrId}`)
     const dataPokemon = await resPokemon.json()
 
@@ -17,12 +17,12 @@ export const fetchPokemonCardApiByNameOrId = async (nameOrId: string | number) =
 }
 
 /***** Pokedex *****/
-export const fetchPokedexEntryApiByNameOrId = async (nameOrId: string | number) => {
+export const fetchPokemon = async (nameOrId: string | number) => {
     const res = await fetch(`${baseUrl}/pokemon/${nameOrId}`)
     return await res.json()
 }
 
-export const fetchPokedexListApiByGenerationIndex = async (index: number) => {
+export const fetchPokemonList = async (index: number) => {
     const res = await fetch(`${baseUrl}/pokemon?offset=${generations[index].offset}&limit=${generations[index].limit}`)
     return await res.json()
 }

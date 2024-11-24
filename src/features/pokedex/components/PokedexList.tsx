@@ -1,16 +1,14 @@
-import { PokedexInfo } from '@/pages/pokemon/PokedexPage.tsx'
 import Pokeball from './Pokeball.tsx'
 import PokeballContainer from './PokeballContainer.tsx'
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks.ts";
+import { setSearchKeyword } from "@/features/pokedex/pokedexSlice.ts";
 
-interface PokedexListProps {
-    pokemons: PokedexInfo[]
-    selectedPokemonName?: string
-    setSelectedPokemonName: (name: string) => void
-}
+function PokedexList() {
+    const { pokedexList: pokemons, searchKeyword } = useAppSelector(state => state.pokedex)
+    const dispatch = useAppDispatch()
 
-function PokedexList({ pokemons, selectedPokemonName, setSelectedPokemonName }: PokedexListProps) {
     const handleClick = (name: string) => {
-        setSelectedPokemonName(name)
+        dispatch(setSearchKeyword(name))
     }
 
     return (
@@ -19,7 +17,7 @@ function PokedexList({ pokemons, selectedPokemonName, setSelectedPokemonName }: 
                 {pokemons.map((pokemon, index) => (
                     <li key={index}>
                         <div
-                            className={`flex gap-1 hover:bg-rose-100 active:bg-rose-200 cursor-pointer ${selectedPokemonName === pokemon.name ? 'bg-rose-200' : ''}`}
+                            className={`flex gap-1 hover:bg-rose-100 active:bg-rose-200 cursor-pointer ${searchKeyword === pokemon.name ? 'bg-rose-200' : ''}`}
                             onClick={() => handleClick(pokemon.name)}>
                             <div className="flex justify-center items-center bg-red-500 w-8 h-8">
                                 {pokemon.seen > 0 &&
