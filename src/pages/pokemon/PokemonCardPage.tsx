@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 function PokemonCardPage() {
     const [ randomId, setRandomId ] = useState<number | null>(null)
     const dispatch = useAppDispatch()
-    const { pokemonCards, isLoading } = useAppSelector((state) => state.pokemonCards)
+    const { pokemonCards, isLoading } = useAppSelector(state => state.pokemonCards)
 
     useEffect(() => {
         if (randomId) {

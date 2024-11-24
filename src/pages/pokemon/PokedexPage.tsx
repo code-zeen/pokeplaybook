@@ -4,7 +4,7 @@ import { Button } from '@/shared/ui/button'
 import { Input } from '@/shared/ui/input'
 
 import { KeyboardEvent, useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks.ts";
+import { useAppDispatch } from "@/app/store/hooks.ts";
 import { fetchPokedexEntryByNameOrId, fetchPokedexListbyGenerationIndex } from "@/features/pokedex/pokedexSlice.ts";
 
 export interface PokedexInfo {
@@ -21,9 +21,8 @@ export interface ExtendedPokemonType extends PokemonType {
 
 function PokedexPage() {
     const [ searchInput, setSearchInput ] = useState<string>('')
-    const [ selectedGenerationIndex, setSelectedGenerationIndex ] = useState<number>(0)
+    const [ selectedGenerationIndex ] = useState<number>(0)
     const [ selectedPokemonName, setSelectedPokemonName ] = useState<string>()
-    const { pokedexList: pokemons, pokedexEntry: pokemon } = useAppSelector(state => state.pokedex)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
@@ -63,9 +62,7 @@ function PokedexPage() {
                     />
                     <Button onClick={handleSearch}>Search</Button>
                 </div>
-                <Pokedex pokemons={pokemons} pokemon={pokemon} selectedGenerationIndex={selectedGenerationIndex}
-                         setSelectedGenerationIndex={setSelectedGenerationIndex}
-                         setSelectedPokemonName={setSelectedPokemonName} />
+                <Pokedex setSelectedPokemonName={setSelectedPokemonName} />
             </div>
         </div>
     )
