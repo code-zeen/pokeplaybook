@@ -4,7 +4,10 @@ import { Button } from '@/shared/ui/button'
 import { Input } from '@/shared/ui/input'
 
 import { KeyboardEvent, useEffect, useState } from 'react'
-import { fetchPokedexEntryByNameOrId, fetchPokedexListByGenerationIndex } from "@/entities/pokemon/fetch/pokeapi.ts";
+import {
+    fetchPokedexEntryApiByNameOrId,
+    fetchPokedexListApiByGenerationIndex
+} from "@/entities/pokemon/fetch/pokeapi.ts";
 
 export interface PokedexInfo {
     name: string
@@ -42,7 +45,7 @@ function PokedexPage() {
 
 
     const getPokemonsByGeneration = async (index: number) => {
-        const data = await fetchPokedexListByGenerationIndex(index)
+        const data = await fetchPokedexListApiByGenerationIndex(index)
 
         setPokemons(data.results.map((pokemon: { name: string, url: string }) => ({
             ...pokemon,
@@ -52,7 +55,7 @@ function PokedexPage() {
     }
 
     const getPokemonByNameOrId = async (name: string | number) => {
-        const data = await fetchPokedexEntryByNameOrId(name)
+        const data = await fetchPokedexEntryApiByNameOrId(name)
 
         setPokemon({
             ...data,

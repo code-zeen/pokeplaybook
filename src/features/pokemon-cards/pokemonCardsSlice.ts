@@ -1,6 +1,6 @@
 import { PokemonCardType } from '@/features/pokemon-cards/types/pokemonCardType.ts'
 import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { fetchPokemonCardByNameOrId } from "@/entities/pokemon/fetch/pokeapi.ts";
+import { fetchPokemonCardApiByNameOrId } from "@/entities/pokemon/fetch/pokeapi.ts";
 
 interface PokemonCardSliceType {
     isLoading: boolean
@@ -20,7 +20,7 @@ export const fetchPokemonCardByNameOrId = createAsyncThunk(
     'pokemon/cards/get',
     async (nameOrId: string | number, { rejectWithValue }) => {
         try {
-            return await fetchPokemonCardByNameOrId(nameOrId)
+            return await fetchPokemonCardApiByNameOrId(nameOrId)
         } catch (error: unknown) {
             if (error instanceof Error) {
                 return rejectWithValue(error.message)
@@ -45,6 +45,8 @@ const pokemonCardsSlice = createSlice({
                 state.error = action.payload as string
             })
             .addCase(fetchPokemonCardByNameOrId.fulfilled, (state, { payload }) => {
+                state.isLoading = false
+                state.error = null
                 const { baseData, ability, move } = payload
                 const newCard = {
                     baseData,
@@ -53,9 +55,7 @@ const pokemonCardsSlice = createSlice({
                     seen: 5,
                     owned: 2,
                 }
-                state.isLoading = false
                 state.pokemonCards.push(newCard)
-                state.error = null
             })
     }
 })
