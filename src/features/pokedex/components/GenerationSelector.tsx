@@ -5,11 +5,10 @@ import { fetchPokedexListbyGenerationIndex, setGenerationIndex } from "@/feature
 import { useEffect } from "react";
 
 function GenerationSelector() {
-    const { pokedexList, generationIndex } = useAppSelector(state => state.pokedex)
+    const { generationIndex } = useAppSelector(state => state.pokedex)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        if (pokedexList.length > 0) return
         dispatch(fetchPokedexListbyGenerationIndex(generationIndex))
     }, [ dispatch, generationIndex ]);
 
