@@ -14,7 +14,7 @@ export const pokemontcgapi = createApi({
     }),
     endpoints: (builder) => ({
         getPokemonCardById: builder.query<PokemonCard, string>({
-            query: (id: string) => `/cards/xy1-1`, // TODO find a way to search by id or randomize
+            query: () => `/cards/xy1-1`, // TODO find a way to search by id or randomize
             transformResponse: (response: { data: PokemonCard }) => {
                 return response.data
             }

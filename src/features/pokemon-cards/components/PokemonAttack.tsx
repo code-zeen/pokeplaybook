@@ -3,7 +3,7 @@ import TypeIcon from '../../../entities/pokemon/TypeIcon.tsx'
 
 interface PokemonMoveProps {
     name: string
-    damage: number | null
+    damage: string
     cost: string[]
     text: string
 }

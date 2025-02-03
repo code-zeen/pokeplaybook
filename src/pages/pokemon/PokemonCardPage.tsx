@@ -5,21 +5,16 @@ import { addPokemonCard } from '@/features/pokemon-cards/pokemonCardsSlice.ts'
 import { useGetPokemonCardByIdQuery } from '@/features/pokemon-cards/pokemontcgapi.ts'
 import { Button } from '@/shared/ui/button.tsx'
 import { LoaderCircle } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 function PokemonCardPage() {
-    const [ randomId, setRandomId ] = useState<number | null>(null)
     const { pokemonCards } = useAppSelector(state => state.pokemonCards)
     const dispatch = useAppDispatch()
 
-    const { data: pokemonCard, error, isLoading } = useGetPokemonCardByIdQuery('test')
+    const { data: pokemonCard, isLoading } = useGetPokemonCardByIdQuery('test')
 
-    const getRandomPokemonId = () => {
-        return Math.floor(Math.random() * 1025) + 1
-    }
     const handleClick = () => {
-        const pokemonId = getRandomPokemonId()
-        setRandomId(pokemonId)
+        return null
     }
 
     useEffect(() => {
