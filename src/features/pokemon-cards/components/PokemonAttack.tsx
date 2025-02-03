@@ -1,10 +1,10 @@
-import { getTypeFromString } from '@/entities/pokemon/types/pokemonEnum.ts'
-import TypeIcon from '../../../entities/pokemon/TypeIcon.tsx'
+import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
+import TypeIcon from '@/shared/components/TypeIcon.tsx'
 
 interface PokemonMoveProps {
     name: string
     damage: string
-    cost: string[]
+    cost: PokemonCardTypeEnum[]
     text: string
 }
 
@@ -15,7 +15,7 @@ function PokemonAttack({ name, damage, cost, text }: PokemonMoveProps) {
                 <div className="flex items-center gap-2">
                     <div className="flex items-center gap-0.5">
                         {cost.map(cost => (
-                            <TypeIcon type={getTypeFromString(cost)} />
+                            <TypeIcon type={cost} />
                         ))}
                     </div>
                     <span className="capitalize"><b>{name}</b></span>

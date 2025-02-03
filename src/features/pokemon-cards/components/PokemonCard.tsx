@@ -1,5 +1,5 @@
-import { cardBgClass } from '@/entities/pokemon/typeColorClasses.ts'
-import { getTypeFromString, TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
+import { cardBgClass } from '@/features/pokedex/config/typeColorClasses.ts'
+import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
 import { motion } from 'framer-motion'
 import PokemonAbility from './PokemonAbility.tsx'
@@ -15,7 +15,7 @@ interface PokemonCardProps {
 }
 
 function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
-    const type = pokemonCard?.types?.[0] as TypeEnum
+    const type = pokemonCard?.types?.[0] as PokemonCardTypeEnum
 
     const xOffset = index * 24
     const rotationOffset = 2
@@ -38,7 +38,7 @@ function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
                 translateY: '-48px',
                 transition: { duration: 0.2 }
             }}>
-            <div className={`flex flex-col h-full ${cardBgClass[getTypeFromString(type)]} border rounded-lg`}>
+            <div className={`flex flex-col h-full ${cardBgClass[type]} border rounded-lg`}>
 
                 <div>
                     <div className="flex justify-between px-2 py-0.5">

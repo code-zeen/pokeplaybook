@@ -7,9 +7,8 @@ export enum StatNameEnum {
     SPEED = 'speed',
 }
 
-export enum TypeEnum {
+export enum PokedexTypeEnum {
     BUG = 'bug',
-    COLORLESS = 'colorless',
     DARK = 'dark',
     DRAGON = 'dragon',
     ELECTRIC = 'electric',
@@ -27,17 +26,4 @@ export enum TypeEnum {
     ROCK = 'rock',
     STEEL = 'steel',
     WATER = 'water',
-}
-
-function isPokemonType(type: string): type is TypeEnum {
-    const normalizedInput = type.toLowerCase()
-    return Object.values(TypeEnum).includes(normalizedInput as TypeEnum)
-}
-
-export function getTypeFromString(type: string): TypeEnum {
-    const normalizedInput = type.toLowerCase()
-    if (isPokemonType(normalizedInput)) {
-        return normalizedInput as TypeEnum
-    }
-    throw new Error(`Invalid Pokemon type: ${type}`)
 }

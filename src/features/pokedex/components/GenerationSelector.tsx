@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks.ts'
-import { generations } from '@/entities/pokemon/config/generationQuery.ts'
+import { generations } from '@/features/pokedex/config/generationQuery.ts'
 import { setGenerationIndex } from '@/features/pokedex/pokedexSlice.ts'
 import GenerationButton from './GenerationButton.tsx'
 

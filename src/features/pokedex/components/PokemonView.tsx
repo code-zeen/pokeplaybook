@@ -1,10 +1,10 @@
 import { useAppSelector } from '@/app/store/hooks.ts'
-import TypeIcon from '@/entities/pokemon/TypeIcon.tsx'
 import ContainerWithSideBorder from '@/features/pokedex/components/ContainerWithSideBorder.tsx'
 import PokeballGrayBg from '@/features/pokedex/components/PokeballGrayBg.tsx'
 import PokemonCryButton from '@/features/pokedex/components/PokemonCryButton.tsx'
 import PokemonName from '@/features/pokedex/components/PokemonName.tsx'
 import { useGetPokedexEntryByNameOrIdQuery } from '@/features/pokedex/pokeapi.ts'
+import TypeIcon from '@/shared/components/TypeIcon.tsx'
 
 function PokemonView() {
     const { searchKeyword } = useAppSelector(state => state.pokedex)
@@ -26,7 +26,7 @@ function PokemonView() {
                 </div>
                 <div className="flex flex-col w-3/12 items-end gap-1">
                     {pokemon.types?.map((type, index) => (
-                        <TypeIcon key={index} type={type.type.name} variant="sv" />
+                        <TypeIcon key={index} type={type.type.name} />
                     ))}
                 </div>
             </div>

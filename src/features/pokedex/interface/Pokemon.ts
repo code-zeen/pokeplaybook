@@ -1,6 +1,6 @@
-import { StatNameEnum, TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
+import { PokedexTypeEnum, StatNameEnum } from '@/features/pokedex/interface/enums.ts'
 
-export interface PokemonType {
+export interface Pokemon {
     name: string
     id: number
     abilities: {
@@ -41,7 +41,7 @@ export interface PokemonType {
 }
 
 export interface TypeType {
-    name: TypeEnum
+    name: PokedexTypeEnum
     url: string
 }
 

@@ -1,6 +1,6 @@
-import { PokemonType } from '@/entities/pokemon/types/pokemonType.ts'
 import Pokedex from '@/features/pokedex/components/Pokedex.tsx'
 import Search from '@/features/pokedex/components/Search.tsx'
+import { Pokemon } from '@/features/pokedex/interface/Pokemon.ts'
 
 export interface ExtendedPokedexItem {
     name: string
@@ -9,7 +9,7 @@ export interface ExtendedPokedexItem {
     owned: number
 }
 
-export interface ExtendedPokedexEntry extends PokemonType {
+export interface ExtendedPokedexEntry extends Pokemon {
     seen: number
     owned: number
 }

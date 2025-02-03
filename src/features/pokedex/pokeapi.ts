@@ -1,4 +1,4 @@
-import { generations } from '@/entities/pokemon/config/generationQuery.ts'
+import { generations } from '@/features/pokedex/config/generationQuery.ts'
 import { ExtendedPokedexEntry, ExtendedPokedexItem } from '@/pages/pokemon/PokedexPage.tsx'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
