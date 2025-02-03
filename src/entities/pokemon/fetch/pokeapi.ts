@@ -13,9 +13,3 @@ export const fetchPokemonCard = async (nameOrId: string | number) => {
 
     return { baseData: dataPokemon, ability: dataAbility, move: dataMove }
 }
-
-/***** Pokedex *****/
-export const fetchPokemon = async (nameOrId: string | number) => {
-    const res = await fetch(`${baseUrl}/pokemon/${nameOrId}`)
-    return await res.json()
-}

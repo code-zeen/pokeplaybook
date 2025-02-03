@@ -1,12 +1,18 @@
+import { useAppSelector } from '@/app/store/hooks.ts'
 import TypeIcon from '@/entities/pokemon/TypeIcon.tsx'
 import ContainerWithSideBorder from '@/features/pokedex/components/ContainerWithSideBorder.tsx'
 import PokeballGrayBg from '@/features/pokedex/components/PokeballGrayBg.tsx'
 import PokemonCryButton from '@/features/pokedex/components/PokemonCryButton.tsx'
 import PokemonName from '@/features/pokedex/components/PokemonName.tsx'
-import { useAppSelector } from "@/app/store/hooks.ts";
+import { useGetPokedexEntryByNameOrIdQuery } from '@/features/pokedex/pokeapi.ts'
 
 function PokemonView() {
-    const { pokedexEntry: pokemon } = useAppSelector(state => state.pokedex)
+    const { searchKeyword } = useAppSelector(state => state.pokedex)
+    const { data: pokemon, error, isLoading } = useGetPokedexEntryByNameOrIdQuery(searchKeyword)
+
+    if (isLoading) return <div>Loading...</div>
+    if (error) return <div>Error occurred</div>
+    if (!pokemon) return <div>No Pokémon found</div>
 
     return (
         <div className="flex flex-col justify-between">
@@ -19,7 +25,7 @@ function PokemonView() {
                     <PokeballGrayBg id={pokemon?.id || 0} name={pokemon?.name || ''} />
                 </div>
                 <div className="flex flex-col w-3/12 items-end gap-1">
-                    {pokemon?.types.map((type, index) => (
+                    {pokemon?.types?.map((type, index) => (
                         <TypeIcon key={index} type={type.type.name} variant="sv" />
                     ))}
                 </div>
