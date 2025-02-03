@@ -1,15 +1,15 @@
 import { PokemonType } from '@/entities/pokemon/types/pokemonType.ts'
 import Pokedex from '@/features/pokedex/components/Pokedex.tsx'
-import Search from "@/features/pokedex/components/Search.tsx";
+import Search from '@/features/pokedex/components/Search.tsx'
 
-export interface PokedexInfo {
+export interface ExtendedPokedexItem {
     name: string
     url: string
     seen: number
     owned: number
 }
 
-export interface ExtendedPokemonType extends PokemonType {
+export interface ExtendedPokedexEntry extends PokemonType {
     seen: number
     owned: number
 }

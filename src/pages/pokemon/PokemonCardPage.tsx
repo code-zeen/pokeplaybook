@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks.ts'
 import PokemonCard from '@/features/pokemon-cards/components/PokemonCard.tsx'
 import { fetchPokemonCardByNameOrId } from '@/features/pokemon-cards/pokemonCardsSlice.ts'
-import { PokemonCardType } from '@/features/pokemon-cards/types/pokemonCardType.ts'
+import { ExtendedPokemonCard } from '@/features/pokemon-cards/types/extendedPokemonCard.ts'
 import { Button } from '@/shared/ui/button.tsx'
 import { LoaderCircle } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -39,7 +39,7 @@ function PokemonCardPage() {
             </Button>
             <div className="flex w-full">
                 <div className="relative flex justify-center items-center border-red-500 h-[600px] w-full">
-                    {pokemonCards.map((pokemon: PokemonCardType, index: number) => (
+                    {pokemonCards.map((pokemon: ExtendedPokemonCard, index: number) => (
                         <PokemonCard key={index} pokemon={pokemon} index={index} />
                     ))}
                 </div>

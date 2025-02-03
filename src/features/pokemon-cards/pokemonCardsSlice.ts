@@ -1,12 +1,12 @@
-import { PokemonCardType } from '@/features/pokemon-cards/types/pokemonCardType.ts'
+import { fetchPokemonCard } from '@/entities/pokemon/fetch/pokeapi.ts'
+import { ExtendedPokemonCard } from '@/features/pokemon-cards/types/extendedPokemonCard.ts'
 import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { fetchPokemonCard } from "@/entities/pokemon/fetch/pokeapi.ts";
 
 interface PokemonCardSliceType {
     isLoading: boolean
     error: string | null
 
-    pokemonCards: PokemonCardType[]
+    pokemonCards: ExtendedPokemonCard[]
 }
 
 const initialState: PokemonCardSliceType = {

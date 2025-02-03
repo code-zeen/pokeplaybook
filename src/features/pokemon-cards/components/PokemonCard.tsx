@@ -1,6 +1,7 @@
 import { cardBgClass } from '@/entities/pokemon/typeColorClasses.ts'
 import { StatNameEnum, TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
 import { FlavorTextEntryType, StatType } from '@/entities/pokemon/types/pokemonType.ts'
+import { ExtendedPokemonCard } from '@/features/pokemon-cards/types/extendedPokemonCard.ts'
 import { motion } from 'framer-motion'
 import PokemonAbility from './PokemonAbility.tsx'
 import PokemonHp from './PokemonHp.tsx'
@@ -8,10 +9,9 @@ import PokemonImage from './PokemonImage.tsx'
 import PokemonMove from './PokemonMove.tsx'
 import PokemonName from './PokemonName.tsx'
 import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx'
-import { PokemonCardType } from "@/features/pokemon-cards/types/pokemonCardType.ts";
 
 interface PokemonCardProps {
-    pokemon: PokemonCardType
+    pokemon: ExtendedPokemonCard
     index?: number
 }
 

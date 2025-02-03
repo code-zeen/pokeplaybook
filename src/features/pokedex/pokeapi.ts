@@ -1,5 +1,5 @@
 import { generations } from '@/entities/pokemon/fetch/generationQuery.ts'
-import { ExtendedPokemonType, PokedexInfo } from '@/pages/pokemon/PokedexPage.tsx'
+import { ExtendedPokedexEntry, ExtendedPokedexItem } from '@/pages/pokemon/PokedexPage.tsx'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const pokeapi = createApi({
@@ -16,9 +16,9 @@ export const pokeapi = createApi({
                 }))
             },
         }),
-        getPokedexEntryByNameOrId: builder.query<ExtendedPokemonType, string | number>({
+        getPokedexEntryByNameOrId: builder.query<ExtendedPokedexEntry, string | number>({
             query: (nameOrId: string | number) => `/pokemon/${nameOrId}`,
-            transformResponse: (response: ExtendedPokemonType) => {
+            transformResponse: (response: ExtendedPokedexEntry) => {
                 return { ...response, seen: 5, owned: 2, }
             }
         })
