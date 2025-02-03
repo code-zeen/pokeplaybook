@@ -27,4 +27,5 @@ export const {
     setSearchKeyword,
     setGenerationIndex
 } = pokedexSlice.actions
+
 export default pokedexSlice.reducer

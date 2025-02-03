@@ -1,33 +1,21 @@
 import { cardBgClass } from '@/entities/pokemon/typeColorClasses.ts'
-import { StatNameEnum, TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
-import { FlavorTextEntryType, StatType } from '@/entities/pokemon/types/pokemonType.ts'
-import { ExtendedPokemonCard } from '@/features/pokemon-cards/interface/extendedPokemonCard.ts'
+import { getTypeFromString, TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
+import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
 import { motion } from 'framer-motion'
 import PokemonAbility from './PokemonAbility.tsx'
+import PokemonAttack from './PokemonAttack.tsx'
 import PokemonHp from './PokemonHp.tsx'
 import PokemonImage from './PokemonImage.tsx'
-import PokemonMove from './PokemonMove.tsx'
 import PokemonName from './PokemonName.tsx'
 import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx'
 
 interface PokemonCardProps {
-    pokemon: ExtendedPokemonCard
+    pokemonCard: IPokemonCard
     index?: number
 }
 
-function PokemonCard({ pokemon, index = 0 }: PokemonCardProps) {
-    const { baseData, ability, move } = pokemon
-    const findStat = (stats: StatType[], name: StatNameEnum): StatType => {
-        return stats.find(each => each.stat.name === name)!
-    }
-
-    const findEnglishFlavorText = (flavorTextEntries: FlavorTextEntryType[]) => {
-        return flavorTextEntries.find(each => each.language.name === 'en')!
-    }
-
-    if (!pokemon || !ability || !move) return null
-
-    const type = baseData.types[0].type.name as TypeEnum
+function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
+    const type = pokemonCard?.types?.[0] as TypeEnum
 
     const xOffset = index * 24
     const rotationOffset = 2
@@ -50,23 +38,32 @@ function PokemonCard({ pokemon, index = 0 }: PokemonCardProps) {
                 translateY: '-48px',
                 transition: { duration: 0.2 }
             }}>
-            <div className={`flex flex-col h-full ${cardBgClass[type]} border rounded-lg`}>
+            <div className={`flex flex-col h-full ${cardBgClass[getTypeFromString(type)]} border rounded-lg`}>
 
                 <div>
                     <div className="flex justify-between px-2 py-0.5">
-                        <PokemonName name={baseData.name} />
-                        <PokemonHp hp={findStat(baseData.stats, StatNameEnum.HP).base_stat}
-                                   type={baseData.types[0].type.name} />
+                        <PokemonName name={pokemonCard.name} />
+                        <PokemonHp hp={pokemonCard.hp}
+                                   type={type} />
                     </div>
-                    <PokemonImage id={baseData.id} name={baseData.name} type={type} />
-                    <PokemonPhysicalInfo number={baseData.id} height={baseData.height} weight={baseData.weight} />
+                    <PokemonImage number={pokemonCard.number} name={pokemonCard.name} type={type} />
+                    <PokemonPhysicalInfo number={pokemonCard.number} />
                 </div>
 
                 <div className="flex flex-col flex-grow justify-around p-4 gap-4">
-                    <PokemonAbility name={ability.name}
-                                    flavorText={findEnglishFlavorText(ability.flavor_text_entries).flavor_text} />
-                    <PokemonMove name={move.name} power={move.power} type={move.type.name}
-                                 flavorText={findEnglishFlavorText(move.flavor_text_entries).flavor_text} />
+                    {pokemonCard.abilities?.map(ability => (
+                        <PokemonAbility
+                            name={ability.name}
+                            text={ability.text} />
+                    ))}
+                    {pokemonCard.attacks?.map(attack => (
+                        <PokemonAttack
+                            name={attack.name}
+                            damage={attack.damage}
+                            cost={attack.cost}
+                            text={attack.text} />
+                    ))}
+
                 </div>
 
                 <div>
@@ -77,7 +74,7 @@ function PokemonCard({ pokemon, index = 0 }: PokemonCardProps) {
                     <div className="flex gap-0.5 p-1">
                         <div className="flex border rounded bg-white text-xs px-0.5">G</div>
                         <div className="flex border rounded bg-black text-xs text-white px-0.5">sv2a</div>
-                        <div className="flex text-white text-xs">{baseData.id}/1125 AR</div>
+                        <div className="flex text-white text-xs">{pokemonCard.number}/1125 AR</div>
                     </div>
                 </div>
             </div>

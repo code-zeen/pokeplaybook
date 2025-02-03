@@ -17,7 +17,7 @@ export interface PokemonCard {
     evolvesFrom?: string
     evolvesTo?: string[]
     flavorText?: string
-    hp?: string
+    hp: string
     id: string
     images: Images
     legalities: Legalities

@@ -2,6 +2,7 @@ import { TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
 
 export const cardBgClass = {
     [TypeEnum.BUG]: 'bg-lime-400',
+    [TypeEnum.COLORLESS]: 'bg-gray-200', // TODO temporarily using the same color as NORMAL
     [TypeEnum.DARK]: 'bg-slate-500',
     [TypeEnum.DRAGON]: 'bg-blue-400',
     [TypeEnum.ELECTRIC]: 'bg-yellow-200',
@@ -23,6 +24,7 @@ export const cardBgClass = {
 
 export const spriteBgClass = {
     [TypeEnum.BUG]: 'bg-lime-500',
+    [TypeEnum.COLORLESS]: 'bg-gray-300', // TODO temporarily using the same color as NORMAL
     [TypeEnum.DARK]: 'bg-slate-700',
     [TypeEnum.DRAGON]: 'bg-blue-600',
     [TypeEnum.ELECTRIC]: 'bg-yellow-400',

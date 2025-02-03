@@ -1,5 +1,6 @@
 import { TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
 import swShBug from '../../assets/Bug_icon_SwSh.png'
+import swShColorless from '../../assets/Colorless_icon_SwSh.png'
 import swShDark from '../../assets/Dark_icon_SwSh.png'
 import swShDragon from '../../assets/Dragon_icon_SwSh.png'
 import swShElectric from '../../assets/Electric_icon_SwSh.png'
@@ -39,6 +40,7 @@ import swShWater from '../../assets/Water_icon_SwSh.png'
 const iconSets = {
     swSh: {
         [TypeEnum.BUG]: swShBug,
+        [TypeEnum.COLORLESS]: swShColorless,
         [TypeEnum.DARK]: swShDark,
         [TypeEnum.DRAGON]: swShDragon,
         [TypeEnum.ELECTRIC]: swShElectric,
@@ -59,6 +61,7 @@ const iconSets = {
     },
     sv: {
         [TypeEnum.BUG]: svBug,
+        [TypeEnum.COLORLESS]: svNormal, // TODO see if colorless is necessary
         [TypeEnum.DARK]: svDark,
         [TypeEnum.DRAGON]: svDragon,
         [TypeEnum.ELECTRIC]: svElectric,

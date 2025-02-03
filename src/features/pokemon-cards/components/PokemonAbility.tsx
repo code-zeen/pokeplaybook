@@ -1,9 +1,9 @@
 interface PokemonAbilityProps {
     name: string
-    flavorText: string
+    text: string
 }
 
-function PokemonAbility({ name, flavorText }: PokemonAbilityProps) {
+function PokemonAbility({ name, text }: PokemonAbilityProps) {
     return (
         <div className="flex flex-col">
             <div className="flex gap-1">
@@ -16,7 +16,7 @@ function PokemonAbility({ name, flavorText }: PokemonAbilityProps) {
                 </div>
                 <span className="capitalize text-rose-500"><b>{name}</b></span>
             </div>
-            <p className="text-xs overflow-hidden text-ellipsis line-clamp-2">{flavorText}</p>
+            <p className="text-xs overflow-hidden text-ellipsis line-clamp-2">{text}</p>
         </div>
     )
 }
