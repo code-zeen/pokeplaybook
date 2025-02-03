@@ -2,19 +2,24 @@ import { useAppDispatch, useAppSelector } from '@/app/store/hooks.ts'
 import PokemonCard from '@/features/pokemon-cards/components/PokemonCard.tsx'
 import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
 import { addPokemonCard } from '@/features/pokemon-cards/pokemonCardsSlice.ts'
-import { useGetPokemonCardByIdQuery } from '@/features/pokemon-cards/pokemontcgapi.ts'
+import { useGetPokemonCardByPokedexNumberQuery } from '@/features/pokemon-cards/pokemontcgapi.ts'
 import { Button } from '@/shared/ui/button.tsx'
 import { LoaderCircle } from 'lucide-react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function PokemonCardPage() {
+    const [ randomId, setRandomId ] = useState<number | null>(null)
     const { pokemonCards } = useAppSelector(state => state.pokemonCards)
     const dispatch = useAppDispatch()
 
-    const { data: pokemonCard, isLoading } = useGetPokemonCardByIdQuery('test')
+    // const { data: pokemonCard, isLoading } = useGetPokemonCardByIdQuery('test')
+    const { data: pokemonCard, isLoading } = useGetPokemonCardByPokedexNumberQuery(randomId, { skip: !randomId })
 
+    const getRandomPokemonId = () => {
+        return Math.floor(Math.random() * 1025) + 1
+    }
     const handleClick = () => {
-        return null
+        setRandomId(getRandomPokemonId())
     }
 
     useEffect(() => {
@@ -38,7 +43,7 @@ function PokemonCardPage() {
             <div className="flex w-full">
                 <div className="relative flex justify-center items-center border-red-500 h-[600px] w-full">
                     {pokemonCards.map((pokemonCard: IPokemonCard, index: number) => (
-                        <PokemonCard key={index} pokemonCard={pokemonCard} index={index} />
+                        <PokemonCard key={index} pokemonCard={pokemonCard} index={index} pokedexNumber={randomId!} />
                     ))}
                 </div>
             </div>

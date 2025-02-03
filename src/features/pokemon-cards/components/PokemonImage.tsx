@@ -1,11 +1,11 @@
 import { spriteBgClass } from '@/features/pokedex/config/typeColorClasses.ts'
 import useSprite, { SpriteEnum } from '@/features/pokedex/hooks/useSprite.ts'
-import { PokedexTypeEnum } from '@/features/pokedex/interface/enums.ts'
+import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 
 interface PokemonImageProps {
-    number: string
+    number: number
     name: string
-    type: PokedexTypeEnum
+    type: PokemonCardTypeEnum
 }
 
 function PokemonImage({ number, name, type }: PokemonImageProps) {

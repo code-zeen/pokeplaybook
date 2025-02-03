@@ -18,8 +18,14 @@ export const pokemontcgapi = createApi({
             transformResponse: (response: { data: PokemonCard }) => {
                 return response.data
             }
+        }),
+        getPokemonCardByPokedexNumber: builder.query<PokemonCard, number | null>({
+            query: (pokedexNumber: number) => `/cards?q=nationalPokedexNumbers:${pokedexNumber}`,
+            transformResponse: (response: { data: PokemonCard[] }) => {
+                return response.data[0]
+            }
         })
     }),
 })
 
-export const { useGetPokemonCardByIdQuery } = pokemontcgapi
+export const { useGetPokemonCardByIdQuery, useGetPokemonCardByPokedexNumberQuery } = pokemontcgapi
