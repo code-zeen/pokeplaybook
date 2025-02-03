@@ -26,7 +26,7 @@ function PokemonView() {
                 </div>
                 <div className="flex flex-col w-3/12 items-end gap-1">
                     {pokemon.types?.map((type, index) => (
-                        <TypeIcon key={index} type={type.type.name} />
+                        <TypeIcon key={index} type={type.type.name} height="16px" />
                     ))}
                 </div>
             </div>

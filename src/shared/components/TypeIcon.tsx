@@ -1,15 +1,15 @@
 import { PokedexTypeEnum } from '@/features/pokedex/interface/enums.ts'
 import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
-import swShColorless from '../../assets/Colorless_icon_SwSh.png'
-import swShDark from '../../assets/Dark_icon_SwSh.png'
-import swShDragon from '../../assets/Dragon_icon_SwSh.png'
-import swShElectric from '../../assets/Electric_icon_SwSh.png'
-import swShFairy from '../../assets/Fairy_icon_SwSh.png'
-import swShFighting from '../../assets/Fighting_icon_SwSh.png'
-import swShFire from '../../assets/Fire_icon_SwSh.png'
-import swShGrass from '../../assets/Grass_icon_SwSh.png'
-import swShPsychic from '../../assets/Psychic_icon_SwSh.png'
-import swShSteel from '../../assets/Steel_icon_SwSh.png'
+import colorlessEnergy from '../../assets/Colorless_energy.png'
+import darkEnergy from '../../assets/Dark_energy.png'
+import electricEnergy from '../../assets/Electric_energy.png'
+import fairyEnergy from '../../assets/Fairy_energy.png'
+import fightingEnergy from '../../assets/Fighting_energy.png'
+import fireEnergy from '../../assets/Fire_energy.png'
+import grassEnergy from '../../assets/Grass_energy.png'
+import psychicEnergy from '../../assets/Psychic_energy.png'
+import steelEnergy from '../../assets/Steel_energy.png'
+
 import svBug from '../../assets/sv-bug.png'
 import svDark from '../../assets/sv-dark.png'
 import svDragon from '../../assets/sv-dragon.png'
@@ -28,20 +28,20 @@ import svPsychic from '../../assets/sv-psychic.png'
 import svRock from '../../assets/sv-rock.png'
 import svSteel from '../../assets/sv-steel.png'
 import svWater from '../../assets/sv-water.png'
-import swShWater from '../../assets/Water_icon_SwSh.png'
+import waterEnergy from '../../assets/Water_energy.png'
 
 const iconSets = {
-    [PokemonCardTypeEnum.COLORLESS]: swShColorless,
-    [PokemonCardTypeEnum.DARK]: swShDark,
-    [PokemonCardTypeEnum.DRAGON]: swShDragon,
-    [PokemonCardTypeEnum.ELECTRIC]: swShElectric,
-    [PokemonCardTypeEnum.FAIRY]: swShFairy,
-    [PokemonCardTypeEnum.FIGHTING]: swShFighting,
-    [PokemonCardTypeEnum.FIRE]: swShFire,
-    [PokemonCardTypeEnum.GRASS]: swShGrass,
-    [PokemonCardTypeEnum.PSYCHIC]: swShPsychic,
-    [PokemonCardTypeEnum.STEEL]: swShSteel,
-    [PokemonCardTypeEnum.WATER]: swShWater,
+    [PokemonCardTypeEnum.COLORLESS]: colorlessEnergy,
+    [PokemonCardTypeEnum.DARK]: darkEnergy,
+    [PokemonCardTypeEnum.ELECTRIC]: electricEnergy,
+    [PokemonCardTypeEnum.FAIRY]: fairyEnergy,
+    [PokemonCardTypeEnum.FIGHTING]: fightingEnergy,
+    [PokemonCardTypeEnum.FIRE]: fireEnergy,
+    [PokemonCardTypeEnum.GRASS]: grassEnergy,
+    [PokemonCardTypeEnum.PSYCHIC]: psychicEnergy,
+    [PokemonCardTypeEnum.STEEL]: steelEnergy,
+    [PokemonCardTypeEnum.WATER]: waterEnergy,
+
     [PokedexTypeEnum.BUG]: svBug,
     [PokedexTypeEnum.DARK]: svDark,
     [PokedexTypeEnum.DRAGON]: svDragon,
@@ -70,7 +70,7 @@ interface TypeIconProps {
 
 function TypeIcon({
                       type,
-                      height = '16px',
+                      height = '12px',
                       className = ''
                   }: TypeIconProps) {
     if (!type) return null
