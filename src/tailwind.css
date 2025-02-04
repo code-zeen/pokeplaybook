@@ -716,6 +716,10 @@ body {
   right: 1rem;
 }
 
+.right-\[-12px\] {
+  right: -12px;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -734,6 +738,18 @@ body {
 
 .top-4 {
   top: 1rem;
+}
+
+.right-\[-10px\] {
+  right: -10px;
+}
+
+.right-\[-8px\] {
+  right: -8px;
+}
+
+.right-\[-9px\] {
+  right: -9px;
 }
 
 .z-10 {
@@ -889,8 +905,8 @@ body {
   height: 1px;
 }
 
-.h-\[420px\] {
-  height: 420px;
+.h-\[428px\] {
+  height: 428px;
 }
 
 .h-\[600px\] {
@@ -923,10 +939,6 @@ body {
 
 .min-h-svh {
   min-height: 100svh;
-}
-
-.w-1\/4 {
-  width: 25%;
 }
 
 .w-10 {
@@ -985,10 +997,6 @@ body {
   width: 1.75rem;
 }
 
-.w-72 {
-  width: 18rem;
-}
-
 .w-8 {
   width: 2rem;
 }
@@ -999,6 +1007,10 @@ body {
 
 .w-\[1px\] {
   width: 1px;
+}
+
+.w-\[308px\] {
+  width: 308px;
 }
 
 .w-auto {
@@ -1119,6 +1131,22 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.grid-cols-\[2fr\2c 6fr\2c 2fr\] {
+  grid-template-columns: 2fr 6fr 2fr;
+}
+
+.grid-cols-\[3fr\2c 5fr\2c 2fr\] {
+  grid-template-columns: 3fr 5fr 2fr;
+}
+
+.grid-cols-\[3fr\2c 6fr\2c 1fr\] {
+  grid-template-columns: 3fr 6fr 1fr;
+}
+
+.grid-cols-\[2\.5fr\2c 5\.5fr\2c 1fr\] {
+  grid-template-columns: 2.5fr 5.5fr 1fr;
 }
 
 .flex-col {
@@ -1391,16 +1419,6 @@ body {
   border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.bg-amber-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
-.bg-amber-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
-}
-
 .bg-background {
   background-color: hsl(var(--background));
 }
@@ -1419,19 +1437,9 @@ body {
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
 
-.bg-blue-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .bg-border {
@@ -1477,26 +1485,6 @@ body {
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 
-.bg-indigo-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(67 56 202 / var(--tw-bg-opacity));
-}
-
-.bg-indigo-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(49 46 129 / var(--tw-bg-opacity));
-}
-
-.bg-lime-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 230 53 / var(--tw-bg-opacity));
-}
-
-.bg-lime-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 204 22 / var(--tw-bg-opacity));
-}
-
 .bg-muted {
   background-color: hsl(var(--muted));
 }
@@ -1527,16 +1515,6 @@ body {
 
 .bg-primary {
   background-color: hsl(var(--primary));
-}
-
-.bg-purple-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
-}
-
-.bg-purple-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 51 234 / var(--tw-bg-opacity));
 }
 
 .bg-red-400 {
@@ -1581,21 +1559,6 @@ body {
   background-color: hsl(var(--sidebar-border));
 }
 
-.bg-sky-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
-}
-
-.bg-sky-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(125 211 252 / var(--tw-bg-opacity));
-}
-
-.bg-sky-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
-}
-
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
@@ -1619,16 +1582,6 @@ body {
 .bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-}
-
-.bg-stone-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 162 158 / var(--tw-bg-opacity));
-}
-
-.bg-stone-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(120 113 108 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -1664,6 +1617,10 @@ body {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-2\.5 {
+  padding: 0.625rem;
 }
 
 .p-4 {
@@ -1814,6 +1771,26 @@ body {
   line-height: 1rem;
 }
 
+.text-\[8px\] {
+  font-size: 8px;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
+}
+
+.text-\[10px\] {
+  font-size: 10px;
+}
+
+.text-\[9px\] {
+  font-size: 9px;
+}
+
+.text-\[11px\] {
+  font-size: 11px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1837,6 +1814,10 @@ body {
 .tabular-nums {
   --tw-numeric-spacing: tabular-nums;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .tracking-widest {

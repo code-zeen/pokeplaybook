@@ -11,18 +11,23 @@ interface PokemonMoveProps {
 function PokemonAttack({ name, damage, cost, text }: PokemonMoveProps) {
     return (
         <div className="flex flex-col">
-            <div className="flex justify-between">
-                <div className="flex items-center gap-2">
+            <div className="flex w-full">
+                <div className="grid grid-cols-[2.5fr,5.5fr,1fr] w-full">
                     <div className="flex items-center gap-0.5">
-                        {cost.map(cost => (
-                            <TypeIcon type={cost} />
+                        {cost.map((type, index) => (
+                            <TypeIcon key={index} type={type} />
                         ))}
                     </div>
                     <span className="capitalize"><b>{name}</b></span>
+                    <span className="flex relative text-right">
+                        <b className="text-right w-full">{damage.replace(/[^\d]/g, '')}</b>
+                        {/[^\d]$/.test(damage) && (
+                            <span className="absolute right-[-9px] top-0 text-xs">{damage.slice(-1)}</span>
+                        )}
+                    </span>
                 </div>
-                <span><b>{damage}</b></span>
             </div>
-            <p className="text-xs">{text}</p>
+            <p className="text-[11px] leading-tight">{text}</p>
         </div>
     )
 }

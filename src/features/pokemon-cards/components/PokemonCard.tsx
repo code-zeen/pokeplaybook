@@ -23,7 +23,7 @@ function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps
 
     return (
         <motion.div
-            className="absolute flex flex-col overflow-auto p-2 bg-gray-300 w-72 h-[420px] border rounded cursor-pointer"
+            className="absolute flex flex-col overflow-auto p-2.5 bg-gray-300 w-[308px] h-[428px] border rounded-xl cursor-pointer"
             style={{
                 left: `${xOffset}px`,
                 zIndex: index,
@@ -42,7 +42,7 @@ function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps
             <div className={`flex flex-col h-full ${cardBgClass[type]} border rounded-lg`}>
 
                 <div>
-                    <div className="flex justify-between px-2 py-0.5">
+                    <div className="flex justify-between px-1 py-0.5">
                         <PokemonName name={pokemonCard.name} />
                         <PokemonHp hp={pokemonCard.hp}
                                    type={type} />
@@ -51,7 +51,7 @@ function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps
                     <PokemonPhysicalInfo number={pokemonCard.number} />
                 </div>
 
-                <div className="flex flex-col flex-grow justify-around p-4 gap-4">
+                <div className="flex flex-col flex-grow justify-around p-2 gap-4">
                     {pokemonCard.abilities?.map(ability => (
                         <PokemonAbility
                             name={ability.name}
