@@ -52,11 +52,11 @@ function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps
                 </div>
 
                 <div className="flex flex-col flex-grow justify-around p-2 gap-4">
-                    {pokemonCard.abilities?.map(ability => (
+                    {pokemonCard.abilities &&
                         <PokemonAbility
-                            name={ability.name}
-                            text={ability.text} />
-                    ))}
+                            name={pokemonCard.abilities?.[0].name}
+                            text={pokemonCard.abilities?.[0].text} />
+                    }
                     {pokemonCard.attacks?.map(attack => (
                         <PokemonAttack
                             name={attack.name}
