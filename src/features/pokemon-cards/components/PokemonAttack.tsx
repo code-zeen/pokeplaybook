@@ -11,8 +11,8 @@ interface PokemonMoveProps {
 function PokemonAttack({ name, damage, cost, text }: PokemonMoveProps) {
     return (
         <div className="flex flex-col">
-            <div className="flex w-full">
-                <div className="grid grid-cols-[2.5fr,5.5fr,1fr] w-full">
+            <div className="flex-col w-full">
+                <div className="grid grid-cols-[2.5fr,5.5fr,1fr]">
                     <div className="flex items-center gap-0.5">
                         {cost.map((type, index) => (
                             <TypeIcon key={index} type={type} />

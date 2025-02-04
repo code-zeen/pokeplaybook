@@ -716,8 +716,8 @@ body {
   right: 1rem;
 }
 
-.right-\[-12px\] {
-  right: -12px;
+.right-\[-9px\] {
+  right: -9px;
 }
 
 .top-0 {
@@ -738,18 +738,6 @@ body {
 
 .top-4 {
   top: 1rem;
-}
-
-.right-\[-10px\] {
-  right: -10px;
-}
-
-.right-\[-8px\] {
-  right: -8px;
-}
-
-.right-\[-9px\] {
-  right: -9px;
 }
 
 .z-10 {
@@ -803,6 +791,10 @@ body {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
 }
 
 .line-clamp-2 {
@@ -1133,20 +1125,12 @@ body {
           user-select: none;
 }
 
-.grid-cols-\[2fr\2c 6fr\2c 2fr\] {
-  grid-template-columns: 2fr 6fr 2fr;
-}
-
-.grid-cols-\[3fr\2c 5fr\2c 2fr\] {
-  grid-template-columns: 3fr 5fr 2fr;
-}
-
-.grid-cols-\[3fr\2c 6fr\2c 1fr\] {
-  grid-template-columns: 3fr 6fr 1fr;
-}
-
 .grid-cols-\[2\.5fr\2c 5\.5fr\2c 1fr\] {
   grid-template-columns: 2.5fr 5.5fr 1fr;
+}
+
+.grid-cols-\[2\.5fr\2c 6\.5fr\] {
+  grid-template-columns: 2.5fr 6.5fr;
 }
 
 .flex-col {
@@ -1635,6 +1619,10 @@ body {
   padding: 2rem;
 }
 
+.p-\[1px\] {
+  padding: 1px;
+}
+
 .px-0\.5 {
   padding-left: 0.125rem;
   padding-right: 0.125rem;
@@ -1702,16 +1690,16 @@ body {
   padding-left: 0.25rem;
 }
 
-.pl-3 {
-  padding-left: 0.75rem;
-}
-
 .pl-8 {
   padding-left: 2rem;
 }
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pr-2\.5 {
+  padding-right: 0.625rem;
 }
 
 .pr-3 {
@@ -1724,6 +1712,10 @@ body {
 
 .pr-8 {
   padding-right: 2rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .pt-8 {
@@ -1744,6 +1736,14 @@ body {
 
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.text-\[10px\] {
+  font-size: 10px;
+}
+
+.text-\[11px\] {
+  font-size: 11px;
 }
 
 .text-base {
@@ -1771,26 +1771,6 @@ body {
   line-height: 1rem;
 }
 
-.text-\[8px\] {
-  font-size: 8px;
-}
-
-.text-\[12px\] {
-  font-size: 12px;
-}
-
-.text-\[10px\] {
-  font-size: 10px;
-}
-
-.text-\[9px\] {
-  font-size: 9px;
-}
-
-.text-\[11px\] {
-  font-size: 11px;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1814,6 +1794,10 @@ body {
 .tabular-nums {
   --tw-numeric-spacing: tabular-nums;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .leading-tight {
@@ -1852,9 +1836,9 @@ body {
   color: hsl(var(--primary-foreground));
 }
 
-.text-rose-500 {
+.text-rose-800 {
   --tw-text-opacity: 1;
-  color: rgb(244 63 94 / var(--tw-text-opacity));
+  color: rgb(159 18 57 / var(--tw-text-opacity));
 }
 
 .text-secondary-foreground {
