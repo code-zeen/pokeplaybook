@@ -17,7 +17,7 @@ export const pokeapi = createApi({
             },
         }),
         getPokedexEntryByNameOrId: builder.query<ExtendedPokedexEntry, string | number>({
-            query: (nameOrId: string | number) => `/pokemon/${nameOrId}`,
+            query: (nameOrId: string | number | undefined) => `/pokemon/${nameOrId}`,
             transformResponse: (response: ExtendedPokedexEntry) => {
                 return { ...response, seen: 5, owned: 2, }
             }

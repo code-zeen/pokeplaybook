@@ -41,12 +41,7 @@ function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps
             <div className={`flex flex-col h-full ${cardBgClass[type]} border rounded-lg`}>
 
                 <div>
-                    <PokemonNameHeader
-                        name={pokemonCard.name}
-                        hp={pokemonCard.hp}
-                        type={type}
-                        subtype={pokemonCard.subtypes[0]}
-                    />
+                    <PokemonNameHeader pokemonCard={pokemonCard} type={type} />
                     <PokemonImage number={pokedexNumber} name={pokemonCard.name} type={type} />
                     <PokemonPhysicalInfo number={pokemonCard.number} />
                 </div>
