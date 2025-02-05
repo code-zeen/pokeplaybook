@@ -70,7 +70,7 @@ interface TypeIconProps {
 
 function TypeIcon({
                       type,
-                      height = '12px',
+                      height = '16px',
                       className = ''
                   }: TypeIconProps) {
     if (!type) return null
@@ -79,7 +79,7 @@ function TypeIcon({
             src={iconSets[type]}
             alt={type}
             style={{ height: height }}
-            className={className}
+            className={`${className} rounded-full border border-gray-100`}
         />
     )
 }
