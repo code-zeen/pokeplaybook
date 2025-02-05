@@ -1,12 +1,11 @@
 import { cardBgClass } from '@/features/pokedex/config/typeColorClasses.ts'
+import PokemonNameHeader from '@/features/pokemon-cards/components/PokemonNameHeader.tsx'
 import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
 import { motion } from 'framer-motion'
 import PokemonAbility from './PokemonAbility.tsx'
 import PokemonAttack from './PokemonAttack.tsx'
-import PokemonHp from './PokemonHp.tsx'
 import PokemonImage from './PokemonImage.tsx'
-import PokemonName from './PokemonName.tsx'
 import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx'
 
 interface PokemonCardProps {
@@ -42,11 +41,12 @@ function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps
             <div className={`flex flex-col h-full ${cardBgClass[type]} border rounded-lg`}>
 
                 <div>
-                    <div className="flex justify-between px-1 py-0.5">
-                        <PokemonName name={pokemonCard.name} />
-                        <PokemonHp hp={pokemonCard.hp}
-                                   type={type} />
-                    </div>
+                    <PokemonNameHeader
+                        name={pokemonCard.name}
+                        hp={pokemonCard.hp}
+                        type={type}
+                        subtype={pokemonCard.subtypes[0]}
+                    />
                     <PokemonImage number={pokedexNumber} name={pokemonCard.name} type={type} />
                     <PokemonPhysicalInfo number={pokemonCard.number} />
                 </div>

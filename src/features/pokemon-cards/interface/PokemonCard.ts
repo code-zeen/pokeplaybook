@@ -30,7 +30,7 @@ export interface PokemonCard {
     retreatCost?: string[]
     rules?: string[]
     set: SetInfo
-    subtypes?: string[]
+    subtypes: string[]
     supertype: string
     tcgplayer?: TCGPlayer
     types?: string[]
