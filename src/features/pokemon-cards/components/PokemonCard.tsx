@@ -11,10 +11,9 @@ import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx'
 interface PokemonCardProps {
     pokemonCard: IPokemonCard
     index?: number
-    pokedexNumber: number
 }
 
-function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps) {
+function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
     const type = pokemonCard?.types?.[0] as PokemonCardTypeEnum
 
     const xOffset = index * 24
@@ -42,7 +41,7 @@ function PokemonCard({ pokemonCard, index = 0, pokedexNumber }: PokemonCardProps
 
                 <div>
                     <PokemonNameHeader pokemonCard={pokemonCard} type={type} />
-                    <PokemonImage number={pokedexNumber} name={pokemonCard.name} type={type} />
+                    <PokemonImage number={pokemonCard.nationalPokedexNumbers[0]} name={pokemonCard.name} type={type} />
                     <PokemonPhysicalInfo number={pokemonCard.number} />
                 </div>
 

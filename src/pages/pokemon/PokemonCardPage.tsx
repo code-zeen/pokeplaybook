@@ -43,7 +43,7 @@ function PokemonCardPage() {
             <div className="flex w-full">
                 <div className="relative flex justify-center items-center border-red-500 h-[600px] w-full">
                     {pokemonCards.map((pokemonCard: IPokemonCard, index: number) => (
-                        <PokemonCard key={index} pokemonCard={pokemonCard} index={index} pokedexNumber={randomId!} />
+                        <PokemonCard key={index} pokemonCard={pokemonCard} index={index} />
                     ))}
                 </div>
             </div>

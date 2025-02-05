@@ -22,7 +22,7 @@ export interface PokemonCard {
     images: Images
     legalities: Legalities
     name: string
-    nationalPokedexNumbers?: number[]
+    nationalPokedexNumbers: number[]
     number: string
     rarity?: string
     regulationMark?: string

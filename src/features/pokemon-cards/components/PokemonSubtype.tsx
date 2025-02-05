@@ -7,7 +7,9 @@ interface PokemonSubtypeProps {
 }
 
 export default function PokemonSubtype({ subtype, evolvesFrom }: PokemonSubtypeProps) {
-    const { data: pokemon, error, isLoading } = useGetPokedexEntryByNameOrIdQuery(evolvesFrom)
+    const { data: pokemon, error, isLoading } = useGetPokedexEntryByNameOrIdQuery(evolvesFrom ?? '', {
+        skip: !evolvesFrom,
+    })
 
     return (
         <div className="relative flex">
