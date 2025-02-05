@@ -21,7 +21,7 @@ function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
 
     return (
         <motion.div
-            className="absolute flex flex-col overflow-auto p-2.5 bg-gray-300 w-[308px] h-[428px] border rounded-xl cursor-pointer"
+            className="absolute flex flex-col overflow-auto p-2.5 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 w-[308px] h-[428px] border rounded-xl cursor-pointer"
             style={{
                 left: `${xOffset}px`,
                 zIndex: index,
