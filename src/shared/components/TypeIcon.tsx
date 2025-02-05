@@ -2,6 +2,7 @@ import { PokedexTypeEnum } from '@/features/pokedex/interface/enums.ts'
 import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 import colorlessEnergy from '../../assets/Colorless_energy.png'
 import darkEnergy from '../../assets/Dark_energy.png'
+import dragonEnergy from '../../assets/Dragon_energy.png'
 import electricEnergy from '../../assets/Electric_energy.png'
 import fairyEnergy from '../../assets/Fairy_energy.png'
 import fightingEnergy from '../../assets/Fighting_energy.png'
@@ -33,6 +34,7 @@ import waterEnergy from '../../assets/Water_energy.png'
 const iconSets = {
     [PokemonCardTypeEnum.COLORLESS]: colorlessEnergy,
     [PokemonCardTypeEnum.DARK]: darkEnergy,
+    [PokemonCardTypeEnum.DRAGON]: dragonEnergy,
     [PokemonCardTypeEnum.ELECTRIC]: electricEnergy,
     [PokemonCardTypeEnum.FAIRY]: fairyEnergy,
     [PokemonCardTypeEnum.FIGHTING]: fightingEnergy,

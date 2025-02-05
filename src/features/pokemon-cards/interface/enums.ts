@@ -1,6 +1,7 @@
 export enum PokemonCardTypeEnum {
     COLORLESS = 'Colorless',
     DARK = 'Darkness',
+    DRAGON = 'Dragon',
     ELECTRIC = 'Lightning',
     FAIRY = 'Fairy',
     FIGHTING = 'Fighting',
