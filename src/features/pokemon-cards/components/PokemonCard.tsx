@@ -2,6 +2,7 @@ import { cardBgClass } from '@/features/pokedex/config/typeColorClasses.ts'
 import PokemonNameHeader from '@/features/pokemon-cards/components/PokemonNameHeader.tsx'
 import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
+import TypeIcon from '@/shared/components/TypeIcon.tsx'
 import { motion } from 'framer-motion'
 import PokemonAbility from './PokemonAbility.tsx'
 import PokemonAttack from './PokemonAttack.tsx'
@@ -62,9 +63,32 @@ function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
                 </div>
 
                 <div>
-                    <div className="flex gap-0.5 m-1 px-1 justify-between text-xs border border-r-0 border-l-0">
-                        <span>weakness</span>
-                        <span>retreat</span>
+                    <div className="flex gap-0.5 m-1 text-xs">
+                        <div
+                            className="flex flex-grow pl-1 pr-2 items-center bg-gray-400 rounded-tl-xl rounded-bl-lg rounded-br-3xl border border-gray-500 shadow-[1px_1px_1px_rgba(0,0,0,0.25)">
+                            <div
+                                className="flex justify-center items-center gap-1 w-full bg-gradient-to-b from-gray-300 via-gray-50 to-gray-300 rounded-tl-3xl rounded-tr-md rounded-br-3xl rounded-bl-lg border border-gray-300">
+                                <span className="text-[10px]">weakness</span>
+                                {pokemonCard.weaknesses?.map(each => (
+                                    <div className="flex items-center">
+                                        <TypeIcon type={each.type} height="12px" />
+                                        <span className="font-bold">{each.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div
+                            className="flex flex-grow pl-1 pr-2 items-center bg-gray-400 rounded-tl-xl rounded-bl-lg rounded-br-3xl border border-gray-500 shadow-[1px_1px_1px_rgba(0,0,0,0.25)">
+                            <div
+                                className="flex justify-center items-center gap-1 w-full bg-gradient-to-b from-gray-300 via-gray-50 to-gray-300 rounded-tl-3xl rounded-tr-md rounded-br-3xl rounded-bl-lg border border-gray-300">
+                                <span className="text-[10px]">retreat</span>
+                                <div className="flex items-center">
+                                    {pokemonCard.retreatCost?.map(cost => (
+                                        <TypeIcon type={cost} height="12px" />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="flex gap-0.5 p-1">
                         <div className="flex border rounded bg-white text-xs px-0.5">G</div>

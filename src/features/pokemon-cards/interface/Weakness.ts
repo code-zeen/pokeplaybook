@@ -1,4 +1,6 @@
+import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
+
 export interface Weakness {
-    type: string
+    type: PokemonCardTypeEnum
     value: string
 }

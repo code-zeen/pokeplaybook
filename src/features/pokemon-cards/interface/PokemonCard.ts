@@ -1,6 +1,7 @@
 import { Ability } from '@/features/pokemon-cards/interface/Ability.ts'
 import { Attack } from '@/features/pokemon-cards/interface/Attack.ts'
 import { CardMarket } from '@/features/pokemon-cards/interface/CardMarket.ts'
+import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 import { Images } from '@/features/pokemon-cards/interface/Images.ts'
 import { Legalities } from '@/features/pokemon-cards/interface/Legalities.ts'
 import { Resistance } from '@/features/pokemon-cards/interface/Resistance.ts'
@@ -27,7 +28,7 @@ export interface PokemonCard {
     rarity?: string
     regulationMark?: string
     resistances?: Resistance[]
-    retreatCost?: string[]
+    retreatCost?: PokemonCardTypeEnum[]
     rules?: string[]
     set: SetInfo
     subtypes: string[]
