@@ -1,17 +1,19 @@
-import { TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
-import TypeIcon from '../../../entities/pokemon/TypeIcon.tsx'
+import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
+import TypeIcon from '@/shared/components/TypeIcon.tsx'
 
 interface PokemonHpProps {
-    hp: number
-    type: TypeEnum
+    hp: string
+    type: PokemonCardTypeEnum
 }
 
 function PokemonHp({ hp, type }: PokemonHpProps) {
     return (
         <div className="flex items-center gap-0.5">
-            <span className="text-xs">HP</span>
-            <span><b>{hp}</b></span>
-            <TypeIcon type={type} />
+            <span>
+                <span className="text-[8px] font-bold">HP</span>
+                <b>{hp}</b>
+            </span>
+            <TypeIcon type={type} height="22px" />
         </div>
     )
 }

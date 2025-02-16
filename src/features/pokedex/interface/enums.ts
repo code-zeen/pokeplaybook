@@ -7,7 +7,7 @@ export enum StatNameEnum {
     SPEED = 'speed',
 }
 
-export enum TypeEnum {
+export enum PokedexTypeEnum {
     BUG = 'bug',
     DARK = 'dark',
     DRAGON = 'dragon',

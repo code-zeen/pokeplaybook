@@ -15,35 +15,35 @@ const checkUrl = async (url: string): Promise<boolean> => {
     }
 }
 
-export const getSpriteUrl = async (type: SpriteEnum, id: number): Promise<string | undefined> => {
+export const getSpriteUrl = async (type: SpriteEnum, number: string | number): Promise<string | undefined> => {
     const baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
     const path: Record<SpriteEnum, string> = {
         [SpriteEnum.GEN_V_ANIMATED]: 'versions/generation-v/black-white/animated',
         [SpriteEnum.SHOWDOWN]: 'other/showdown',
     }
 
-    const gifUrl = `${baseUrl}/${path[type]}/${id}.gif`
+    const gifUrl = `${baseUrl}/${path[type]}/${number}.gif`
     if (await checkUrl(gifUrl)) {
         return gifUrl
     }
-    const pngUrl = `${baseUrl}/${id}.png`
+    const pngUrl = `${baseUrl}/${number}.png`
     if (await checkUrl(pngUrl)) {
         return pngUrl
     }
 
-    console.error(`No sprite found for ID: ${id}`)
+    console.error(`No sprite found for ID: ${number}`)
     return undefined
 }
-const useSprite = (spriteEnum: SpriteEnum, id: number) => {
+const useSprite = (spriteEnum: SpriteEnum, number: string | number) => {
     const [ spriteUrl, setSpriteUrl ] = useState<string>(questionPng)
 
     useEffect(() => {
         (async () => {
             setSpriteUrl(questionPng)
-            const url = await getSpriteUrl(spriteEnum, id)
+            const url = await getSpriteUrl(spriteEnum, number)
             setSpriteUrl(url || questionPng)
         })()
-    }, [ spriteEnum, id ])
+    }, [ spriteEnum, number ])
 
     return { spriteUrl }
 }

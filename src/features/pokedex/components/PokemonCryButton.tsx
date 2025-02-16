@@ -19,7 +19,10 @@ function PokemonCryButton({ pokemonId }: PokemonCryButtonProps) {
             setIsPlaying(true)
             audioRef.current
                 .play()
-                .catch(() => {
+                .catch((error) => {
+                    console.log(
+                        'Error playing audio',
+                        JSON.stringify(error, null, 2))
                     setIsError(true)
                     setIsLoading(false)
                 })
@@ -47,7 +50,7 @@ function PokemonCryButton({ pokemonId }: PokemonCryButtonProps) {
                 src={audioUrl}
                 preload="auto"
                 onLoadedMetadata={() => {
-                    console.log("Loaded metadata")
+                    console.log('Loaded metadata')
                     if (audioRef.current) {
                         audioRef.current.volume = 0.1
                     }
@@ -55,18 +58,23 @@ function PokemonCryButton({ pokemonId }: PokemonCryButtonProps) {
                 }}
                 onEnded={() => {
                     setIsPlaying(false)
-                    console.log("Audio ended");
+                    console.log('Audio ended')
                 }}
                 onLoadStart={() => {
                     setIsLoading(true)
-                    console.log("Loading started")
+                    console.log('Loading started')
                 }}
                 onCanPlay={() => {
-                    console.error("Can play")
+                    console.log('Can play')
                     setIsLoading(false)
                 }}
-                onError={() => {
-                    console.error("Error loading audio")
+                onError={(event) => {
+                    console.error('Error loading audio', JSON.stringify(event, null, 2))
+                    // const audioElement = event.target
+                    // if (audioElement.error) {
+                    //     console.error('Audio Error Code:', audioElement.error.code) // Numeric error code
+                    //     console.error('Audio Error Message:', audioElement.error.message) // (Optional, some browsers)
+                    // }
                     setIsError(true)
                     setIsLoading(false)
                 }}

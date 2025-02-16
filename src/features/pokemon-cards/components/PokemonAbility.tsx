@@ -1,22 +1,25 @@
 interface PokemonAbilityProps {
     name: string
-    flavorText: string
+    text: string
 }
 
-function PokemonAbility({ name, flavorText }: PokemonAbilityProps) {
+function PokemonAbility({ name, text }: PokemonAbilityProps) {
     return (
         <div className="flex flex-col">
-            <div className="flex gap-1">
+            <div className="grid grid-cols-[2.5fr,6.5fr] items-center">
                 <div
-                    className="border border-gray-300 bg-white rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg px-0.5">
+                    className="flex border border-gray-300 bg-white rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg px-0.5 mr-1">
                     <div
-                        className="bg-rose-500 rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg pl-3 pr-4 pb-0.5">
-                        <b className="text-xs text-white italic">Ability</b>
+                        className="flex justify-center items-center bg-rose-500 rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg p-[1px] leading-none w-full pl-1 pr-2.5 py-1"
+                    >
+                        <b className="text-[10px] text-white italic leading-none">
+                            Ability
+                        </b>
                     </div>
                 </div>
-                <span className="capitalize text-rose-500"><b>{name}</b></span>
+                <span className="capitalize text-rose-800"><b>{name}</b></span>
             </div>
-            <p className="text-xs overflow-hidden text-ellipsis line-clamp-2">{flavorText}</p>
+            <p className="text-[11px] leading-tight overflow-hidden text-ellipsis line-clamp-2">{text}</p>
         </div>
     )
 }

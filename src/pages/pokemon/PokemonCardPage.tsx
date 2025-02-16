@@ -1,29 +1,32 @@
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks.ts'
 import PokemonCard from '@/features/pokemon-cards/components/PokemonCard.tsx'
-import { fetchPokemonCardByNameOrId } from '@/features/pokemon-cards/pokemonCardsSlice.ts'
-import { PokemonCardType } from '@/features/pokemon-cards/types/pokemonCardType.ts'
+import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
+import { addPokemonCard } from '@/features/pokemon-cards/pokemonCardsSlice.ts'
+import { useGetPokemonCardByPokedexNumberQuery } from '@/features/pokemon-cards/pokemontcgapi.ts'
 import { Button } from '@/shared/ui/button.tsx'
 import { LoaderCircle } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 function PokemonCardPage() {
     const [ randomId, setRandomId ] = useState<number | null>(null)
+    const { pokemonCards } = useAppSelector(state => state.pokemonCards)
     const dispatch = useAppDispatch()
-    const { pokemonCards, isLoading } = useAppSelector(state => state.pokemonCards)
 
-    useEffect(() => {
-        if (randomId) {
-            dispatch(fetchPokemonCardByNameOrId(randomId))
-        }
-    }, [ randomId, dispatch ])
+    // const { data: pokemonCard, isLoading } = useGetPokemonCardByIdQuery('test')
+    const { data: pokemonCard, isLoading } = useGetPokemonCardByPokedexNumberQuery(randomId, { skip: !randomId })
 
     const getRandomPokemonId = () => {
         return Math.floor(Math.random() * 1025) + 1
     }
     const handleClick = () => {
-        const pokemonId = getRandomPokemonId()
-        setRandomId(pokemonId)
+        setRandomId(getRandomPokemonId())
     }
+
+    useEffect(() => {
+        if (pokemonCard) {
+            dispatch(addPokemonCard(pokemonCard))
+        }
+    }, [ dispatch, pokemonCard ])
 
     return (
         <div className="flex flex-col items-center p-4 gap-4">
@@ -39,8 +42,8 @@ function PokemonCardPage() {
             </Button>
             <div className="flex w-full">
                 <div className="relative flex justify-center items-center border-red-500 h-[600px] w-full">
-                    {pokemonCards.map((pokemon: PokemonCardType, index: number) => (
-                        <PokemonCard key={index} pokemon={pokemon} index={index} />
+                    {pokemonCards.map((pokemonCard: IPokemonCard, index: number) => (
+                        <PokemonCard key={index} pokemonCard={pokemonCard} index={index} />
                     ))}
                 </div>
             </div>

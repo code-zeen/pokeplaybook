@@ -1,19 +1,19 @@
-import { TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
-import useSprite, { SpriteEnum } from '../../../entities/pokemon/hooks/useSprite.ts'
-import { spriteBgClass } from '@/entities/pokemon/typeColorClasses.ts'
+import { spriteBgClass } from '@/features/pokedex/config/typeColorClasses.ts'
+import useSprite, { SpriteEnum } from '@/features/pokedex/hooks/useSprite.ts'
+import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 
 interface PokemonImageProps {
-    id: number
+    number: number
     name: string
-    type: TypeEnum
+    type: PokemonCardTypeEnum
 }
 
-function PokemonImage({ id, name, type }: PokemonImageProps) {
-    const { spriteUrl } = useSprite(SpriteEnum.SHOWDOWN, id)
+function PokemonImage({ number, name, type }: PokemonImageProps) {
+    const { spriteUrl } = useSprite(SpriteEnum.SHOWDOWN, number)
 
     return (
         <div
-            className={`flex justify-center items-center mx-2 border border-white border-b-0 h-36 overflow-clip ${spriteBgClass[type]}`}>
+            className={`flex justify-center items-center mx-2 border border-white border-b-0 h-36 overflow-clip ${spriteBgClass[type]} shadow-[inset_2px_2px_2px_rgba(0,0,0,0.25)]`}>
             <img src={spriteUrl} alt={name} />
         </div>
     )

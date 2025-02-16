@@ -1,7 +1,7 @@
-import { TypeEnum } from '@/entities/pokemon/types/pokemonEnum.ts'
-import { FlavorTextEntryType } from './pokemonType.ts'
+import { PokedexTypeEnum } from '@/features/pokedex/interface/enums.ts'
+import { FlavorTextEntryType } from './Pokemon.ts'
 
-export interface MoveType {
+export interface Move {
     id: number
     name: string
     accuracy: number
@@ -11,7 +11,7 @@ export interface MoveType {
     power: number | null
     flavor_text_entries: FlavorTextEntryType[]
     type: {
-        name: TypeEnum
+        name: PokedexTypeEnum
         url: string
     }
 }

@@ -1,16 +1,11 @@
+import { useAppDispatch, useAppSelector } from '@/app/store/hooks.ts'
+import { generations } from '@/features/pokedex/config/generationQuery.ts'
+import { setGenerationIndex } from '@/features/pokedex/pokedexSlice.ts'
 import GenerationButton from './GenerationButton.tsx'
-import { generations } from '@/entities/pokemon/fetch/generationQuery.ts'
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks.ts";
-import { fetchPokedexListbyGenerationIndex, setGenerationIndex } from "@/features/pokedex/pokedexSlice.ts";
-import { useEffect } from "react";
 
 function GenerationSelector() {
     const { generationIndex } = useAppSelector(state => state.pokedex)
     const dispatch = useAppDispatch()
-
-    useEffect(() => {
-        dispatch(fetchPokedexListbyGenerationIndex(generationIndex))
-    }, [ dispatch, generationIndex ]);
 
     const handleClick = (index: number) => {
         dispatch(setGenerationIndex(index))
