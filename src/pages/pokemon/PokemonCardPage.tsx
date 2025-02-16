@@ -40,8 +40,11 @@ function PokemonCardPage() {
                     'Pull!'
                 )}
             </Button>
-            <div className="flex w-full">
-                <div className="relative flex justify-center items-center border-red-500 h-[600px] w-full">
+
+            <p className="text-blue-800 italic opacity-70">"{pokemonCard?.flavorText}"</p>
+
+            <div className="flex w-full border h-full">
+                <div className="relative flex justify-center items-center border-red-500 h-[500px] w-full">
                     {pokemonCards.map((pokemonCard: IPokemonCard, index: number) => (
                         <PokemonCard key={index} pokemonCard={pokemonCard} index={index} />
                     ))}
