@@ -13,7 +13,7 @@ function PokemonCardPage() {
     const dispatch = useAppDispatch()
 
     // const { data: pokemonCard, isLoading } = useGetPokemonCardByIdQuery('test')
-    const { data: pokemonCard, isLoading } = useGetPokemonCardByPokedexNumberQuery(randomId, { skip: !randomId })
+    const { data: pokemonCard, isFetching } = useGetPokemonCardByPokedexNumberQuery(randomId, { skip: !randomId })
 
     const getRandomPokemonId = () => {
         return Math.floor(Math.random() * 1025) + 1
@@ -30,8 +30,8 @@ function PokemonCardPage() {
 
     return (
         <div className="flex flex-col items-center p-4 gap-4">
-            <Button variant="secondary" onClick={handleClick} disabled={isLoading}>
-                {isLoading ? (
+            <Button variant="default" onClick={handleClick} disabled={isFetching}>
+                {isFetching ? (
                     <>
                         <LoaderCircle className="animate-spin" />
                         Pulling...
