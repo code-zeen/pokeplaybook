@@ -8,9 +8,9 @@ function Layout() {
     return (
         <SidebarProvider>
             <AppSidebar />
-            <main className="w-full">
+            <main className="flex flex-col w-full h-screen">
                 <MenuBar />
-                <div className="bg-[url('/bg.png')] bg-black bg-opacity-20 bg-blend-overlay bg-repeat h-screen w-full">
+                <div className="bg-[url('/bg.png')] bg-black bg-opacity-20 bg-blend-overlay bg-repeat h-screen">
                     <Outlet />
                 </div>
                 <Toaster />

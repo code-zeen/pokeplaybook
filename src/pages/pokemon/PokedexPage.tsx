@@ -16,9 +16,11 @@ export interface ExtendedPokedexEntry extends Pokemon {
 
 function PokedexPage() {
     return (
-        <div className="flex flex-col items-center px-1 py-2 gap-2">
-            <Search />
-            <Pokedex />
+        <div className="flex flex-col items-center px-1 py-2">
+            <div className="flex flex-col itesm-center bg-gray-100 p-1 rounded-lg  gap-2">
+                <Search />
+                <Pokedex />
+            </div>
         </div>
     )
 }
