@@ -92,8 +92,10 @@ function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
                     </div>
                     <div className="flex gap-0.5 p-1">
                         <div className="flex border rounded bg-white text-xs px-0.5">G</div>
-                        <div className="flex border rounded bg-black text-xs text-white px-0.5">sv2a</div>
-                        <div className="flex text-white text-xs">{pokemonCard.number}/1125 AR</div>
+                        <div
+                            className="flex border rounded bg-black text-xs text-white px-0.5 uppercase font-bold">{pokemonCard.id.split('-')[0]}</div>
+                        <div
+                            className="flex text-xs drop-shadow-[0_0_1px_white] font-bold">{pokemonCard.number}/1125 {pokemonCard.rarity}</div>
                     </div>
                 </div>
             </div>

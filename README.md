@@ -1,24 +1,33 @@
+# ⚡ Pokemon 포켓몬 ⚡
+Demo: [pokeplaybook.netlify.app](https://pokeplaybook.netlify.app/)
+
 <details>
 <summary>English</summary>
+  
+### 🎂 It all started when I was gifted 10 displays of Pokemon boosters for my 28th birthday. 
+Now I am an avid Pokemon card collector :D
 
-# ⚡ Pokedex & Pokemon Card ⚡
-
-Link to site: [pokeplaybook.netlify.app](https://pokeplaybook.netlify.app/)
-
-This is a toy project where I am creating my own Pokedex for fun.
+<img src="https://github.com/user-attachments/assets/6666ae23-7e87-4162-a9c0-046418efd03f" width="600px" />
 
 <br />
 
 ## Features
 
-### 📖 Pokedex
+### 1 📖 Pokedex
 
 - Search pokemon by name or id
 - Or just browse through the list of pokemon by generation
 
-### 🎴 Pokemon Cards
+### 2 🎴 Pokemon Cards
 
 - Pull pokemon cards with a random chance to draw any between id #1 to #1025!
+
+<br />
+
+## API
+ - https://pokeapi.co/
+ - https://pokemontcg.io/
+
 
 <br />
 
@@ -31,7 +40,7 @@ This is a toy project where I am creating my own Pokedex for fun.
 ## Stacks
 
 - Base : React, TypeScript
-- State Mgmt : Redux Toolkit
+- State Mgmt : Redux Toolkit, RTK Query
 - UI : Tailwind CSS, shadcn, Motion
 - Deploy: Netlify
 
@@ -43,24 +52,29 @@ This is a toy project where I am creating my own Pokedex for fun.
 <details>
 <summary>한국어</summary>
 
-# ⚡ 포켓몬 도감 & 카드 ⚡
+### 🎂 28번째 생일에 포켓몬 카드 10박스를 선물받은 뒤
+어쩌다가 포켓몬카드를 모으는 사람이 되었습니다.
 
-사이트: [pokeplaybook.netlify.app](https://pokeplaybook.netlify.app/)
-
-포켓몬 카드를 모으는 취미로 시작한 개인 프로젝트입니다 :)
+<img src="https://github.com/user-attachments/assets/6666ae23-7e87-4162-a9c0-046418efd03f" width="600px" />
 
 <br />
 
 ## 기능
 
-### 📖 포켓몬 도감
+### 1 📖 포켓몬 도감
 
 - 포켓몬 이름 또는 ID로 검색
 - 세대별 포켓몬 목록 둘러보기
 
-### 🎴 포켓몬 카드
+### 2 🎴 포켓몬 카드
 
 - #1부터 #1025까지의 포켓몬 중 랜덤으로 카드 뽑기
+
+<br />
+
+## API
+ - https://pokeapi.co/
+ - https://pokemontcg.io/
 
 <br />
 
@@ -73,7 +87,7 @@ This is a toy project where I am creating my own Pokedex for fun.
 ## 스택
 
 - 기본 : React, TypeScript
-- 상태관리 : Redux Toolkit
+- 상태관리 : Redux Toolkit, RTK Query
 - UI : Tailwind CSS, shadcn, Motion
 - 자동배포: Netlify
 
