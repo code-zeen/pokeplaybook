@@ -10,7 +10,9 @@ function Layout() {
             <AppSidebar />
             <main className="w-full">
                 <MenuBar />
-                <Outlet />
+                <div className="bg-[url('/bg.png')] bg-black bg-opacity-20 bg-blend-overlay bg-repeat h-screen w-full">
+                    <Outlet />
+                </div>
                 <Toaster />
             </main>
         </SidebarProvider>
