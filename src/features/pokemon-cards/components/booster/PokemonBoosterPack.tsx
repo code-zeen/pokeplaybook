@@ -1,22 +1,54 @@
+'use client'
+
 import BackgroundArt from '@/features/pokemon-cards/components/booster/BackgroundArt.tsx'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 export default function PokemonBoosterPack() {
-    const [ isHovering, setIsHovering ] = useState(false)
+    const [ isOpened, setIsOpened ] = useState(false)
+
+    const handleClick = () => {
+        setIsOpened(true)
+    }
 
     return (
-        <div className="flex justify-center items-center">
-            <div
-                className={`w-64 h-96 relative cursor-pointer transition-transform duration-300 ${isHovering ? 'transform -translate-y-2' : ''}`}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-            >
-                <div className="h-8 bg-red-600"></div>
-                <div className="h-1 bg-gray-50"></div>
-                <BackgroundArt isHovering={isHovering} />
-                <div className="h-0.5 bg-gray-50"></div>
-                <div className="h-4 bg-red-600"></div>
-            </div>
+        <div onClick={handleClick} className="cursor-pointer select-none">
+            <AnimatePresence>
+                {!isOpened && (
+                    <>
+                        <motion.div
+                            className="h-8 bg-red-600"
+                            initial={{ y: 0 }}
+                            animate={{ y: isOpened ? -50 : 0 }}
+                            exit={{ y: -50, opacity: 0 }}
+                            transition={{ duration: 0.4 }}
+                        />
+                        <motion.div
+                            className="h-1 bg-gray-50"
+                            initial={{ y: 0 }}
+                            animate={{ y: isOpened ? -50 : 0 }}
+                            exit={{ y: -50, opacity: 0 }}
+                            transition={{ duration: 0.4 }}
+                        />
+                    </>
+                )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+                {!isOpened && (
+                    <motion.div
+                        className="h-0.5 bg-gray-50"
+                        initial={{ y: 0 }}
+                        animate={{ y: isOpened ? 50 : 0 }}
+                        exit={{ y: 50, opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                    >
+                        <BackgroundArt />
+                        <div className="h-0.5 bg-gray-50" />
+                        <div className="h-4 bg-red-600" />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

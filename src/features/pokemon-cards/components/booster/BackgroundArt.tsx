@@ -4,14 +4,11 @@ import CharizardSilhouette
     from '@/features/pokemon-cards/components/booster/pokemon-silhouettes/CharizardSilhouette.tsx'
 import PokemonLogo from '@/features/pokemon-cards/components/booster/PokemonLogo.tsx'
 
-interface BackgroundArtProps {
-    isHovering: boolean
-}
 
-export default function BackgroundArt({ isHovering }: BackgroundArtProps) {
+export default function BackgroundArt() {
     return (
         <div
-            className={`w-full h-full bg-gradient-to-br from-red-600 to-orange-500 overflow-hidden relative ${isHovering ? 'shadow-xl' : 'shadow-lg'}`}>
+            className="w-full h-96 bg-gradient-to-br from-red-600 to-orange-500 overflow-hidden relative">
             <PokemonLogo />
 
             <Pokeball />
