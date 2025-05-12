@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks.ts'
+import PokemonBoosterPack from '@/features/pokemon-cards/components/booster/PokemonBoosterPack.tsx'
 import PokemonCard from '@/features/pokemon-cards/components/PokemonCard.tsx'
 import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
 import { addPokemonCard } from '@/features/pokemon-cards/pokemonCardsSlice.ts'
@@ -42,6 +43,8 @@ function PokemonCardPage() {
             </Button>
 
             <p className="text-blue-800 italic opacity-70">"{pokemonCard?.flavorText}"</p>
+
+            <PokemonBoosterPack />
 
             <div className="flex w-full h-full">
                 <div className="relative flex justify-center items-center border-red-500 h-[500px] w-full">
