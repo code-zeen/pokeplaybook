@@ -2,14 +2,13 @@
 
 import BackgroundArt from '@/features/pokemon-cards/components/booster/BackgroundArt.tsx'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
 
-export default function PokemonBoosterPack() {
-    const [ isOpened, setIsOpened ] = useState(false)
+interface PokemonBoosterPackProps {
+    isOpened: boolean
+    handleClick: () => void
+}
 
-    const handleClick = () => {
-        setIsOpened(true)
-    }
+export default function PokemonBoosterPack({ isOpened, handleClick }: PokemonBoosterPackProps) {
 
     return (
         <div onClick={handleClick} className="cursor-pointer select-none">
