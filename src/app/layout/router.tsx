@@ -2,7 +2,7 @@ import Layout from '@/app/layout/Layout.tsx'
 import { MenuItem, menuItems } from '@/app/layout/menuItems.tsx'
 import { createBrowserRouter, Navigate, RouteObject } from 'react-router-dom'
 
-function buildRoutes(menuItems: MenuItem[]): RouteObject[] {
+function buildRoutes(menuItems: MenuItem[]) {
     return menuItems.map(item => {
         const route: RouteObject = {
             path: item.path,

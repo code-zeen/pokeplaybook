@@ -1,5 +1,5 @@
 import questionPng from '/missing.png'
-import { useGetPokedexEntryByNameOrIdQuery } from '@/features/pokedex/pokeapi.ts'
+import { useGetPokedexEntryByNameOrIdQuery } from '@/features/pokedex/pokeApi.ts'
 
 interface PokemonSubtypeProps {
     subtype: string

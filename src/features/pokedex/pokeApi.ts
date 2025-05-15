@@ -2,8 +2,8 @@ import { generations } from '@/features/pokedex/config/generationQuery.ts'
 import { ExtendedPokedexEntry, ExtendedPokedexItem } from '@/pages/pokemon/PokedexPage.tsx'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export const pokeapi = createApi({
-    reducerPath: 'pokeapi',
+export const pokeApi = createApi({
+    reducerPath: 'pokeApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
     endpoints: (builder) => ({
         getPokedexListByGenerationIndex: builder.query<ExtendedPokedexItem[], number>({
@@ -19,10 +19,10 @@ export const pokeapi = createApi({
         getPokedexEntryByNameOrId: builder.query<ExtendedPokedexEntry, string | number>({
             query: (nameOrId: string | number | undefined) => `/pokemon/${nameOrId}`,
             transformResponse: (response: ExtendedPokedexEntry) => {
-                return { ...response, seen: 5, owned: 2, }
-            }
+                return { ...response, seen: 5, owned: 2 }
+            },
         }),
     }),
 })
 
-export const { useGetPokedexListByGenerationIndexQuery, useGetPokedexEntryByNameOrIdQuery, } = pokeapi
+export const { useGetPokedexListByGenerationIndexQuery, useGetPokedexEntryByNameOrIdQuery } = pokeApi

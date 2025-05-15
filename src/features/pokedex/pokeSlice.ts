@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-interface PokedexSliceType {
+interface PokeSliceType {
     searchKeyword: string
     generationIndex: number
 }
 
-const initialState: PokedexSliceType = {
+const initialState: PokeSliceType = {
     searchKeyword: '',
     generationIndex: 0,
 }
 
-const pokedexSlice = createSlice({
-    name: 'pokedex',
+const pokeSlice = createSlice({
+    name: 'poke',
     initialState,
     reducers: {
         setSearchKeyword: (state, action) => {
@@ -19,13 +19,13 @@ const pokedexSlice = createSlice({
         },
         setGenerationIndex: (state, action) => {
             state.generationIndex = action.payload
-        }
+        },
     },
 })
 
 export const {
     setSearchKeyword,
-    setGenerationIndex
-} = pokedexSlice.actions
+    setGenerationIndex,
+} = pokeSlice.actions
 
-export default pokedexSlice.reducer
+export default pokeSlice.reducer

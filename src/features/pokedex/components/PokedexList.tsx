@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks.ts'
-import { useGetPokedexListByGenerationIndexQuery } from '@/features/pokedex/pokeapi.ts'
-import { setSearchKeyword } from '@/features/pokedex/pokedexSlice.ts'
+import { useGetPokedexListByGenerationIndexQuery } from '@/features/pokedex/pokeApi.ts'
+import { setSearchKeyword } from '@/features/pokedex/pokeSlice.ts'
 import Pokeball from './Pokeball.tsx'
 import PokeballContainer from './PokeballContainer.tsx'
 

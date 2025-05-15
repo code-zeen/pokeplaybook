@@ -3,7 +3,7 @@ import ContainerWithSideBorder from '@/features/pokedex/components/ContainerWith
 import PokeballGrayBg from '@/features/pokedex/components/PokeballGrayBg.tsx'
 import PokemonCryButton from '@/features/pokedex/components/PokemonCryButton.tsx'
 import PokemonName from '@/features/pokedex/components/PokemonName.tsx'
-import { useGetPokedexEntryByNameOrIdQuery } from '@/features/pokedex/pokeapi.ts'
+import { useGetPokedexEntryByNameOrIdQuery } from '@/features/pokedex/pokeApi.ts'
 import TypeIcon from '@/shared/components/TypeIcon.tsx'
 
 function PokemonView() {

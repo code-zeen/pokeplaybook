@@ -1,13 +1,13 @@
-import { pokeapi } from '@/features/pokedex/pokeapi.ts'
-import pokedexSlice from '@/features/pokedex/pokedexSlice.ts'
-import pokemonCardsSlice from '@/features/pokemon-cards/pokemonCardsSlice.ts'
+import { pokeApi } from '@/features/pokedex/pokeApi.ts'
+import pokedexSlice from '@/features/pokedex/pokeSlice.ts'
 import { pokemontcgapi } from '@/features/pokemon-cards/pokemontcgapi.ts'
+import pokemonCardsSlice from '@/features/pokemon-cards/pokemontcgSlice.ts'
 import toastSlice from '@/features/toast/toastSlice.ts'
 import { configureStore } from '@reduxjs/toolkit'
 
 const store = configureStore({
     reducer: {
-        [pokeapi.reducerPath]: pokeapi.reducer,
+        [pokeApi.reducerPath]: pokeApi.reducer,
         [pokemontcgapi.reducerPath]: pokemontcgapi.reducer,
         pokedex: pokedexSlice,
         pokemonCards: pokemonCardsSlice,
@@ -16,8 +16,8 @@ const store = configureStore({
     middleware: getDefaultMiddleware => getDefaultMiddleware({
         serializableCheck: false,
     })
-        .concat(pokeapi.middleware)
-        .concat(pokemontcgapi.middleware)
+        .concat(pokeApi.middleware)
+        .concat(pokemontcgapi.middleware),
 })
 
 export default store
