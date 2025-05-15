@@ -7,7 +7,7 @@ import { useGetPokedexEntryByNameOrIdQuery } from '@/features/pokedex/pokeApi.ts
 import TypeIcon from '@/shared/components/TypeIcon.tsx'
 
 function PokemonView() {
-    const { searchKeyword } = useAppSelector(state => state.pokedex)
+    const { searchKeyword } = useAppSelector(state => state.poke)
     const { data: pokemon, error, isLoading } = useGetPokedexEntryByNameOrIdQuery(searchKeyword)
 
     if (isLoading) return <div>Loading...</div>

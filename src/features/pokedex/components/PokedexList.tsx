@@ -5,7 +5,7 @@ import Pokeball from './Pokeball.tsx'
 import PokeballContainer from './PokeballContainer.tsx'
 
 function PokedexList() {
-    const { searchKeyword, generationIndex } = useAppSelector(state => state.pokedex)
+    const { searchKeyword, generationIndex } = useAppSelector(state => state.poke)
     const { data: pokemonList, error, isLoading } = useGetPokedexListByGenerationIndexQuery(generationIndex)
     const dispatch = useAppDispatch()
 

@@ -4,7 +4,7 @@ import { setGenerationIndex } from '@/features/pokedex/pokeSlice.ts'
 import GenerationButton from './GenerationButton.tsx'
 
 function GenerationSelector() {
-    const { generationIndex } = useAppSelector(state => state.pokedex)
+    const { generationIndex } = useAppSelector(state => state.poke)
     const dispatch = useAppDispatch()
 
     const handleClick = (index: number) => {
