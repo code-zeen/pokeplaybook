@@ -1,3 +1,4 @@
+import { menuItems } from '@/app/layout/menuItems.tsx'
 import {
     Sidebar,
     SidebarContent,
@@ -6,14 +7,12 @@ import {
     SidebarGroupLabel,
     SidebarMenu,
     SidebarMenuButton,
-    SidebarMenuItem
+    SidebarMenuItem,
+    SidebarMenuSub,
+    SidebarMenuSubButton,
+    SidebarMenuSubItem
 } from '@/shared/ui/sidebar.tsx'
 import { Link } from 'react-router-dom'
-
-const menuItems = [
-    { title: 'Pokedex', url: '/pokedex' },
-    { title: 'Cards', url: '/pokemon-cards' }
-]
 
 function AppSidebar() {
     return (
@@ -23,13 +22,26 @@ function AppSidebar() {
                     <SidebarGroupLabel>Pokemon</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {menuItems.map((each) => (
-                                <SidebarMenuItem key={each.title}>
+                            {menuItems.map((item) => (
+                                <SidebarMenuItem key={item.label}>
                                     <SidebarMenuButton asChild>
-                                        <Link to={each.url}>
-                                            <span>{each.title}</span>
+                                        <Link to={item.path!}>
+                                            {item.icon}
+                                            <span>{item.label}</span>
                                         </Link>
                                     </SidebarMenuButton>
+                                    {item.children?.map(subItem => (
+                                        <SidebarMenuSub key={subItem.label}>
+                                            <SidebarMenuSubItem>
+                                                <SidebarMenuSubButton asChild>
+                                                    <Link to={`${item.path!}/${subItem.path!}`}>
+                                                        {subItem.icon}
+                                                        <span>{subItem.label}</span>
+                                                    </Link>
+                                                </SidebarMenuSubButton>
+                                            </SidebarMenuSubItem>
+                                        </SidebarMenuSub>
+                                    ))}
                                 </SidebarMenuItem>
                             ))}
                         </SidebarMenu>

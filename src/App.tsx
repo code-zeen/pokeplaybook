@@ -1,4 +1,4 @@
-import router from '@/app/routes/router.tsx'
+import router from '@/app/layout/router.tsx'
 import store from '@/app/store/store.ts'
 import { ToastProvider } from '@/shared/ui/toast.tsx'
 import { DndProvider } from 'react-dnd'
