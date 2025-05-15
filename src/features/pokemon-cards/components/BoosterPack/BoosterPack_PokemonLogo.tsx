@@ -1,4 +1,4 @@
-export default function PokemonLogo() {
+export default function BoosterPack_PokemonLogo() {
     return (
         <div className="absolute top-5 left-1/2 transform -translate-x-1/2 w-48 text-center">
             <div className="font-bold text-3xl text-yellow-400" style={{

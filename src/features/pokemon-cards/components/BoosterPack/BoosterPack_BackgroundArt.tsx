@@ -1,21 +1,20 @@
-import CardProbabilityInfo from '@/features/pokemon-cards/components/booster/CardProbabilityInfo.tsx'
-import Pokeball from '@/features/pokemon-cards/components/booster/Pokeball.tsx'
-import CharizardSilhouette
-    from '@/features/pokemon-cards/components/booster/pokemon-silhouettes/CharizardSilhouette.tsx'
-import PokemonLogo from '@/features/pokemon-cards/components/booster/PokemonLogo.tsx'
+import BoosterPack_Pokeball from '@/features/pokemon-cards/components/BoosterPack/BoosterPack_Pokeball.tsx'
+import BoosterPack_PokemonLogo from '@/features/pokemon-cards/components/BoosterPack/BoosterPack_PokemonLogo.tsx'
+import BoosterPack_Rarity from '@/features/pokemon-cards/components/BoosterPack/BoosterPack_Rarity.tsx'
+import Silhouette_Charizard from '@/features/pokemon-cards/components/BoosterPack/Silhouette/Silhouette_Charizard.tsx'
 
 
-export default function BackgroundArt() {
+export default function BoosterPack_BackgroundArt() {
     return (
         <div
             className="w-full h-96 bg-gradient-to-br from-red-600 to-orange-500 overflow-hidden relative">
-            <PokemonLogo />
+            <BoosterPack_PokemonLogo />
 
-            <Pokeball />
+            <BoosterPack_Pokeball />
 
-            <CharizardSilhouette />
+            <Silhouette_Charizard />
 
-            <CardProbabilityInfo total={7} rare={1} />
+            <BoosterPack_Rarity total={7} rare={1} />
 
             {/* Energy symbols scattered around */}
             <div className="absolute top-24 left-8 w-5 h-5 rounded-full bg-yellow-400" style={{

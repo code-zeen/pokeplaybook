@@ -1,4 +1,4 @@
-export default function CharizardSilhouette() {
+export default function Silhouette_Charizard() {
     return (
         <div className="absolute bottom-8 right-8 w-24 h-24 opacity-50">
             {/* Simplified Charizard silhouette */}

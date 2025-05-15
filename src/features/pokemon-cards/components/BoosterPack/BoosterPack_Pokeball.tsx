@@ -1,4 +1,4 @@
-export default function Pokeball() {
+export default function BoosterPack_Pokeball() {
     return (
         <div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-white shadow-lg flex items-center justify-center"
