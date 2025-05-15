@@ -11,10 +11,17 @@ export default function Cardmarket() {
     }
 
     return (
-        <div className="flex justify-center items-center flex-wrap overflow-y-auto h-full gap-2 px-1 py-2">
+        <div className="flex flex-wrap gap-1 px-1 py-2">
             {pokemonCards?.map(card => (
-                <img key={card.id} src={card.images.small} alt={card.name}
-                     className="max-h-[240px] h-auto w-auto object-contain" />
+                <div key={card.id}
+                     className="border rounded-xl bg-white w-[calc(50%-0.125rem)] p-2">
+                    <img src={card.images.small} alt={card.name}
+                         className="object-contain" />
+                    <div className="flex flex-col items-center">
+                        <span className="font-bold">{card.name}</span>
+                        <span className="text-xs bg-gray-300 px-1 border">{card.set.ptcgoCode} {card.number}</span>
+                    </div>
+                </div>
             ))}
         </div>
     )

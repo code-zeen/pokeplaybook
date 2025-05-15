@@ -16,7 +16,7 @@ export const pokemontcgapi = createApi({
         getPokemonCardsBySearch: builder.query<PokemonCard[], string>({
             query: (keyword: string) => {
                 const params = new URLSearchParams({
-                    q: `name:${keyword}`,
+                    q: `name:*${keyword}*`,
                     page: '1',
                     pageSize: '20',
                 })
