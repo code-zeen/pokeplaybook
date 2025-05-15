@@ -1,10 +1,14 @@
 import { useAppDispatch } from '@/app/store/hooks.ts'
-import { setSearchKeyword } from '@/features/pokedex/pokedexSlice.ts'
 import { Button } from '@/shared/ui/button.tsx'
 import { Input } from '@/shared/ui/input.tsx'
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 import { KeyboardEvent, useState } from 'react'
 
-function Search() {
+interface SearchProps {
+    setSearchKeyword: ActionCreatorWithPayload<string>
+}
+
+function Search({ setSearchKeyword }: SearchProps) {
     const [ input, setInput ] = useState<string>('')
     const dispatch = useAppDispatch()
 

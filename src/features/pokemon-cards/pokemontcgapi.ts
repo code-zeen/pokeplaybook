@@ -13,6 +13,9 @@ export const pokemontcgapi = createApi({
         }
     }),
     endpoints: (builder) => ({
+        getPokemonCardBySearch: builder.query<PokemonCard, string>({
+            query: (keyword: string) => `/cards?q=name:${keyword}`,
+        }),
         getPokemonCardById: builder.query<PokemonCard, string>({
             query: () => `/cards/xy1-1`, // TODO find a way to search by id or randomize
             transformResponse: (response: { data: PokemonCard }) => {
@@ -28,4 +31,8 @@ export const pokemontcgapi = createApi({
     }),
 })
 
-export const { useGetPokemonCardByIdQuery, useGetPokemonCardByPokedexNumberQuery } = pokemontcgapi
+export const {
+    useGetPokemonCardBySearchQuery,
+    useGetPokemonCardByIdQuery,
+    useGetPokemonCardByPokedexNumberQuery
+} = pokemontcgapi
