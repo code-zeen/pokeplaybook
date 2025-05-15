@@ -5,11 +5,11 @@ import Search from '@/shared/components/Search.tsx'
 export default function CardmarketSearchPage() {
 
     return (
-        <div>
+        <>
             <div className="flex flex-col items-center justify-center bg-gray-100 p-1 sticky top-0">
                 <Search setSearchKeyword={setSearchKeyword} />
             </div>
             <Cardmarket />
-        </div>
+        </>
     )
 }

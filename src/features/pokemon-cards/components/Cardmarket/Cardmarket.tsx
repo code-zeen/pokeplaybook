@@ -7,7 +7,11 @@ export default function Cardmarket() {
     const { data: pokemonCards, isFetching } = useGetPokemonCardsBySearchQuery(searchKeyword, { skip: !searchKeyword })
 
     if (isFetching) {
-        return <LoaderCircle className="animate-spin" />
+        return (
+            <div className="flex justify-center items-center w-full h-full">
+                <LoaderCircle className="animate-spin" />
+            </div>
+        )
     }
 
     return (
