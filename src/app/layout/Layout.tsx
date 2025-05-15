@@ -9,7 +9,7 @@ function Layout() {
         <SidebarProvider>
             <AppSidebar />
             <main
-                className="flex flex-col bg-[url('/bg.png')] overflow-y-auto bg-black bg-opacity-20 bg-blend-overlay bg-repeat w-full h-screen"
+                className="flex flex-col bg-[url('/bg.png')] overflow-x-hidden bg-black bg-opacity-20 bg-blend-overlay bg-repeat w-full h-screen"
             >
                 <MenuBar />
                 <Outlet />
