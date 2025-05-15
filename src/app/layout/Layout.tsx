@@ -1,4 +1,4 @@
-import AppSidebar from '@/app/layout/AppSidebar.tsx'
+import AppSidebar from '@/app/layout/AppSidebar/AppSidebar.tsx'
 import MenuBar from '@/app/layout/MenuBar.tsx'
 import { SidebarProvider } from '@/shared/ui/sidebar.tsx'
 import { Toaster } from '@/shared/ui/toaster.tsx'

@@ -1,3 +1,4 @@
+import AppSidebar_Footer from '@/app/layout/AppSidebar/AppSidebar_Footer.tsx'
 import { menuItems } from '@/app/layout/menuItems.tsx'
 import {
     Sidebar,
@@ -48,6 +49,8 @@ function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
+
+            <AppSidebar_Footer />
         </Sidebar>
     )
 }

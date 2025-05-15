@@ -1,11 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/avatar.tsx'
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger
-} from '@/shared/ui/dropdown-menu.tsx'
+import UserDropdownMenuAvatar from '@/app/layout/UserDropdownMenu/UserDropdownMenuAvatar.tsx'
 import { SidebarTrigger } from '@/shared/ui/sidebar.tsx'
 
 function MenuBar() {
@@ -17,29 +10,7 @@ function MenuBar() {
                     <h1 className="text-xl font-bold">PokePlaybook</h1>
                 </div>
 
-                <div>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger>
-                            <Avatar>
-                                <AvatarImage src="/razz-berry.png" alt="User Avatar" />
-                                <AvatarFallback>U</AvatarFallback>
-                            </Avatar>
-                        </DropdownMenuTrigger>
-
-                        <DropdownMenuContent>
-                            <DropdownMenuItem>
-                                Profile
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                Settings
-                            </DropdownMenuItem>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem>
-                                Logout
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
+                <UserDropdownMenuAvatar />
             </div>
         </div>
     )
