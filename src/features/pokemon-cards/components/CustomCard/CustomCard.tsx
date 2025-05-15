@@ -1,20 +1,20 @@
 import { cardBgClass } from '@/features/pokedex/config/typeColorClasses.ts'
-import PokemonNameHeader from '@/features/pokemon-cards/components/PokemonNameHeader.tsx'
+import CustomCard_Name_Header from '@/features/pokemon-cards/components/CustomCard/CustomCard_Name_Header.tsx'
 import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
 import TypeIcon from '@/shared/components/TypeIcon.tsx'
 import { motion } from 'framer-motion'
-import PokemonAbility from './PokemonAbility.tsx'
-import PokemonAttack from './PokemonAttack.tsx'
-import PokemonImage from './PokemonImage.tsx'
-import PokemonPhysicalInfo from './PokemonPhysicalInfo.tsx'
+import CustomCard_Ability from './CustomCard_Ability.tsx'
+import CustomCard_Attack from './CustomCard_Attack.tsx'
+import CustomCard_Image from './CustomCard_Image.tsx'
+import CustomCard_PhysicalInfo from './CustomCard_PhysicalInfo.tsx'
 
 interface PokemonCardProps {
     pokemonCard: IPokemonCard
     index?: number
 }
 
-function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
+function CustomCard({ pokemonCard, index = 0 }: PokemonCardProps) {
     const type = pokemonCard?.types?.[0] as PokemonCardTypeEnum
 
     const xOffset = index * 24
@@ -36,24 +36,25 @@ function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
                 scale: 1.02,
                 rotate: rotationOffset,
                 translateY: '-48px',
-                transition: { duration: 0.2 }
+                transition: { duration: 0.2 },
             }}>
             <div className={`flex flex-col h-full ${cardBgClass[type]} border rounded-lg`}>
 
                 <div>
-                    <PokemonNameHeader pokemonCard={pokemonCard} type={type} />
-                    <PokemonImage number={pokemonCard.nationalPokedexNumbers[0]} name={pokemonCard.name} type={type} />
-                    <PokemonPhysicalInfo number={pokemonCard.number} />
+                    <CustomCard_Name_Header pokemonCard={pokemonCard} type={type} />
+                    <CustomCard_Image number={pokemonCard.nationalPokedexNumbers[0]} name={pokemonCard.name}
+                                      type={type} />
+                    <CustomCard_PhysicalInfo number={pokemonCard.number} />
                 </div>
 
                 <div className="flex flex-col flex-grow justify-around p-2 gap-4">
                     {pokemonCard.abilities &&
-                        <PokemonAbility
+                        <CustomCard_Ability
                             name={pokemonCard.abilities?.[0].name}
                             text={pokemonCard.abilities?.[0].text} />
                     }
                     {pokemonCard.attacks?.map(attack => (
-                        <PokemonAttack
+                        <CustomCard_Attack
                             name={attack.name}
                             damage={attack.damage}
                             cost={attack.cost}
@@ -103,4 +104,4 @@ function PokemonCard({ pokemonCard, index = 0 }: PokemonCardProps) {
     )
 }
 
-export default PokemonCard
+export default CustomCard

@@ -3,7 +3,7 @@ interface PokemonAbilityProps {
     text: string
 }
 
-function PokemonAbility({ name, text }: PokemonAbilityProps) {
+function CustomCard_Ability({ name, text }: PokemonAbilityProps) {
     return (
         <div className="flex flex-col">
             <div className="grid grid-cols-[2.5fr,6.5fr] items-center">
@@ -24,4 +24,4 @@ function PokemonAbility({ name, text }: PokemonAbilityProps) {
     )
 }
 
-export default PokemonAbility
+export default CustomCard_Ability

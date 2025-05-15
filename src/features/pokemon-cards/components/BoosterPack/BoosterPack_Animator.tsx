@@ -1,5 +1,5 @@
 import BoosterPack from '@/features/pokemon-cards/components/BoosterPack/BoosterPack.tsx'
-import PokemonCard from '@/features/pokemon-cards/components/PokemonCard.tsx'
+import CustomCard from '@/features/pokemon-cards/components/CustomCard/CustomCard.tsx'
 import { useGetPokemonCardByPokedexNumberQuery } from '@/features/pokemon-cards/pokemontcgapi.ts'
 import { LoaderCircle } from 'lucide-react'
 import { useState } from 'react'
@@ -29,7 +29,7 @@ export default function BoosterPack_Animator() {
                         <LoaderCircle className="animate-spin" />
                     </div>
                 ) : (
-                    isOpened && pokemonCard && <PokemonCard pokemonCard={pokemonCard} />
+                    isOpened && pokemonCard && <CustomCard pokemonCard={pokemonCard} />
                 )}
             </div>
         </div>

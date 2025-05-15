@@ -6,7 +6,7 @@ interface PokemonSubtypeProps {
     evolvesFrom?: string
 }
 
-export default function PokemonSubtype({ subtype, evolvesFrom }: PokemonSubtypeProps) {
+export default function CustomCard_Subtype({ subtype, evolvesFrom }: PokemonSubtypeProps) {
     const { data: pokemon, error, isLoading } = useGetPokedexEntryByNameOrIdQuery(evolvesFrom ?? '', {
         skip: !evolvesFrom,
     })

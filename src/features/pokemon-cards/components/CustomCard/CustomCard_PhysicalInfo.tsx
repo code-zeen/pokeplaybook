@@ -2,7 +2,7 @@ interface PokemonPhysicalInfoProps {
     number: string
 }
 
-function PokemonPhysicalInfo({ number }: PokemonPhysicalInfoProps) {
+function CustomCard_PhysicalInfo({ number }: PokemonPhysicalInfoProps) {
     return (
         <div
             className="flex flex-col pl-1 pr-3 bg-gray-400 rounded-tl-xl rounded-bl-lg rounded-br-3xl border border-gray-500 shadow-[1px_1px_1px_rgba(0,0,0,0.25)]">
@@ -14,4 +14,4 @@ function PokemonPhysicalInfo({ number }: PokemonPhysicalInfoProps) {
     )
 }
 
-export default PokemonPhysicalInfo
+export default CustomCard_PhysicalInfo

@@ -6,7 +6,7 @@ interface PokemonHpProps {
     type: PokemonCardTypeEnum
 }
 
-function PokemonHp({ hp, type }: PokemonHpProps) {
+function CustomCard_Hp({ hp, type }: PokemonHpProps) {
     return (
         <div className="flex items-center gap-0.5">
             <span>
@@ -18,4 +18,4 @@ function PokemonHp({ hp, type }: PokemonHpProps) {
     )
 }
 
-export default PokemonHp
+export default CustomCard_Hp

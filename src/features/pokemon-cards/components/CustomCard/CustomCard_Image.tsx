@@ -8,7 +8,7 @@ interface PokemonImageProps {
     type: PokemonCardTypeEnum
 }
 
-function PokemonImage({ number, name, type }: PokemonImageProps) {
+function CustomCard_Image({ number, name, type }: PokemonImageProps) {
     const { spriteUrl } = useSprite(SpriteEnum.SHOWDOWN, number)
 
     return (
@@ -19,4 +19,4 @@ function PokemonImage({ number, name, type }: PokemonImageProps) {
     )
 }
 
-export default PokemonImage
+export default CustomCard_Image

@@ -2,10 +2,10 @@ interface PokemonNameProps {
     name: string
 }
 
-function PokemonName({ name }: PokemonNameProps) {
+function CustomCard_Name({ name }: PokemonNameProps) {
     return (
         <b className="capitalize">{name}</b>
     )
 }
 
-export default PokemonName
+export default CustomCard_Name

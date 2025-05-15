@@ -8,7 +8,7 @@ interface PokemonMoveProps {
     text: string
 }
 
-function PokemonAttack({ name, damage, cost, text }: PokemonMoveProps) {
+function CustomCard_Attack({ name, damage, cost, text }: PokemonMoveProps) {
     return (
         <div className="flex flex-col">
             <div className="flex-col w-full">
@@ -32,4 +32,4 @@ function PokemonAttack({ name, damage, cost, text }: PokemonMoveProps) {
     )
 }
 
-export default PokemonAttack
+export default CustomCard_Attack
