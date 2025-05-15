@@ -9,7 +9,7 @@ export default function Cardmarket() {
     if (isFetching) {
         return (
             <div className="flex justify-center items-center w-full h-full">
-                <LoaderCircle className="animate-spin" />
+                <LoaderCircle className="animate-spin" size={64} />
             </div>
         )
     }
@@ -35,7 +35,19 @@ export default function Cardmarket() {
                          className="object-contain" />
                     <div className="flex flex-col items-center">
                         <span className="font-bold">{card.name}</span>
-                        <span className="text-xs bg-gray-300 px-1 border">{card.set.ptcgoCode} {card.number}</span>
+                        <div className="flex">
+                            <span
+                                className="text-xs bg-gray-100 px-2 rounded border ">
+                            {card.set.ptcgoCode} {card.number}
+                        </span>
+                            {card.rarity && (
+                                <span
+                                    className="text-xs bg-gray-800 text-white px-1 rounded"
+                                >
+                                    {card.rarity.split(' ').map(word => word[0] || '').reverse().join('')}
+                                </span>
+                            )}
+                        </div>
                     </div>
                 </div>
             ))}
