@@ -1,7 +1,7 @@
 'use client'
 
 import BoosterPack_BackgroundArt from '@/features/pokemon-cards/components/BoosterPack/BoosterPack_BackgroundArt.tsx'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 
 interface PokemonBoosterPackProps {
     isOpened: boolean

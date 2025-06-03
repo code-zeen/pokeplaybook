@@ -3,7 +3,7 @@ import CustomCard_Name_Header from '@/features/pokemon-cards/components/CustomCa
 import { PokemonCardTypeEnum } from '@/features/pokemon-cards/interface/enums.ts'
 import { PokemonCard as IPokemonCard } from '@/features/pokemon-cards/interface/PokemonCard.ts'
 import TypeIcon from '@/shared/components/TypeIcon.tsx'
-import { motion } from 'framer-motion'
+import {motion} from 'motion/react'
 import CustomCard_Ability from './CustomCard_Ability.tsx'
 import CustomCard_Attack from './CustomCard_Attack.tsx'
 import CustomCard_Image from './CustomCard_Image.tsx'
