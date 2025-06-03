@@ -1,10 +1,11 @@
 import { SVGAttributes } from 'react'
 import { IconType } from 'react-icons'
-import { TbCards, TbChevronUp, TbGift, TbPokeball, TbSearch } from 'react-icons/tb'
+import { TbCards, TbChevronDown, TbChevronUp, TbGift, TbPokeball, TbSearch } from 'react-icons/tb'
 
 export type IconName =
     | 'cards'
     | 'chevronUp'
+    | 'chevronDown'
     | 'gift'
     | 'pokeball'
     | 'search'
@@ -16,6 +17,7 @@ interface IconProps extends SVGAttributes<SVGElement> {
 
 const iconMap: Record<IconName, IconType> = {
     cards: TbCards,
+    chevronDown: TbChevronDown,
     chevronUp: TbChevronUp,
     gift: TbGift,
     pokeball: TbPokeball,
